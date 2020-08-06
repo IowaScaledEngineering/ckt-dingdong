@@ -1,8 +1,8 @@
 v 20130925 2
 T 25400 7900 9 10 1 0 0 0 1
-Micro Sized Sound Player
+Tiny Sound Player
 T 25300 7600 9 10 1 0 0 0 1
-ckt-reefer.sch
+ckt-dingdong.sch
 T 25500 7300 9 10 1 0 0 0 1
 1
 T 27000 7300 9 10 1 0 0 0 1
