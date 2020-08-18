@@ -66,7 +66,7 @@ help:
 
 hex: $(BASE_NAME).hex
 
-program: fuse flash
+program: fuse flash eeprom
 
 terminal:
 	$(AVRDUDE_SLOW) -t
@@ -86,6 +86,12 @@ size:
 # rule for uploading firmware:
 flash: $(BASE_NAME).hex
 	$(AVRDUDE) -U flash:w:$(BASE_NAME).hex:i
+
+firmware:
+	$(AVRDUDE) -U flash:w:$(HEX):i
+
+eeprom:
+	$(AVRDUDE_SLOW) -U eeprom:w:$(BASE_NAME).eep:i
 
 # rule for deleting dependent files (those which can be built by Make):
 clean:
