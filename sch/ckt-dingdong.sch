@@ -98,7 +98,7 @@ symversion=0.1
 T 24100 10600 5 10 0 1 90 0 1
 footprint=0805
 T 23350 10800 5 10 1 1 0 3 1
-refdes=C7
+refdes=C6
 T 23350 10200 5 10 1 1 0 5 1
 value=0.1uF
 T 23350 10000 5 10 1 1 0 5 1
@@ -117,7 +117,7 @@ symversion=0.1
 T 19800 10800 5 10 0 1 0 0 1
 footprint=0805
 T 19800 11700 5 10 1 1 0 0 1
-refdes=C6
+refdes=C4
 T 19800 11400 5 10 1 1 0 2 1
 value=10uF
 T 19800 11200 5 10 1 1 0 2 1
@@ -146,7 +146,7 @@ device=RESISTOR
 T 26400 11600 5 10 0 0 90 2 1
 footprint=0805
 T 26350 12200 5 10 1 1 0 7 1
-refdes=R3
+refdes=R2
 T 26350 11900 5 10 1 1 0 7 1
 value=27k
 }
@@ -162,7 +162,7 @@ symversion=0.1
 T 23900 8100 5 10 0 1 0 6 1
 footprint=0805
 T 23900 9000 5 10 1 1 0 6 1
-refdes=C8
+refdes=C5
 T 23900 8700 5 10 1 1 0 8 1
 value=470pF
 T 23900 8500 5 10 1 1 0 8 1
@@ -209,7 +209,7 @@ device=RESISTOR
 T 31100 15000 5 10 0 0 90 0 1
 footprint=0805
 T 31150 15600 5 10 1 1 0 1 1
-refdes=R2
+refdes=R1
 T 31150 15300 5 10 1 1 0 1 1
 value=DNI
 }
@@ -226,7 +226,7 @@ symversion=0.1
 T 25300 12000 5 10 0 1 0 6 1
 footprint=0805
 T 25300 12900 5 10 1 1 0 6 1
-refdes=C4
+refdes=C3
 T 25300 12600 5 10 1 1 0 8 1
 value=1uF
 T 25300 12400 5 10 1 1 0 8 1
@@ -272,7 +272,7 @@ C 26600 10000 1 90 0 pot-bourns.sym
 T 25700 10800 5 10 0 0 90 0 1
 device=VARIABLE_RESISTOR
 T 26650 10500 5 10 1 1 0 1 1
-refdes=R5
+refdes=R3
 T 26650 10300 5 10 1 1 0 1 1
 value=10k
 T 26600 10000 5 10 0 0 90 0 1
