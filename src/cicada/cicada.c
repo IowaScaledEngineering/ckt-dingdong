@@ -43,12 +43,13 @@ LICENSE:
 #define ATTACK_TIME       (uint16_t)4
 #define DECAY_START   (uint16_t)45000
 #define DECAY_TIME        (uint16_t)4
-#define MAX_VOL          (uint16_t)32
-#define MIN_VOL         (uint16_t)512
+#define MAX_VOL         (uint16_t)256
+#define MIN_VOL        (uint16_t)4096
 
-uint16_t volume = 255;
-volatile uint8_t newVolume = 0;
+uint16_t attenuation = MIN_VOL;
+volatile uint8_t newAttenuation = 0;
 uint8_t mute = 1;
+uint8_t repeat = 0;
 
 inline void disableAmplifier()
 {
@@ -66,93 +67,71 @@ uint8_t ocr0a;
 ISR(TIMER0_COMPA_vect) 
 {
 	static uint16_t wavIdx = 0;
-	static uint8_t state = 0;
-	static uint16_t myVolume = 255;
+	static uint8_t state = 8;
+	static uint16_t myAttenuation = MIN_VOL;
 	static uint8_t myMute = 1;
 
-	uint16_t delta;
-	uint8_t data;
+	uint8_t delta;
+	uint8_t data = 0x7F;
 
-	if(newVolume)
+	if(newAttenuation)
 	{
-		myVolume = volume;
-		newVolume = 0;
+		myAttenuation = attenuation;
+		newAttenuation = 0;
 	}
 	
-	switch(state)
+	if(8 == state)
 	{
-		case 0:
-			// Start
-			if(!mute)
-				myMute = 0;
-			OCR0A = ocr0a;
-			data = pgm_read_byte(&start_wav[wavIdx++]);
-			if (wavIdx == start_wav_len)
-			{
-				wavIdx = 0;
-				state++;
-			}
-			break;
-		case 1:
-		case 2:
-		case 3:
-		case 4:
-			// Middle
-			switch(state)
-			{
-				case 1:
-					OCR0A = ocr0a;
-					break;
-				case 2:
-					OCR0A = ocr0a + 1;
-					break;
-				case 3:
-					OCR0A = ocr0a;
-					break;
-				case 4:
-					OCR0A = ocr0a - 1;
-					break;
-			}
-			data = pgm_read_byte(&mid_wav[wavIdx++]);
-			if (wavIdx == mid_wav_len)
-			{
-				wavIdx = 0;
-				state++;
-			}
-			break;
-		default:
-			// End
-			if(mute)
-				myMute = 1;
-			OCR0A = ocr0a;
-			data = pgm_read_byte(&end_wav[wavIdx++]);
-			if (wavIdx == end_wav_len)
-			{
-				wavIdx = 0;
-				state++;
-			}
-			break;
+		// Start
+		if(!mute)
+			myMute = 0;
+		data = pgm_read_byte(&start_wav[wavIdx++]);
+		if (wavIdx == start_wav_len)
+		{
+			wavIdx = 0;
+			state = 4 + repeat;
+		}
+	}
+	else if(state && (state < 8))
+	{
+		// Middle
+		data = pgm_read_byte(&mid_wav[wavIdx++]);
+		if (wavIdx == mid_wav_len)
+		{
+			wavIdx = 0;
+			state--;
+			OCR0A = ocr0a - (state & 0x03);  // Wobble the pitch
+		}
+	}
+	else
+	{
+		// End
+		if(mute)
+			myMute = 1;
+		data = pgm_read_byte(&end_wav[wavIdx++]);
+		if (wavIdx == end_wav_len)
+		{
+			wavIdx = 0;
+			state = 8;
+		}
 	}
 
 	if(data > 0x80)
 	{
-		delta = (uint16_t)(data - 0x80) * (uint16_t)MAX_VOL / (uint16_t)myVolume;
+		delta = (uint16_t)(data - 0x80) * (uint16_t)256 / (uint16_t)myAttenuation;
 		OCR1A = myMute ? 0x7F : 0x0080 + delta;
 	}
 	else
 	{
-		delta = (uint16_t)(0x0080 - data) * (uint16_t)MAX_VOL / (uint16_t)myVolume;
+		delta = (uint16_t)(0x0080 - data) * (uint16_t)256 / (uint16_t)myAttenuation;
 		OCR1A = myMute ? 0x7F : 0x0080 - delta;
-	}
-
-	if(state > 5)
-	{
-		state = 0;
 	}
 }
 
 int main(void)
 {
+	uint8_t i;
+
 	// Deal with watchdog first thing
 	MCUSR = 0;								// Clear reset status
 
@@ -175,73 +154,78 @@ int main(void)
 	DDRB |= _BV(PB4) | _BV(PB1);
 	PORTB |= _BV(PB3);                            // Turn on pullup for PB3 (enable input)
 
-	uint8_t dly = 1;
-
 	sei();
 	enableAmplifier();
+	mute = 1;
+	TIMSK = _BV(OCIE0A);
 
-	uint16_t counter;
+	uint8_t *eePtr = 0;
 
 	while(1)
 	{
 		wdt_reset();
+		
 		if(!(PINB & _BV(PB3)))
 		{
+			// First Byte: aaabbccc
+			// aaa = Duration
+			// bb  = Repeats
+			// ccc = Pitch
+			uint8_t eeVal = eeprom_read_byte(eePtr++);
+		
 			// Vary the pitch
-			ocr0a = 60 + 3*((dly/8)%4);  // 63 is nominal (16kHz)
+			ocr0a = 60 + (eeVal & 0x07);  // 63 is nominal (16kHz)
 			OCR0A = ocr0a;
 			
-			counter = 65535;
-			volume = MIN_VOL;
-			mute = 1;
-			TIMSK = _BV(OCIE0A);
+			attenuation = MIN_VOL;
+			repeat = (eeVal >> 3) & 0x03;
+			uint8_t duration = (eeVal >> 5) & 0x07;
 
-			while(counter)
+			// Second Byte: pre-chirp delay
+			eeVal = eeprom_read_byte(eePtr++);
+			
+			while(eeVal--)
+			{
+				// Pre-chirp delay
+				wdt_reset();
+				_delay_ms(100);
+			}
+			
+			mute = 0;
+
+			while(attenuation > MAX_VOL)
+			{
+				// Ramp-up
+				wdt_reset();
+				if(!newAttenuation)
+					attenuation -= 8;
+				newAttenuation = 1;
+				_delay_ms(2);
+			}
+			
+			// attenuation now equals MAX_VOL
+			
+			// Wait minimum 7 seconds + duration
+			for(i=0; i<((7+duration)*8); i++)
 			{
 				wdt_reset();
-				if(counter > ATTACK_START)
-				{
-					// Initial pause
-					mute = 1;
-				}
-				else if(counter > (ATTACK_START - ((MIN_VOL-MAX_VOL)*ATTACK_TIME) - 1))
-				{
-					// Ramp up
-					mute = 0;
-					if(!newVolume)
-						volume = MIN_VOL - ((uint16_t)(ATTACK_START - counter) / ATTACK_TIME);
-					newVolume = 1;
-				}
-				else if(counter > DECAY_START)
-				{
-					// Keep playing
-				}
-				else if(counter > (DECAY_START - ((MIN_VOL-MAX_VOL)*DECAY_TIME) - 1))
-				{
-					// Decay down
-					if(!newVolume)
-						volume = MAX_VOL + ((uint16_t)(DECAY_START - counter) / DECAY_TIME);
-					newVolume = 1;
-				}
-				else
-				{
-					// Pause afterwards
-					mute = 1;
-					uint8_t i = dly;
-					while(i)
-					{
-						i--;
-						wdt_reset();
-						_delay_ms(400);
-					}
-					break;  // Leave while(counter) loop
-				}
-				counter--;
-				_delay_us(500);
+				_delay_ms(60);  // Should be 125ms, but ISR slows things down
 			}
-			// Really, really, really, crude Linear Congruential Method (a=5, c=0, m=256, X0 = 1), repeat period of 64, min = 1, max = 253
-			dly *= 5;
+
+			while(attenuation < MIN_VOL)
+			{
+				// Ramp-down
+				wdt_reset();
+				if(!newAttenuation)
+					attenuation += 8;
+				newAttenuation = 1;
+				_delay_ms(2);
+			}
+			
+			mute = 1;
 		}
+		if(eePtr > (uint8_t *)511)
+			eePtr = 0;
 	}
 }
 
