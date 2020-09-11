@@ -61,7 +61,7 @@ inline void enableAmplifier()
 	PORTB |= _BV(PB4);
 }
 
-uint8_t ocr0a;
+uint8_t pitch;
 
 // 16kHz interrupt to load high speed PWMs
 ISR(TIMER0_COMPA_vect) 
@@ -92,7 +92,7 @@ ISR(TIMER0_COMPA_vect)
 			state = 4 + repeat;
 		}
 	}
-	else if(state && (state < 8))
+	else if(state)
 	{
 		// Middle
 		data = pgm_read_byte(&mid_wav[wavIdx++]);
@@ -100,7 +100,7 @@ ISR(TIMER0_COMPA_vect)
 		{
 			wavIdx = 0;
 			state--;
-			OCR0A = ocr0a - (state & 0x03);  // Wobble the pitch
+			OCR0A = pitch - (state & 0x03);  // Wobble the pitch
 		}
 	}
 	else
@@ -150,6 +150,7 @@ int main(void)
 	TCCR0A = _BV(WGM00) | _BV(WGM01);             // Fast PWM (also needs WGM02 in TCCR0B)
 	TCCR0B = _BV(WGM02) | _BV(CS01);              // 1/8 prescale
 //	OCR0A = 63;                                   // Divide by ~500 (16kHz)
+	pitch = 63;
 
 	DDRB |= _BV(PB4) | _BV(PB1);
 	PORTB |= _BV(PB3);                            // Turn on pullup for PB3 (enable input)
@@ -174,8 +175,8 @@ int main(void)
 			uint8_t eeVal = eeprom_read_byte(eePtr++);
 		
 			// Vary the pitch
-			ocr0a = 60 + (eeVal & 0x07);  // 63 is nominal (16kHz)
-			OCR0A = ocr0a;
+			pitch = 60 + (eeVal & 0x07);  // 63 is nominal (16kHz)
+			OCR0A = pitch;
 			
 			attenuation = MIN_VOL;
 			repeat = (eeVal >> 3) & 0x03;
