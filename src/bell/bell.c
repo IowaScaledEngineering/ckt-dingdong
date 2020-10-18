@@ -68,7 +68,7 @@ ISR(TIMER0_COMPA_vect)
 			TIMSK = 0;
 			// Stop speaker output, center output
 			OCR1A = 0x7F;
-//			disableAmplifier();
+			disableAmplifier();
 		}
 	}
 }
@@ -101,11 +101,7 @@ int main(void)
 	sei();
 
 	wdt_reset();
-	_delay_ms(100);  // Wait for PWM to settle
-	enableAmplifier();
-
-	wdt_reset();
-	_delay_ms(400);  // Wait for PB3 to settle
+	_delay_ms(400);  // Wait for PWM and PB3 to settle
 
 	uint8_t state = 0;
 
