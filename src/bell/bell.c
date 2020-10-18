@@ -33,12 +33,6 @@ LICENSE:
 #include <avr/pgmspace.h>
 #include <avr/sleep.h>
 
-// 20kHz 8 bit unsigned PCM data
-//#include "tinybell-20k-nr.h"
-
-// 26kHz 8 bit unsigned PCM data
-#include "bell-26k.h"
-	
 // playBell acts as an indicator between the main loop and 
 // the ISR to tell it to shut down playback once it hits the end
 // of the bell sound sample
@@ -98,10 +92,7 @@ int main(void)
 	// Set up Timer/Counter0 for 16kHz interrupt to output samples.
 	TCCR0A = _BV(WGM00) | _BV(WGM01);             // Fast PWM (also needs WGM02 in TCCR0B)
 	TCCR0B = _BV(WGM02) | _BV(CS01);              // 1/8 prescale
-//	OCR0A = 63;                                   // Divide by ~500 (16kHz)
-//	OCR0A = 50;                                   // Divide by 400 (20kHz)
-//	OCR0A = 39;                                   // Divide by 312 (25.64kHz)
-	OCR0A = 42;                                   // Divide by 312 (23.81kHz)
+	OCR0A = OCR0A_DEFAULT;
 
 	DDRB = _BV(PB4) | _BV(PB1);
 	PORTB |= _BV(PB3);                            // Turn on pullup for PB3 (enable input)

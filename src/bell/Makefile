@@ -48,7 +48,7 @@ AVRDUDE_SLOW = avrdude -P $(PROGRAMMER_PORT) -c $(PROGRAMMER_TYPE) -p $(DEVICE) 
 
 OBJS = ${SRCS:.c=.o} ${ASM_SRC:.S=.o}
 INCLUDES = -I. 
-CFLAGS  = $(INCLUDES) -Wall -Os -std=gnu99
+CFLAGS  = $(INCLUDES) -include $(WAV) -Wall -Os -std=gnu99
 ASFLAGS = -ffunction-sections -fdata-sections
 LDFLAGS = -Wl,-gc-sections
 
@@ -61,6 +61,7 @@ help:
 	@echo "make flash ..... flash the firmware"
 	@echo "make fuse ...... flash the fuses"
 	@echo "make program ... flash fuses and firmware"
+	@echo "make firmware .. flash firmware from file"
 	@echo "make read ...... read the fuses"
 	@echo "make size ...... memory usage"
 	@echo "make clean ..... delete objects and hex file"
@@ -89,6 +90,9 @@ size:
 # rule for uploading firmware:
 flash: $(BASE_NAME).hex
 	$(AVRDUDE) -U flash:w:$(BASE_NAME).hex:i
+
+firmware:
+	$(AVRDUDE) -U flash:w:$(HEX):i
 
 # rule for deleting dependent files (those which can be built by Make):
 clean:
