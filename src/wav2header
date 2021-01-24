@@ -1,11 +1,11 @@
 #!/bin/bash
 
-fname=${1%.*}
+f=${1%.*}
+fname=$(basename $f)
 echo $fname
 
 xxd -i -s +44 $1 > $fname.h
 sed -i '1s/^/#include <avr\/pgmspace.h>\n\n/' $fname.h
-sed -i "s/unsigned char/const uint8_t/" $fname.h
-sed -i "s/unsigned int/const uint16_t/" $fname.h
-sed -i "s/$fname\_//" $fname.h
+sed -i "s/.*_wav\[\]/const uint8_t wav[]/" $fname.h
+sed -i "s/.*_wav_len/const uint16_t wav_len/" $fname.h
 sed -i "s/wav\[\]/wav[] PROGMEM/" $fname.h
