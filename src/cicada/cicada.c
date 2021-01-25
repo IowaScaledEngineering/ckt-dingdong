@@ -1,6 +1,7 @@
 /*************************************************************************
 Title:    Cicada Sound Module
-Authors:  Nathan D. Holmes <maverick@drgw.net>
+Authors:  Michael Petersen <railfan@drgw.net>
+          Nathan D. Holmes <maverick@drgw.net>
           Based on the work of David Johnson-Davies - www.technoblogy.com - 23rd October 2017
            and used under his Creative Commons Attribution 4.0 International license
 License:  GNU General Public License v3

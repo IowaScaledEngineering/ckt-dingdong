@@ -1,6 +1,7 @@
 /*************************************************************************
-Title:    CKT-TINYBELL Railroad Crossing Bell Circuit
-Authors:  Nathan D. Holmes <maverick@drgw.net>
+Title:    Railroad Crossing Bell Module
+Authors:  Michael Petersen <railfan@drgw.net>
+          Nathan D. Holmes <maverick@drgw.net>
           Based on the work of David Johnson-Davies - www.technoblogy.com - 23rd October 2017
            and used under his Creative Commons Attribution 4.0 International license
 File:     $Id: $
@@ -89,7 +90,7 @@ int main(void)
 	TCCR1 = _BV(PWM1A) | _BV(COM1A1) | _BV(CS10); // PWM A, clear on match, 1:1 prescale
 	OCR1A = 0x7F;                                 // 50% duty at start
 
-	// Set up Timer/Counter0 for 16kHz interrupt to output samples.
+	// Set up Timer/Counter0 for interrupts to output samples.
 	TCCR0A = _BV(WGM00) | _BV(WGM01);             // Fast PWM (also needs WGM02 in TCCR0B)
 	TCCR0B = _BV(WGM02) | _BV(CS01);              // 1/8 prescale
 	OCR0A = OCR0A_DEFAULT;
