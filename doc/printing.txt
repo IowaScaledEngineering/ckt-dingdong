@@ -1,0 +1,4 @@
+SND-XBELL.fodt:
+OfficeJet 8210
+Print Quality = Presentation
+RGB Color = Photo (sRGB)
