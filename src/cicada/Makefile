@@ -34,8 +34,8 @@ FUSE_H  = 0xC5
 FUSE_E  = 0xFF
 
 #PROGRAMMER_TYPE=avrispmkii
-#PROGRAMMER_TYPE=iseavrprog
-PROGRAMMER_TYPE=dragon_isp
+PROGRAMMER_TYPE=iseavrprog
+#PROGRAMMER_TYPE=dragon_isp
 PROGRAMMER_PORT=usb
 
 DEFINES = 
@@ -92,7 +92,7 @@ firmware:
 	$(AVRDUDE) -U flash:w:$(HEX):i
 
 eeprom:
-	$(AVRDUDE_SLOW) -U eeprom:w:$(BASE_NAME).eep:i
+	$(AVRDUDE) -U eeprom:w:$(BASE_NAME).eep:i
 
 # rule for deleting dependent files (those which can be built by Make):
 clean:
