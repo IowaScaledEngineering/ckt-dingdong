@@ -1293,7 +1293,7 @@ Layer(4 "bottom silk" "silk")
 (
 	Text[739.57mil 19.8990mm 2 117 "CC BY-SA" "clearline,onsolder"]
 	Text[710.00mil 21.6770mm 2 117 "(C) 2021" "clearline,onsolder"]
-	Text[890.00mil 1020.00mil 2 100 "CKT-DINGDONG-SPI v1.0" "clearline,onsolder"]
+	Text[880.00mil 1005.00mil 2 100 "CKT-DINGDONG v2.0" "clearline,onsolder"]
 )
 Layer(5 "top silk" "silk")
 (
