@@ -1,0 +1,32 @@
+#!/bin/bash
+
+while [ true ]
+do
+	espeak "Programming"
+
+	echo -e "\n\033[1;33mFusing...\033[0m\n"
+	make fuse
+
+	echo -e "\n\033[1;33mProgramming...\033[0m\n"
+	make firmware HEX=hex/cicada.hex
+	
+	echo -e "\n\033[1;33mGenerating EEPROM...\033[0m\n"
+	python3 generateEE.py
+
+	head -n1 cicada.eep
+
+	make eeprom
+
+	if [ $? -eq 0 ]
+	then 
+		echo -e "\033[0;32mComplete\033[0m\n"
+		espeak "Complete"
+	else 
+		echo -e "\033[0;31mFailed\033[0m\n"
+		espeak "Failed"
+	fi
+
+	read -t 0.1 -n 1000 discard
+	read -n 1 -p "Press any key to continue..."
+	echo
+done
