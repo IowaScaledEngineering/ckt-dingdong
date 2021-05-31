@@ -1,0 +1,4 @@
+schematics dingdong-demo.sch
+output-name ../pcb/dingdong-demo
+skip-m4
+elements-dir ../../../footprints
