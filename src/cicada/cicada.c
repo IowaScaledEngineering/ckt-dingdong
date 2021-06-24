@@ -161,6 +161,8 @@ int main(void)
 	mute = 1;
 	TIMSK = _BV(OCIE0A);
 
+	_delay_ms(100);  // Wait for PB3 to settle
+
 	uint8_t *eePtr = 0;
 
 	while(1)
@@ -181,7 +183,7 @@ int main(void)
 			
 			attenuation = MIN_VOL;
 			repeat = (eeVal >> 3) & 0x03;
-			uint8_t duration = (eeVal >> 5) & 0x07;
+			uint8_t duration = (eeVal >> 4) & 0x0E;   // 2 to 14, in steps of 2
 
 			// Second Byte: pre-chirp delay
 			eeVal = eeprom_read_byte(eePtr++);
@@ -207,8 +209,8 @@ int main(void)
 			
 			// attenuation now equals MAX_VOL
 			
-			// Wait minimum 7 seconds + duration
-			for(i=0; i<((7+duration)*8); i++)
+			// Wait minimum 16 seconds + duration
+			for(i=0; i<((16+duration)*8); i++)   // (16+14)*8 = 30 * 8 = 240 (max)
 			{
 				wdt_reset();
 				_delay_ms(60);  // Should be 125ms, but ISR slows things down
