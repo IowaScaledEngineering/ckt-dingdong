@@ -2,3 +2,12 @@ SND-XBELL.fodt:
 OfficeJet 8210
 Print Quality = Presentation
 RGB Color = Photo (sRGB)
+
+Orange   #ff860d
+Green    #00a933   (wchayes-333)
+Blue     #0070FF   (wchayes-777)
+Purple   #800080
+Pink     #FF00FF
+Brown    #813709
+
+
