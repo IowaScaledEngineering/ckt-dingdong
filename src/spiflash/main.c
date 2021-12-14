@@ -71,9 +71,8 @@ int main(void)
 
 		if (!audioIsPlaying())
 		{
-			
 			isplAudioAssetLoad(0, &r);
-			audioPlay(r.addr, r.size, r.sampleRate);
+			audioPlay(r.addr, r.size, 32000);
 		}
 		audioPump();
 	}

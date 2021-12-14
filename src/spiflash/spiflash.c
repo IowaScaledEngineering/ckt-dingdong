@@ -150,8 +150,9 @@ uint16_t spiflashReadU16(uint32_t addr)
 	spiTransferByte(0xFF & (addr>>16));
 	spiTransferByte(0xFF & (addr>>8));
 	spiTransferByte(0xFF & addr);
-	i = spiTransferByte(0xFF);
-	i |= ((uint16_t)spiTransferByte(0xFF))<<8;
+	i = ((uint16_t)spiTransferByte(0xFF))<<8;
+	i |= spiTransferByte(0xFF);
+
 	spiCSDisble();
 	return i;
 }
