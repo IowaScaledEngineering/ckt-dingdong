@@ -129,6 +129,51 @@ void spiflashReadBlock(uint32_t addr, uint8_t len, uint8_t* destPtr)
 	spiCSDisble();
 }
 
+uint8_t spiflashReadU8(uint32_t addr)
+{
+	uint8_t i;
+	spiCSEnable();
+	spiTransferByte(SPI_FLASH_READ_CMD);
+	spiTransferByte(0xFF & (addr>>16));
+	spiTransferByte(0xFF & (addr>>8));
+	spiTransferByte(0xFF & addr);
+	i = spiTransferByte(0xFF);
+	spiCSDisble();
+	return i;
+}
+
+uint16_t spiflashReadU16(uint32_t addr)
+{
+	uint16_t i;
+	spiCSEnable();
+	spiTransferByte(SPI_FLASH_READ_CMD);
+	spiTransferByte(0xFF & (addr>>16));
+	spiTransferByte(0xFF & (addr>>8));
+	spiTransferByte(0xFF & addr);
+	i = spiTransferByte(0xFF);
+	i |= ((uint16_t)spiTransferByte(0xFF))<<8;
+	spiCSDisble();
+	return i;
+}
+
+uint32_t spiflashReadU32(uint32_t addr)
+{
+	uint32_t i=0, j;
+	spiCSEnable();
+	spiTransferByte(SPI_FLASH_READ_CMD);
+	spiTransferByte(0xFF & (addr>>16));
+	spiTransferByte(0xFF & (addr>>8));
+	spiTransferByte(0xFF & addr);
+	for(j=0; j<4; j++)
+	{
+		i <<= 8;
+		i |= spiTransferByte(0xFF);
+	}
+	spiCSDisble();
+	return i;
+}
+
+
 void spiflashReadToRingBuffer(uint32_t addr, uint8_t len)
 {
 	uint8_t i;

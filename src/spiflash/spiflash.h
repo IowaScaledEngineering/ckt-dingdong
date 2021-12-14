@@ -51,5 +51,8 @@ void spiCSDisble();
 uint8_t spiTransferByte(uint8_t txData);
 void spiflashReset();
 void spiflashReadBlock(uint32_t addr, uint8_t len, uint8_t* destPtr);
+uint8_t spiflashReadU8(uint32_t addr);
+uint16_t spiflashReadU16(uint32_t addr);
+uint32_t spiflashReadU32(uint32_t addr);
 void spiflashReadToRingBuffer(uint32_t addr, uint8_t len);
 #endif

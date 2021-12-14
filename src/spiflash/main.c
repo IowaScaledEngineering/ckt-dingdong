@@ -37,6 +37,9 @@ LICENSE:
 #include <stdint.h>
 #include "spiflash.h"
 #include "audio.h"
+#include "ispl.h"
+
+AudioAssetRecord r;
 
 int main(void)
 {
@@ -60,15 +63,21 @@ int main(void)
 	wdt_reset();
 	_delay_ms(400);  // Wait for PWM and PB3 to settle
 
+	isplInitialize(); // What should I do if this fails?
+
 	while(1)
 	{
 		wdt_reset();
 
 		if (!audioIsPlaying())
 		{
-			audioPlay(0, 729088, 44000);
+			
+			isplAudioAssetLoad(0, &r);
+			audioPlay(r.addr, r.size, r.sampleRate);
 		}
 		audioPump();
 	}
 }
+
+
 
