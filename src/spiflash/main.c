@@ -41,6 +41,37 @@ LICENSE:
 
 AudioAssetRecord r;
 
+bool inputEnableLine = false;
+
+void readEnableLine()
+{
+	static uint32_t lastRead = 0;
+	static uint8_t counter = 0;
+	
+	if (millis > lastRead + 10)
+	{
+		spiCSRelease();
+		lastRead = millis;
+		
+		if(PINB & _BV(PB3))
+		{
+			if (counter < 4)
+				counter++;
+		} else {
+			if (counter > 0)
+				counter--;
+		}
+		
+		if (4 == counter)
+			inputEnableLine = false;
+		else if (0 == counter)
+			inputEnableLine = true;
+		
+		spiCSAcquire();
+	} 
+	
+}
+
 int main(void)
 {
 	// Deal with watchdog first thing
@@ -69,12 +100,15 @@ int main(void)
 	{
 		wdt_reset();
 
-		if (!audioIsPlaying())
+		if (!audioIsPlaying() && inputEnableLine)
 		{
 			isplAudioAssetLoad(0, &r);
-			audioPlay(r.addr, r.size, 32000);
+			audioPlay(r.addr, r.size, r.sampleRate);
 		}
 		audioPump();
+		
+		readEnableLine();
+		
 	}
 }
 

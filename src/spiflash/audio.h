@@ -35,6 +35,8 @@ LICENSE:
 
 #define AUDIO_BUFFER_SZ  128
 
+extern uint32_t millis;
+
 typedef struct
 {
 	uint8_t headIdx;

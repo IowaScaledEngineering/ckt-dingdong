@@ -36,9 +36,20 @@ uint32_t audioDataLen = 0;
 
 // Audio playing ISR
 
+uint32_t millis = 0;
+
 ISR(TIMER0_COMPA_vect) 
 {
+	static uint16_t micros = 0;
 	OCR1B = audioBufferPop();
+	
+	micros += OCR0A;
+	if(micros >= 1000)
+	{
+		millis++;
+		micros -= 1000;
+	}
+	
 }
 
 
