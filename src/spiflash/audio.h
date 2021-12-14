@@ -28,23 +28,34 @@ LICENSE:
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <avr/wdt.h>
+#include <util/delay.h>
+
+#define AUDIO_BUFFER_SZ  128
 
 typedef struct
 {
 	uint8_t headIdx;
 	uint8_t tailIdx;
 	bool full;
-	uint8_t* buffer;
-	uint8_t bufferSz;
-} RingBuffer;
+	uint8_t buffer[AUDIO_BUFFER_SZ];
+} AudioRingBuffer;
 
 
-void ringBufferInitialize(RingBuffer* r, uint8_t* buffer, uint8_t bufferSz);
-void ringBufferReinitialize(RingBuffer* r);
-uint8_t ringBufferDepth(RingBuffer* r);
-void ringBufferPush(RingBuffer* r, uint8_t data);
-uint8_t ringBufferPop(RingBuffer* r);
-uint8_t ringBufferSize(RingBuffer* r);
+void audioInitialize();
+bool audioIsPlaying();
+void audioPlay(uint32_t addr, uint32_t len, uint16_t sampleRateHz);
+void audioPump();
+
+// Functions related to the audio buffer - probably shouldn't call directly
+
+void audioBufferInitialize();
+uint8_t audioBufferSize();
+uint8_t audioBufferDepth();
+void audioBufferPush(uint8_t data);
+uint8_t audioBufferPop();
 
 #endif
 

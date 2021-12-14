@@ -74,9 +74,29 @@ inline void spiCSDisble()
 uint8_t spiTransferByte(uint8_t txData)
 {
 	USIDR = txData;
-	USISR = _BV(USIOIF);                // clear counter and counter overflow interrupt flag
-	while ( !(USISR & _BV(USIOIF)) )
-		USICR |= _BV(USITC);
+	USISR = 0;
+
+	// Faster than a loop is just to run this 16x to create all the clock edges
+	USICR |= _BV(USITC);
+	USICR |= _BV(USITC);
+	USICR |= _BV(USITC);
+	USICR |= _BV(USITC);
+	
+	USICR |= _BV(USITC);
+	USICR |= _BV(USITC);
+	USICR |= _BV(USITC);
+	USICR |= _BV(USITC);
+	
+	USICR |= _BV(USITC);
+	USICR |= _BV(USITC);
+	USICR |= _BV(USITC);
+	USICR |= _BV(USITC);
+	
+	USICR |= _BV(USITC);
+	USICR |= _BV(USITC);
+	USICR |= _BV(USITC);
+	USICR |= _BV(USITC);
+	
 	return USIDR;
 }
 
@@ -109,7 +129,7 @@ void spiflashReadBlock(uint32_t addr, uint8_t len, uint8_t* destPtr)
 	spiCSDisble();
 }
 
-void spiflashReadToRingBuffer(uint32_t addr, uint8_t len, RingBuffer* r)
+void spiflashReadToRingBuffer(uint32_t addr, uint8_t len)
 {
 	uint8_t i;
 	spiCSEnable();
@@ -119,7 +139,7 @@ void spiflashReadToRingBuffer(uint32_t addr, uint8_t len, RingBuffer* r)
 	spiTransferByte(0xFF & addr);
 	for(i=0; i<len; i++)
 	{
-		ringBufferPush(r, spiTransferByte(0xFF));
+		audioBufferPush(spiTransferByte(0xFF));
 	}
 	spiCSDisble();
 }

@@ -30,7 +30,7 @@ LICENSE:
 
 
 #include <stdint.h>
-#include "avr-ringbuffer.h"
+#include "audio.h"
 
 #define SPI_DDR_PORT DDRB
 #define SPI_PORT     PORTB
@@ -51,5 +51,5 @@ void spiCSDisble();
 uint8_t spiTransferByte(uint8_t txData);
 void spiflashReset();
 void spiflashReadBlock(uint32_t addr, uint8_t len, uint8_t* destPtr);
-void spiflashReadToRingBuffer(uint32_t addr, uint8_t len, RingBuffer* r);
+void spiflashReadToRingBuffer(uint32_t addr, uint8_t len);
 #endif
