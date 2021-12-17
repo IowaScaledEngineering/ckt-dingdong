@@ -45,6 +45,7 @@ class AudioAssetManifest:
       if asset.audioType == 'PCM':
         typeVal = 1
 
+      print("Writing audio asset %d [%s] at addr=%d, len=%d, rate=%d" % (i, self.audioAssetIdxs[i], startingOffset + assetTableLen + len(audioBlob), len(asset.data), asset.rate))
       tableRec = struct.pack('>BIIHI', typeVal, startingOffset + assetTableLen + len(audioBlob), len(asset.data), asset.rate, asset.flags)
       tableBlob += tableRec
       audioBlob += asset.data
@@ -124,16 +125,26 @@ def main():
     
     manifestFinalSize = 10 * 3
     
+    print("Starting manifest write at address %d" % (bytesWritten))
+    
     manifestData = struct.pack('>IIH', bytesWritten, 3, 10)  # manifest self record
+    print("Manifest Table 0 - %d %d %d" % (bytesWritten, 3, 10))
+    
     manifestData += struct.pack('>IIH', bytesWritten + manifestFinalSize, len(programData), 1)
+    print("Manifest Table 1 - %d %d %d" % (bytesWritten + manifestFinalSize, len(programData), 1))
+    
     manifestData += struct.pack('>IIH', bytesWritten + manifestFinalSize + len(programData), audioAssetManifest.getEntries(), audioAssetManifest.getEntrySize())
+    print("Manifest Table 1 - %d %d %d" % (bytesWritten + manifestFinalSize + len(programData), audioAssetManifest.getEntries(), audioAssetManifest.getEntrySize()))
     
     outfile.write(manifestData)
     bytesWritten += len(manifestData)
     
+    
+    print("Starting program write at address %d" % (bytesWritten))
     outfile.write(programData)
     bytesWritten += len(programData)
     
+    print("Starting audio asset write at address %d" % (bytesWritten))
     outfile.write(audioAssetManifest.write(bytesWritten))
  
 
