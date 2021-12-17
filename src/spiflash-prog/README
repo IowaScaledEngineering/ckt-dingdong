@@ -1,0 +1,4 @@
+The basis for the spi flash programmer is this project:
+https://github.com/nfd/spi-flash-programmer
+
+I've made a few changes to speed things up
