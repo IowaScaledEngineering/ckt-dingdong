@@ -120,7 +120,21 @@ def main():
     # 2 - Audio asset table
     # *  Manifest Table Record:
     # *  [Addr:32] [Recs-N:32] [Recs-S:16]
-    programData = bytearray([0,0,0,0,0])
+    
+    programData = bytearray([
+      0x00,                # ldst                 0x00
+      0x22, 0x00, 0x01,    # push 0x0001          0x22 0x00 0x01
+      0x35,                # and                  0x35
+      0x3A,                # lnot                 0x3A
+      0x01,                # ldin                 0x01
+      0x22, 0x00, 0x01,    # push 0x0001          0x22 0x00 0x01
+      0x35,                # and                  0x35
+      0x3B,                # land                 0x3B
+      0x22, 0x00, 0x00,    # push 0               0x22 0x00 0x00
+      0x91, 0x00, 0x04,    # rje 4                0x91 0x00 0x04
+      0x22, 0x00, 0x00,    # push 0               0x22 0x00 0x00
+      0x0A,                # play                 0x0A
+      0x80, 0x00, 0x00])   # jmp 0                0x80 0x00 0x00
     
     
     manifestFinalSize = 10 * 3

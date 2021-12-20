@@ -40,7 +40,7 @@ PROGRAMMER_TYPE=iseavrprog
 PROGRAMMER_PORT=usb
 
 DEFINES = 
-SRCS = $(BASE_NAME).c spiflash.c audio.c ispl.c
+SRCS = $(BASE_NAME).c spiflash.c audio.c lfsr.c ispl.c ispl-vm.c
 
 AVRDUDE = avrdude -P $(PROGRAMMER_PORT) -c $(PROGRAMMER_TYPE) -p $(DEVICE) -B8 -F
 AVRDUDE_SLOW = avrdude -P $(PROGRAMMER_PORT) -c $(PROGRAMMER_TYPE) -p $(DEVICE) -B32
@@ -129,6 +129,9 @@ disasm:	$(BASE_NAME).elf
 	avr-objdump -d $(BASE_NAME).elf
 
 PWD := $(shell pwd)
+
+test-vm:
+	gcc -I. -ggdb -DVM_DEBUG test-vm.c ispl.c ispl-vm.c lfsr.c -o testvm
 
 release: hex
 	@echo -n "Creating temporary build directories..."

@@ -28,12 +28,17 @@ LICENSE:
 
 #include <stdint.h>
 #include <stdbool.h>
+
+#ifndef VM_DEBUG
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
 #include <util/delay.h>
+#endif
 
 #define AUDIO_BUFFER_SZ  128
+
+#define min(a,b) ((a)<(b)?(a):(b))
 
 extern uint32_t millis;
 
@@ -44,6 +49,22 @@ typedef struct
 	bool full;
 	uint8_t buffer[AUDIO_BUFFER_SZ];
 } AudioRingBuffer;
+
+typedef enum
+{
+	AUDIO_UNKNOWN   = 0,
+	AUDIO_8BIT_UPCM = 1,
+	AUDIO_TONE      = 100,
+} AudioRecordType;
+
+typedef struct
+{
+	uint8_t type;
+	uint32_t addr;
+	uint32_t size;
+	uint16_t sampleRate;
+	uint32_t flags;
+} AudioAssetRecord;
 
 
 void audioInitialize();

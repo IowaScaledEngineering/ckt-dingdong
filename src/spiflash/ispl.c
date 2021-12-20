@@ -70,16 +70,9 @@ bool isplAudioAssetLoad(uint16_t assetNum, AudioAssetRecord* r)
 	return true;
 }
 
-bool isplInitialize()
-{
-	uint8_t buffer[8];
-	spiflashReadBlock(ISPL_HEADER_IDENTIFIER_ADDR, ISPL_HEADER_IDENTIFIER_LEN, buffer);
-	if (0 != memcmp(buffer, ISPL_HEADER_IDENTIFIER, ISPL_HEADER_IDENTIFIER_LEN))
-		return false;  // Header doesn't contain correct starting record
 
-	isplTableLoad(&isplTable, ISPL_TABLE_PROGRAM);
-	isplTableLoad(&audioTable, ISPL_TABLE_AUDIO);
-	return true;
-}
+
+
+
 
 

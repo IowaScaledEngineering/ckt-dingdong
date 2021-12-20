@@ -28,7 +28,6 @@ LICENSE:
 #ifndef _SPIFLASH_H_
 #define _SPIFLASH_H_
 
-
 #include <stdint.h>
 #include "audio.h"
 
@@ -41,7 +40,8 @@ LICENSE:
 
 #define SPI_FLASH_READ_CMD       0x03
 #define SPI_FLASH_POWER_UP_CMD   0xAB
-
+#define SPI_FLASH_READ_UUID      0x4B
+#define UUID_LEN_BYTES           8
 
 void spiSetup();
 void spiCSAcquire();
@@ -51,6 +51,7 @@ void spiCSDisble();
 uint8_t spiTransferByte(uint8_t txData);
 void spiflashReset();
 void spiflashReadBlock(uint32_t addr, uint8_t len, uint8_t* destPtr);
+void spiflashReadUUID(uint8_t* destPtr, uint8_t len);
 uint8_t spiflashReadU8(uint32_t addr);
 uint16_t spiflashReadU16(uint32_t addr);
 uint32_t spiflashReadU32(uint32_t addr);

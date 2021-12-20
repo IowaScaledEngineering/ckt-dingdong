@@ -38,12 +38,13 @@ LICENSE:
 #include "spiflash.h"
 #include "audio.h"
 #include "ispl.h"
+#include "lfsr.h"
 
 AudioAssetRecord r;
 
-bool inputEnableLine = false;
+uint8_t inputs = 0;
 
-void readEnableLine()
+void readInputs()
 {
 	static uint32_t lastRead = 0;
 	static uint8_t counter = 0;
@@ -63,13 +64,30 @@ void readEnableLine()
 		}
 		
 		if (4 == counter)
-			inputEnableLine = false;
+			inputs = 0x00;
 		else if (0 == counter)
-			inputEnableLine = true;
+			inputs = 0x01;
 		
 		spiCSAcquire();
 	} 
 	
+}
+
+// Grab the 8-byte UUID out of the SPI flash and use it to seed the
+// LFSR random number generator
+
+void initializeRandomGenerator()
+{
+	uint8_t buffer[UUID_LEN_BYTES];
+	uint8_t i;
+	spiflashReadUUID(buffer, sizeof(buffer));
+	for(i=2; i<UUID_LEN_BYTES; i+=2)
+	{
+		buffer[0] ^= buffer[i];
+		buffer[1] ^= buffer[i+1];
+	}
+
+	randomSeedSet(((uint16_t)buffer[1]<<8) + buffer[0]);
 }
 
 int main(void)
@@ -92,23 +110,24 @@ int main(void)
 	sei();
 
 	wdt_reset();
-	_delay_ms(400);  // Wait for PWM and PB3 to settle
+	_delay_ms(100);  // Wait for PWM and PB3 to settle
 
+	initializeRandomGenerator();
 	isplInitialize(); // What should I do if this fails?
 
 	while(1)
 	{
 		wdt_reset();
 
-		if (!audioIsPlaying() && inputEnableLine)
+		isplVirtualMachineRun();
+/*		if (!audioIsPlaying() && (inputs & 0x01))
 		{
 			isplAudioAssetLoad(0, &r);
 			audioPlay(r.addr, r.size, r.sampleRate);
-		}
+		}*/
+
 		audioPump();
-		
-		readEnableLine();
-		
+		readInputs();
 	}
 }
 

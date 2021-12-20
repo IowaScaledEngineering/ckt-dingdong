@@ -26,8 +26,6 @@ LICENSE:
 #include "audio.h"
 #include "spiflash.h"
 
-#define min(a,b) ((a)<(b)?(a):(b))
-
 AudioRingBuffer audioBuffer;
 uint32_t audioStartIdx = 0;
 uint32_t audioEndIdx = 0;
@@ -49,7 +47,6 @@ ISR(TIMER0_COMPA_vect)
 		millis++;
 		micros -= 1000;
 	}
-	
 }
 
 
@@ -91,7 +88,6 @@ void audioPlay(uint32_t addr, uint32_t len, uint16_t sampleRateHz)
 	
 	// 8MHz / prescaler 8:1 / sample frequency
 	OCR0A = (uint8_t)(((8000000UL / 8UL) + ((uint32_t)sampleRateHz - 1)) / sampleRateHz);
-
 	spiflashReadToRingBuffer(audioReadIdx, loadBytes);
 	audioReadIdx += loadBytes;
 	audioEndIdx = audioStartIdx + audioDataLen;
@@ -103,7 +99,6 @@ void audioPump()
 	uint32_t bytesRemaining = audioEndIdx - audioReadIdx;
 	if ((bytesRemaining) &&  bufferFree > 32)
 	{
-		// Load more data
 		uint8_t bytesToRead = min(bufferFree-1, bytesRemaining);
 		spiflashReadToRingBuffer(audioReadIdx, bytesToRead);
 		audioReadIdx += bytesToRead;
@@ -154,5 +149,4 @@ uint8_t audioBufferPop()
 
 	return(retval);
 }
-
 

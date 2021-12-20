@@ -29,6 +29,7 @@ LICENSE:
 #include <string.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include "audio.h"
 
 typedef struct
 {
@@ -36,21 +37,6 @@ typedef struct
 	uint32_t n;
 	uint16_t s;
 } ISPLTable;
-
-typedef enum
-{
-	AUDIO_UNKNOWN   = 0,
-	AUDIO_8BIT_UPCM = 1
-} AudioRecordType;
-
-typedef struct
-{
-	uint8_t type;
-	uint32_t addr;
-	uint32_t size;
-	uint16_t sampleRate;
-	uint32_t flags;
-} AudioAssetRecord;
 
 extern ISPLTable isplTable;
 extern ISPLTable audioTable;
@@ -78,6 +64,7 @@ extern ISPLTable audioTable;
 bool isplAudioAssetLoad(uint16_t assetNum, AudioAssetRecord* r);
 void isplTableLoad(ISPLTable* t, uint8_t tableNum);
 bool isplInitialize();
+void isplVirtualMachineRun();
 
 /*  Start of Flash:
  *  IDENT:  ISPL
@@ -96,5 +83,8 @@ bool isplInitialize();
  * 
  */
 
+#ifdef VM_DEBUG
+const char* const isplOpcodeName(uint8_t op);
+#endif
 
 #endif

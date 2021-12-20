@@ -114,6 +114,26 @@ void spiflashReset()
 	_delay_us(5);
 }
 
+void spiflashReadUUID(uint8_t* destPtr, uint8_t len)
+{
+	uint8_t i;
+	spiCSEnable();
+	spiTransferByte(SPI_FLASH_READ_UUID);
+
+	// Dummy bytes for read cycle
+	for(i=0; i<4; i++)
+		spiTransferByte(0xFF);
+
+	len = min(len, 8);
+
+	for(i=0; i<len; i++)
+	{
+		*destPtr++ = spiTransferByte(0xFF);
+	}
+	spiCSDisble();
+}
+
+
 void spiflashReadBlock(uint32_t addr, uint8_t len, uint8_t* destPtr)
 {
 	uint8_t i;
@@ -189,3 +209,6 @@ void spiflashReadToRingBuffer(uint32_t addr, uint8_t len)
 	}
 	spiCSDisble();
 }
+
+
+
