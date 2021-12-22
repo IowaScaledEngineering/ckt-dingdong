@@ -237,7 +237,7 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			isplvm_cip = isplvm_stack[isplvm_sp--];
 			break;
 
-		case ISPL_JQE:
+		case ISPL_JEQ:
 		case ISPL_JNE:
 		case ISPL_JLT:
 		case ISPL_JLTE:
@@ -253,7 +253,7 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			isplvm_cip += isplFetchS16CIP();
 			break;
 
-		case ISPL_RJQE:
+		case ISPL_RJEQ:
 		case ISPL_RJNE:
 		case ISPL_RJLT:
 		case ISPL_RJLTE:
