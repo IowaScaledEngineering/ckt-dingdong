@@ -120,17 +120,19 @@ int16_t isplFetchS16CIP()
 	ENUM(ISPL_OR     , 0x36) \
 	ENUM(ISPL_XOR    , 0x37) \
 	ENUM(ISPL_NOT    , 0x38) \
-	ENUM(ISPL_LNOT   , 0x3A) \
-	ENUM(ISPL_LAND   , 0x3B) \
+	ENUM(ISPL_NOTL   , 0x3A) \
+	ENUM(ISPL_ANDL   , 0x3B) \
+	ENUM(ISPL_CALL   , 0x70) \
+	ENUM(ISPL_RET    , 0x71) \
 	ENUM(ISPL_JMP    , 0x80) \
-	ENUM(ISPL_JE     , 0x81) \
+	ENUM(ISPL_JEQ    , 0x81) \
 	ENUM(ISPL_JNE    , 0x82) \
 	ENUM(ISPL_JLT    , 0x83) \
 	ENUM(ISPL_JLTE   , 0x84) \
 	ENUM(ISPL_JGT    , 0x85) \
 	ENUM(ISPL_JGTE   , 0x86) \
 	ENUM(ISPL_RJMP   , 0x90) \
-	ENUM(ISPL_RJE    , 0x91) \
+	ENUM(ISPL_RJEQ   , 0x91) \
 	ENUM(ISPL_RJNE   , 0x92) \
 	ENUM(ISPL_RJLT   , 0x93) \
 	ENUM(ISPL_RJLTE  , 0x94) \
@@ -218,11 +220,19 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 	
 	switch(op)
 	{
+
+		case ISPL_CALL:
+			isplvm_stack[isplvm_sp++] = isplvm_cip;
+			// fall through
 		case ISPL_JMP:
 			isplvm_cip = isplFetchU16CIP();
 			break;
 
-		case ISPL_JE:
+		case ISPL_RET:
+			isplvm_cip = isplvm_stack[isplvm_sp--];
+			break;
+
+		case ISPL_JQE:
 		case ISPL_JNE:
 		case ISPL_JLT:
 		case ISPL_JLTE:
@@ -238,7 +248,7 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			isplvm_cip += isplFetchS16CIP();
 			break;
 
-		case ISPL_RJE:
+		case ISPL_RJQE:
 		case ISPL_RJNE:
 		case ISPL_RJLT:
 		case ISPL_RJLTE:
@@ -346,11 +356,11 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			isplvm_stack[isplvm_sp-1] = ~isplvm_stack[isplvm_sp-1];
 			break;
 
-		case ISPL_LNOT:
+		case ISPL_NOTL:
 			isplvm_stack[isplvm_sp-1] = !isplvm_stack[isplvm_sp-1];
 			break;
 
-		case ISPL_LAND:
+		case ISPL_ANDL:
 			isplvm_stack[isplvm_sp-2] = isplvm_stack[isplvm_sp-2] && isplvm_stack[isplvm_sp-1];
 			isplvm_sp--;
 			break;

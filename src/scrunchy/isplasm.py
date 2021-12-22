@@ -34,6 +34,8 @@ opcodes = {
     'not'       : { 'op':0x38, 'args':[] },
     'notl'      : { 'op':0x3A, 'args':[] },
     'andl'      : { 'op':0x3B, 'args':[] },
+    'call'      : { 'op':0x70, 'args':['addr'] },
+    'ret'       : { 'op':0x71, 'args':[] },
     'jmp'       : { 'op':0x80, 'args':['addr'] },
     'jeq'       : { 'op':0x81, 'args':['addr'] },
     'jne'       : { 'op':0x82, 'args':['addr'] },
