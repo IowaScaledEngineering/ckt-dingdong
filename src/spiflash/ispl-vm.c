@@ -103,6 +103,7 @@ int16_t isplFetchS16CIP()
 	ENUM(ISPL_RAND   , 0x02) \
 	ENUM(ISPL_LDCIP  , 0x03) \
 	ENUM(ISPL_LDSP   , 0x04) \
+	ENUM(ISPL_LDTIME , 0x05) \
 	ENUM(ISPL_PLAY   , 0x0A) \
 	ENUM(ISPL_STOP   , 0x0B) \
 	ENUM(ISPL_DROP   , 0x20) \
@@ -111,6 +112,10 @@ int16_t isplFetchS16CIP()
 	ENUM(ISPL_SWAP   , 0x23) \
 	ENUM(ISPL_ROT    , 0x24) \
 	ENUM(ISPL_OVER   , 0x25) \
+	ENUM(ISPL_LOAD   , 0x26) \
+	ENUM(ISPL_LOADn  , 0x27) \
+	ENUM(ISPL_STOR   , 0x28) \
+	ENUM(ISPL_STORn  , 0x29) \
 	ENUM(ISPL_ADD    , 0x30) \
 	ENUM(ISPL_SUB    , 0x31) \
 	ENUM(ISPL_MUL    , 0x32) \
@@ -271,6 +276,10 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			isplvm_stack[isplvm_sp++] = inputs;
 			break;
 
+		case ISPL_LDTIME:
+			isplvm_stack[isplvm_sp++] = (uint16_t)getMillis();
+			break;
+
 		case ISPL_RAND:
 			a = isplFetchU16CIP();
 			b = isplFetchU16CIP();
@@ -289,6 +298,25 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			isplvm_stack[isplvm_sp] = isplvm_stack[isplvm_sp-1];
 			isplvm_sp++;
 			break;
+
+		case ISPL_LOADn:  // DUP of stack position n (global var)
+			isplvm_stack[isplvm_sp++] = isplvm_stack[isplFetchCIP()];
+			break;
+
+		case ISPL_LOAD:  // DUP of stack position (stacktop)
+			isplvm_stack[isplvm_sp] = isplvm_stack[isplvm_stack[isplvm_sp]];
+			break;
+
+		case ISPL_STORn:  // Store value from top of stack into constant position (global var)
+			isplvm_stack[isplFetchCIP()] = isplvm_stack[isplvm_sp--];
+			break;
+
+		case ISPL_STOR:  // Store value 1 down on stack into position from stop of stack
+			a = isplvm_stack[isplvm_sp--];
+			b = isplvm_stack[isplvm_sp--];
+			isplvm_stack[b] = a;
+			break;
+
 
 		case ISPL_DROP:
 			isplvm_sp--;

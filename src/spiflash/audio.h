@@ -79,6 +79,6 @@ uint8_t audioBufferSize();
 uint8_t audioBufferDepth();
 void audioBufferPush(uint8_t data);
 uint8_t audioBufferPop();
-
+uint32_t getMillis();
 #endif
 

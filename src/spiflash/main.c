@@ -40,8 +40,6 @@ LICENSE:
 #include "ispl.h"
 #include "lfsr.h"
 
-AudioAssetRecord r;
-
 uint8_t inputs = 0;
 
 void readInputs()
