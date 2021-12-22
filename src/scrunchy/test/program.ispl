@@ -1,0 +1,20 @@
+AudioFile GS1 PCM 32000 track1.raw
+
+ISPLbegin:
+	var testvar
+
+start:
+	ldst
+	push 0x0001
+	and
+	notl
+	ldin
+	push 0x0001
+	and
+	andl
+	push 0
+	jne start
+	push GS1
+	play 
+	jmp start
+	
