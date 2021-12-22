@@ -2,6 +2,8 @@
 import re
 import argparse
 import struct
+from isplasm import isplAssemble
+
 
 class ISPLManifest:
   def __init__(self):
@@ -17,6 +19,7 @@ class AudioAssetManifest:
     if asset.name not in self.audioAssets.keys():
       self.audioAssets[asset.name] = asset
       self.audioAssetIdxs.append(asset.name)
+      return self.audioAssetIdxs.index(asset.name)
 
   def getAssetIdx(self, assetName):
     return self.audioAssetIdxs.index(assetName)
@@ -60,7 +63,7 @@ class AudioAsset:
     self.data = data
     self.rate = rate
     self.flags = flags
-  
+    
     
   
 
@@ -75,13 +78,19 @@ def main():
   
   pcm_asset_match = re.compile(r'AudioFile (?P<assetName>\w+) PCM (?P<sampleRate>\d+) (?P<assetFilename>.+)')
   asset_match = re.compile(r'AudioFile (?P<assetName>\w+) PCM (?P<sampleRate>\d+) (?P<assetFilename>.+)')
+  
+  code_begin_match = re.compile(r'ISPLCode')
+  code_end_match = re.compile(r'ISPLCodeEnd')
+  
   # Compile assets
   
   isplFilename = args.input_directory + '/program.ispl'
   
   audioAssetManifest = AudioAssetManifest()
-  
+  assetDict = { }
   with open(isplFilename, 'r+') as isplFile:
+    print("Assembling audio assets")
+
     pcmAssetRecs = filter(lambda e: e is not None, [pcm_asset_match.match(rec) for rec in isplFile.readlines()])
     
     for assetRec in pcmAssetRecs:
@@ -91,13 +100,37 @@ def main():
             audioType = 'PCM',
             data = f.read(),
             rate = int(assetRec.group('sampleRate')))
-
-          audioAssetManifest.add(newAsset)
-          print("Added PCM asset [%s] - rate=%dHz, bytes=%d len=%.1fs" % (newAsset.name, newAsset.rate, len(newAsset.data), len(newAsset.data) / newAsset.rate))    
+          assetDict[newAsset.name] = audioAssetManifest.add(newAsset)
+          
+          print("- Added PCM asset [%s] - rate=%dHz, bytes=%d len=%.1fs" % (newAsset.name, newAsset.rate, len(newAsset.data), len(newAsset.data) / newAsset.rate))    
       except IOError:
         print("ERROR: Audio asset [%s] - file [%s] cannot be opened" % (assetRec.group('assetName'), assetRec.group('assetFilename')))
+        raise IOError
+
+
+      isplFile.seek(0)
       
+      inCode = False
+      code = ""
       
+      for line in isplFile.readlines():
+        if code_begin_match.match(line):
+          inCode = True
+          continue
+
+        if code_end_match.match(line):
+          inCode = False
+          continue
+
+        if inCode:
+          code += line
+
+      print("Building ISPL assembly")
+      print(code)
+      
+      programData, listData = isplAssemble(code, assetDict)
+      print("- Program is %d bytes long" % (len(programData)))
+      print(listData)
   
   # Build asset table
   
@@ -121,7 +154,7 @@ def main():
     # *  Manifest Table Record:
     # *  [Addr:32] [Recs-N:32] [Recs-S:16]
     
-    programData = bytearray([
+    programDataOld = bytearray([
       0x00,                # ldst                 0x00
       0x22, 0x00, 0x01,    # push 0x0001          0x22 0x00 0x01
       0x35,                # and                  0x35
@@ -148,7 +181,7 @@ def main():
     print("Manifest Table 1 - %d %d %d" % (bytesWritten + manifestFinalSize, len(programData), 1))
     
     manifestData += struct.pack('>IIH', bytesWritten + manifestFinalSize + len(programData), audioAssetManifest.getEntries(), audioAssetManifest.getEntrySize())
-    print("Manifest Table 1 - %d %d %d" % (bytesWritten + manifestFinalSize + len(programData), audioAssetManifest.getEntries(), audioAssetManifest.getEntrySize()))
+    print("Manifest Table 2 - %d %d %d" % (bytesWritten + manifestFinalSize + len(programData), audioAssetManifest.getEntries(), audioAssetManifest.getEntrySize()))
     
     outfile.write(manifestData)
     bytesWritten += len(manifestData)
