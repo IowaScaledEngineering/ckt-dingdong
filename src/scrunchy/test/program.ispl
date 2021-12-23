@@ -3,7 +3,6 @@ AudioFile GS1 PCM 32000 track1.raw
 ISPLCode
 
 begin:
-	var testvar
 	const INPUT_MASK 0x0001
 	const IS_PLAYING 0x0001
 
@@ -17,7 +16,7 @@ start:
 	and
 	andl
 	push 0
-	jne start
+	jeq start
 	push GS1
 	play 
 	jmp start

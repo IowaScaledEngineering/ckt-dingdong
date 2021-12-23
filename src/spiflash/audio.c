@@ -39,7 +39,9 @@ uint32_t millis = 0;
 ISR(TIMER0_COMPA_vect) 
 {
 	static uint16_t micros = 0;
-	OCR1B = audioBufferPop();
+	static uint8_t next = 0x7F;
+	OCR1B = next;
+	next = audioBufferPop();
 	
 	micros += OCR0A;
 	if(micros >= 1000)

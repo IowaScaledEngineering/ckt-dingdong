@@ -108,29 +108,29 @@ def main():
         raise IOError
 
 
-      isplFile.seek(0)
+    isplFile.seek(0)
       
-      inCode = False
-      code = ""
-      
-      for line in isplFile.readlines():
-        if code_begin_match.match(line):
-          inCode = True
-          continue
+    inCode = False
+    code = ""
+    
+    for line in isplFile.readlines():
+      if code_begin_match.match(line):
+        inCode = True
+        continue
 
-        if code_end_match.match(line):
-          inCode = False
-          continue
+      if code_end_match.match(line):
+        inCode = False
+        continue
 
-        if inCode:
-          code += line
+      if inCode:
+        code += line
 
-      print("Building ISPL assembly")
-      print(code)
-      
-      programData, listData = isplAssemble(code, assetDict)
-      print("- Program is %d bytes long" % (len(programData)))
-      print(listData)
+    print("Building ISPL assembly")
+    print(code)
+    
+    programData, listData = isplAssemble(code, assetDict)
+    print("- Program is %d bytes long" % (len(programData)))
+    print(listData)
   
   # Build asset table
   
@@ -154,7 +154,7 @@ def main():
     # *  Manifest Table Record:
     # *  [Addr:32] [Recs-N:32] [Recs-S:16]
     
-    programDataOld = bytearray([
+    programDataWorks = bytearray([
       0x00,                # ldst                 0x00
       0x22, 0x00, 0x01,    # push 0x0001          0x22 0x00 0x01
       0x35,                # and                  0x35
@@ -168,7 +168,6 @@ def main():
       0x22, 0x00, 0x00,    # push 0               0x22 0x00 0x00
       0x0A,                # play                 0x0A
       0x80, 0x00, 0x00])   # jmp 0                0x80 0x00 0x00
-    
     
     manifestFinalSize = 10 * 3
     
@@ -194,6 +193,11 @@ def main():
     print("Starting audio asset write at address %d" % (bytesWritten))
     outfile.write(audioAssetManifest.write(bytesWritten))
  
+def hexDump(byteArray):
+  for i in range(0, len(byteArray)):
+    if 0 == i%16:
+      print("");
+    print("%02X " % byteArray[i], end='')
 
 if __name__ == '__main__':
   main()

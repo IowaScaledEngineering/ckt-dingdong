@@ -31,6 +31,11 @@ inline void spiCSDisble()
 	return;
 }
 
+uint32_t getMillis()
+{
+	return 0;
+}
+
 void spiflashReset()
 {
 	printf("spiflashReset()\n");

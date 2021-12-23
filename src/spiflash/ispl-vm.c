@@ -234,10 +234,10 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			break;
 
 		case ISPL_RET:
-			isplvm_cip = isplvm_stack[isplvm_sp--];
+			isplvm_cip = isplvm_stack[--isplvm_sp];
 			break;
 
-		case ISPL_JQE:
+		case ISPL_JEQ:
 		case ISPL_JNE:
 		case ISPL_JLT:
 		case ISPL_JLTE:
@@ -253,7 +253,7 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			isplvm_cip += isplFetchS16CIP();
 			break;
 
-		case ISPL_RJQE:
+		case ISPL_RJEQ:
 		case ISPL_RJNE:
 		case ISPL_RJLT:
 		case ISPL_RJLTE:
@@ -289,7 +289,7 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 		case ISPL_PLAY:
 			{
 			AudioAssetRecord r;
-			isplAudioAssetLoad(isplvm_stack[isplvm_sp--], &r);
+			isplAudioAssetLoad(isplvm_stack[--isplvm_sp], &r);
 			audioPlay(r.addr, r.size, r.sampleRate);
 			}
 			break;
@@ -308,12 +308,12 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			break;
 
 		case ISPL_STORn:  // Store value from top of stack into constant position (global var)
-			isplvm_stack[isplFetchCIP()] = isplvm_stack[isplvm_sp--];
+			isplvm_stack[isplFetchCIP()] = isplvm_stack[--isplvm_sp];
 			break;
 
 		case ISPL_STOR:  // Store value 1 down on stack into position from stop of stack
-			a = isplvm_stack[isplvm_sp--];
-			b = isplvm_stack[isplvm_sp--];
+			a = isplvm_stack[--isplvm_sp];
+			b = isplvm_stack[--isplvm_sp];
 			isplvm_stack[b] = a;
 			break;
 
