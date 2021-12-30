@@ -3,11 +3,12 @@ OfficeJet 8210
 Print Quality = Presentation
 RGB Color = Photo (sRGB)
 
-Orange   #ff860d
+Orange   #ff860d   (usstd)
 Green    #00a933   (wch333)
 Blue     #0070FF   (wch777)
 Purple   #800080   (stmech)
 Pink     #FF00FF
-Brown    #813709
+Brown    #813709   (wrs222)
 
+Dk Grn   #1e6a39   (ctc)
 
