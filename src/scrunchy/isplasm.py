@@ -23,6 +23,7 @@ opcodes = {
     'loadn'     : { 'op':0x27, 'args':['number'] },
     'stor'      : { 'op':0x28, 'args':[] },
     'storn'     : { 'op':0x29, 'args':['number'] },
+    'rotn'      : { 'op':0x2A, 'args':['number'] },
     'add'       : { 'op':0x30, 'args':[] },
     'sub'       : { 'op':0x31, 'args':[] },
     'mul'       : { 'op':0x32, 'args':[] },
@@ -43,13 +44,8 @@ opcodes = {
     'jlte'      : { 'op':0x84, 'args':['addr'] },
     'jgt'       : { 'op':0x85, 'args':['addr'] },
     'jgte'      : { 'op':0x86, 'args':['addr'] },
-    'rjmp'      : { 'op':0x90, 'args':['raddr'] },
-    'rjeq'      : { 'op':0x91, 'args':['raddr'] },
-    'rjne'      : { 'op':0x92, 'args':['raddr'] },
-    'rjlt'      : { 'op':0x93, 'args':['raddr'] },
-    'rjlte'     : { 'op':0x94, 'args':['raddr'] },
-    'rjgt'      : { 'op':0x95, 'args':['raddr'] },
-    'rjgte'     : { 'op':0x96, 'args':['raddr'] },
+    'jz'        : { 'op':0x90, 'args':['raddr'] },
+    'jnz'       : { 'op':0x91, 'args':['raddr'] },
     'nop'       : { 'op':0xFF, 'args':[] },
     }
 

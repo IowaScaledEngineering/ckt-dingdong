@@ -3,7 +3,7 @@ import re
 import argparse
 import struct
 from isplasm import isplAssemble
-
+from pydub import AudioSegment
 
 class ISPLManifest:
   def __init__(self):
@@ -77,6 +77,8 @@ def main():
   args = parser.parse_args()
   
   pcm_asset_match = re.compile(r'AudioFile (?P<assetName>\w+) PCM (?P<sampleRate>\d+) (?P<assetFilename>.+)')
+  wav_asset_match = re.compile(r'AudioFile (?P<assetName>\w+) WAV (?P<sampleRate>\d+) (?P<assetFilename>.+)')
+
   asset_match = re.compile(r'AudioFile (?P<assetName>\w+) PCM (?P<sampleRate>\d+) (?P<assetFilename>.+)')
   
   code_begin_match = re.compile(r'ISPLCode')
@@ -92,6 +94,8 @@ def main():
     print("Assembling audio assets")
 
     pcmAssetRecs = filter(lambda e: e is not None, [pcm_asset_match.match(rec) for rec in isplFile.readlines()])
+    isplFile.seek(0)
+    wavAssetRecs = filter(lambda e: e is not None, [wav_asset_match.match(rec) for rec in isplFile.readlines()])
     
     for assetRec in pcmAssetRecs:
       try:
@@ -106,6 +110,26 @@ def main():
       except IOError:
         print("ERROR: Audio asset [%s] - file [%s] cannot be opened" % (assetRec.group('assetName'), assetRec.group('assetFilename')))
         raise IOError
+
+    for assetRec in wavAssetRecs:
+      try:
+        wavFilename = args.input_directory + '/' + assetRec.group('assetFilename')
+        wav = AudioSegment.from_wav(wavFilename)
+        # Convert to 8-bit unsigned PCM at prescribed sample rate here
+        sampleRate = int(assetRec.group('sampleRate'))
+        wav = AudioSegment.from_wav(wavFilename).set_channels(1).set_frame_rate(sampleRate).set_sample_width(1)
+
+        newAsset = AudioAsset(name=assetRec.group('assetName'), 
+          audioType = 'PCM',
+          data = wav.raw_data,
+          rate = sampleRate)
+        assetDict[newAsset.name] = audioAssetManifest.add(newAsset)
+          
+        print("- Added WAV asset [%s] - rate=%dHz, bytes=%d len=%.1fs" % (newAsset.name, newAsset.rate, len(newAsset.data), len(newAsset.data) / newAsset.rate))    
+      except IOError:
+        print("ERROR: Audio asset [%s] - file [%s] cannot be opened" % (assetRec.group('assetName'), assetRec.group('assetFilename')))
+        raise IOError
+
 
 
     isplFile.seek(0)
@@ -126,11 +150,11 @@ def main():
         code += line
 
     print("Building ISPL assembly")
-    print(code)
+    #print(code)
     
     programData, listData = isplAssemble(code, assetDict)
     print("- Program is %d bytes long" % (len(programData)))
-    print(listData)
+    #print(listData)
   
   # Build asset table
   
