@@ -1,0 +1,28 @@
+AudioFile SQUEAL1 WAV 32000 Flange_1.wav
+AudioFile SQUEAL2 WAV 32000 Flange_2.wav
+AudioFile SQUEAL3 WAV 32000 Flange_3.wav
+AudioFile SQUEAL4 WAV 32000 Flange_7.wav
+
+ISPLCode
+
+begin:
+	const INPUT_MASK 0x0001
+	const IS_PLAYING 0x0001
+
+start:
+	ldst
+	push IS_PLAYING
+	and
+	notl
+	ldin
+	push INPUT_MASK
+	and
+	andl
+	jz start
+	push SQUEAL1
+	play 
+	jmp start
+	
+
+ISPLCodeEnd
+
