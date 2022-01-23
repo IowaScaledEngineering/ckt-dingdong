@@ -118,10 +118,13 @@ def main():
         # Convert to 8-bit unsigned PCM at prescribed sample rate here
         sampleRate = int(assetRec.group('sampleRate'))
         wav = AudioSegment.from_wav(wavFilename).set_channels(1).set_frame_rate(sampleRate).set_sample_width(1)
+        u8data = bytearray()
+        for b in wav.raw_data:
+          u8data.append(0xFF & (b+0x80))
 
         newAsset = AudioAsset(name=assetRec.group('assetName'), 
           audioType = 'PCM',
-          data = wav.raw_data,
+          data = u8data,
           rate = sampleRate)
         assetDict[newAsset.name] = audioAssetManifest.add(newAsset)
           
