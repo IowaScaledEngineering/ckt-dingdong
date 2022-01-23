@@ -245,16 +245,12 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			isplvm_sp -= 2;
 			break;
 
-		case ISPL_RJMP:
-			isplvm_cip += isplFetchS16CIP();
-			break;
-
 		case ISPL_JZ:
 		case ISPL_JNZ:
 			c = isplFetchS16CIP(); // Fetch jump address
 			a = isplvm_stack[--isplvm_sp];
 			if ( (ISPL_JZ == op) ? (0 == a) : (0!=a) )
-				isplvm_cip += c;
+				isplvm_cip = c;
 			break;
 		
 		case ISPL_LDST:
@@ -335,7 +331,7 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			b = isplvm_stack[isplvm_sp-a];
 			for(uint8_t i=a-1; i>0; i--)
 			{
-				isplvm_stack[isplvm_sp-i-1] = isplvm_stack[isplvm_sp-i]
+				isplvm_stack[isplvm_sp-i-1] = isplvm_stack[isplvm_sp-i];
 			}
 			isplvm_stack[isplvm_sp-1] = b;
 			break;
