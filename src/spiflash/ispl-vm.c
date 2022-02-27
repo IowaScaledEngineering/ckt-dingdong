@@ -216,7 +216,12 @@ void isplVirtualMachineRun()
 	uint8_t op = isplFetchCIP();
 	int16_t c;
 #ifdef VM_DEBUG
+for (int q=isplvm_sp-1; q >= 0; q--)
+  printf("  SP[%02d] = 0x%04x\n", q, isplvm_stack[q]);
+
 printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op), op);
+
+
 #endif
 	
 	switch(op)
@@ -317,11 +322,10 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			break;
 
 		case ISPL_ROT:
-			a = isplvm_stack[isplvm_sp-1];
-			b = isplvm_stack[isplvm_sp-2];
-			isplvm_stack[isplvm_sp-2] = isplvm_stack[isplvm_sp-3];
-			isplvm_stack[isplvm_sp-3] = a;
-			isplvm_stack[isplvm_sp-1] = b;
+			a = isplvm_stack[isplvm_sp-3];
+			isplvm_stack[isplvm_sp-3] = isplvm_stack[isplvm_sp-2];
+			isplvm_stack[isplvm_sp-2] = isplvm_stack[isplvm_sp-1];
+			isplvm_stack[isplvm_sp-1] = a;
 			break;
 
 		case ISPL_ROTn:
