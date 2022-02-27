@@ -128,6 +128,8 @@ int16_t isplFetchS16CIP()
 	ENUM(ISPL_NOT    , 0x38) \
 	ENUM(ISPL_NOTL   , 0x3A) \
 	ENUM(ISPL_ANDL   , 0x3B) \
+	ENUM(ISPL_INC    , 0x3C) \
+	ENUM(ISPL_DEC    , 0x3D) \
 	ENUM(ISPL_CALL   , 0x70) \
 	ENUM(ISPL_RET    , 0x71) \
 	ENUM(ISPL_JMP    , 0x80) \
@@ -397,6 +399,15 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			isplvm_stack[isplvm_sp-2] = isplvm_stack[isplvm_sp-2] && isplvm_stack[isplvm_sp-1];
 			isplvm_sp--;
 			break;
+
+		case ISPL_INC:
+			isplvm_stack[isplvm_sp-1]++;
+			break;
+
+		case ISPL_DEC:
+			isplvm_stack[isplvm_sp-1]--;
+			break;
+
 
 		default:
 			break;
