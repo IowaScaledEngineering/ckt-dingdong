@@ -1,7 +1,28 @@
-AudioFile SQUEAL1 WAV 32000 Flange_1.wav
-AudioFile SQUEAL2 WAV 32000 Flange_2.wav
-AudioFile SQUEAL3 WAV 32000 Flange_3.wav
-AudioFile SQUEAL4 WAV 32000 Flange_7.wav
+AudioFile SQUEAL1 WAV 32000 01a.wav
+AudioFile SQUEAL2 WAV 32000 02a.wav
+AudioFile SQUEAL3 WAV 32000 03a.wav
+AudioFile SQUEAL4 WAV 32000 03b.wav
+AudioFile SQUEAL5 WAV 32000 04a.wav
+AudioFile SQUEAL6 WAV 32000 04b.wav
+AudioFile SQUEAL7 WAV 32000 05a.wav
+AudioFile SQUEAL8 WAV 32000 05b.wav
+AudioFile SQUEAL9 WAV 32000 06a.wav
+AudioFile SQUEAL10 WAV 32000 06b.wav
+AudioFile SQUEAL11 WAV 32000 07a.wav
+AudioFile SQUEAL12 WAV 32000 07b.wav
+AudioFile SQUEAL13 WAV 32000 07c.wav
+AudioFile SQUEAL14 WAV 32000 08a.wav
+AudioFile SQUEAL15 WAV 32000 08b.wav
+AudioFile SQUEAL16 WAV 32000 08c.wav
+AudioFile SQUEAL17 WAV 32000 09a.wav
+AudioFile SQUEAL18 WAV 32000 09b.wav
+AudioFile SQUEAL19 WAV 32000 11a.wav
+AudioFile SQUEAL20 WAV 32000 12a.wav
+AudioFile SQUEAL21 WAV 32000 12b.wav
+AudioFile SQUEAL22 WAV 32000 12c.wav
+AudioFile SQUEAL23 WAV 32000 13a.wav
+AudioFile SQUEAL24 WAV 32000 13b.wav
+AudioFile SQUEAL25 WAV 32000 13c.wav
 
 ISPLCode
 
@@ -19,10 +40,39 @@ start:
 	and
 	andl
 	jz start
-	push SQUEAL1
-	play 
+	rand SQUEAL1 SQUEAL24
+	play
+
+	rand 200 1500
+	call sub_delay_ms
+
 	jmp start
-	
+
+sub_wait_playing:
+	ldst
+	push IS_PLAYING
+	and
+	jnz sub_wait_playing
+	ret
+
+; Expects a number of ms as a stack argument
+sub_delay_ms:
+	ldtime   ; (start reti delay)
+	rot      ; (delay start reti)
+sdms_wait:   ; start of waiting loop (expects delay start reti)
+	ldtime   ; (current delay start reti)
+	rot      ; (start current delay reti)
+	dup      ; (start start current delay reti)
+	rot      ; (current start start delay reti)
+	swap     ; (start current start delay reti)
+	sub      ; subtract current - start  (diff start delay reti)
+	rot      ; (delay diff start reti)
+	dup      ; (delay delay diff start reti)
+	rot      ; (diff delay delay start reti)
+	jlte     sdms_wait   ; eats two, leaving (delay start reti)
+	drop     ; (start reti)
+	drop     ; (reti)
+	ret
 
 ISPLCodeEnd
 
