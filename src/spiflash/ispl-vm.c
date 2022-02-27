@@ -228,7 +228,7 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 	{
 
 		case ISPL_CALL:
-			isplvm_stack[isplvm_sp++] = isplvm_cip;
+			isplvm_stack[isplvm_sp++] = isplvm_cip+2;
 			// fall through
 		case ISPL_JMP:
 			isplvm_cip = isplFetchU16CIP();
