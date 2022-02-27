@@ -30,23 +30,41 @@ begin:
 	const INPUT_MASK 0x0001
 	const IS_PLAYING 0x0001
 
+	const SILENCE_MINIMUM_MS   500
+	const SILENCE_MAXIMUM_MS   1500
+
 start:
 	ldst
 	push IS_PLAYING
 	and
 	notl
+
 	ldin
 	push INPUT_MASK
 	and
 	andl
 	jz start
-	rand SQUEAL1 SQUEAL24
-	play
 
-	rand 200 1500
+	rand 2 5
+play_group:
+	call sub_play	
+	dec
+	dup
+	jnz play_group
+	drop
+
+	; Wait a random amount of silence
+	rand SILENCE_MINIMUM_MS SILENCE_MAXIMUM_MS
 	call sub_delay_ms
 
 	jmp start
+
+sub_play:
+	rand SQUEAL1 SQUEAL24
+	play
+	call sub_wait_playing  ; Wait for playing to stop
+	ret
+
 
 sub_wait_playing:
 	ldst
