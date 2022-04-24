@@ -3,8 +3,11 @@
 #include "lfsr.h"
 #include "ispl.h"
 #include <malloc.h>
+#include <stdlib.h>
 
 uint8_t* fileBuffer = NULL;
+
+uint32_t millis = 0;
 
 void spiSetup()
 {
@@ -33,7 +36,7 @@ inline void spiCSDisble()
 
 uint32_t getMillis()
 {
-	return 0;
+	return millis++;
 }
 
 void spiflashReset()
@@ -99,6 +102,8 @@ int main(int argc, char* argv[])
 	uint32_t sz=0;
 	int i;
 	
+	int end=atoi(argv[2]);
+	
 	fseek(f, 0L, SEEK_END);
 	sz = ftell(f);
 	rewind(f);
@@ -111,7 +116,7 @@ int main(int argc, char* argv[])
 	isplInitialize();
 	
 	
-	for(i=0; i<32; i++)
+	for(i=0; i<end; i++)
 	{
 		isplVirtualMachineRun();
 	}

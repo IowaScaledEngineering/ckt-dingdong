@@ -116,6 +116,7 @@ int16_t isplFetchS16CIP()
 	ENUM(ISPL_LOADn  , 0x27) \
 	ENUM(ISPL_STOR   , 0x28) \
 	ENUM(ISPL_STORn  , 0x29) \
+	ENUM(ISPL_ROTn   , 0x2A) \
 	ENUM(ISPL_ADD    , 0x30) \
 	ENUM(ISPL_SUB    , 0x31) \
 	ENUM(ISPL_MUL    , 0x32) \
@@ -127,6 +128,8 @@ int16_t isplFetchS16CIP()
 	ENUM(ISPL_NOT    , 0x38) \
 	ENUM(ISPL_NOTL   , 0x3A) \
 	ENUM(ISPL_ANDL   , 0x3B) \
+	ENUM(ISPL_INC    , 0x3C) \
+	ENUM(ISPL_DEC    , 0x3D) \
 	ENUM(ISPL_CALL   , 0x70) \
 	ENUM(ISPL_RET    , 0x71) \
 	ENUM(ISPL_JMP    , 0x80) \
@@ -136,13 +139,8 @@ int16_t isplFetchS16CIP()
 	ENUM(ISPL_JLTE   , 0x84) \
 	ENUM(ISPL_JGT    , 0x85) \
 	ENUM(ISPL_JGTE   , 0x86) \
-	ENUM(ISPL_RJMP   , 0x90) \
-	ENUM(ISPL_RJEQ   , 0x91) \
-	ENUM(ISPL_RJNE   , 0x92) \
-	ENUM(ISPL_RJLT   , 0x93) \
-	ENUM(ISPL_RJLTE  , 0x94) \
-	ENUM(ISPL_RJGT   , 0x95) \
-	ENUM(ISPL_RJGTE  , 0x96) \
+	ENUM(ISPL_JZ     , 0x90) \
+	ENUM(ISPL_JNZ    , 0x91) \
 	ENUM(ISPL_NOP    , 0xFF)
 #define ENUM(x,y) x=y,
 typedef enum { ISPLVMOpcodesEnum } ISPLVMOpcodes;
@@ -220,14 +218,19 @@ void isplVirtualMachineRun()
 	uint8_t op = isplFetchCIP();
 	int16_t c;
 #ifdef VM_DEBUG
+for (int q=isplvm_sp-1; q >= 0; q--)
+  printf("  SP[%02d] = 0x%04x\n", q, isplvm_stack[q]);
+
 printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op), op);
+
+
 #endif
 	
 	switch(op)
 	{
 
 		case ISPL_CALL:
-			isplvm_stack[isplvm_sp++] = isplvm_cip;
+			isplvm_stack[isplvm_sp++] = isplvm_cip+2;
 			// fall through
 		case ISPL_JMP:
 			isplvm_cip = isplFetchU16CIP();
@@ -249,20 +252,12 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			isplvm_sp -= 2;
 			break;
 
-		case ISPL_RJMP:
-			isplvm_cip += isplFetchS16CIP();
-			break;
-
-		case ISPL_RJEQ:
-		case ISPL_RJNE:
-		case ISPL_RJLT:
-		case ISPL_RJLTE:
-		case ISPL_RJGT:
-		case ISPL_RJGTE:
+		case ISPL_JZ:
+		case ISPL_JNZ:
 			c = isplFetchS16CIP(); // Fetch jump address
-			if (isplEvaluateConditional(op & 0x07, isplvm_stack[isplvm_sp-1], isplvm_stack[isplvm_sp-2]))
-				isplvm_cip += c;
-			isplvm_sp -= 2;
+			a = isplvm_stack[--isplvm_sp];
+			if ( (ISPL_JZ == op) ? (0 == a) : (0!=a) )
+				isplvm_cip = c;
 			break;
 		
 		case ISPL_LDST:
@@ -329,13 +324,25 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			break;
 
 		case ISPL_ROT:
-			a = isplvm_stack[isplvm_sp-1];
-			b = isplvm_stack[isplvm_sp-2];
-			isplvm_stack[isplvm_sp-2] = isplvm_stack[isplvm_sp-3];
-			isplvm_stack[isplvm_sp-3] = a;
+			a = isplvm_stack[isplvm_sp-3];
+			isplvm_stack[isplvm_sp-3] = isplvm_stack[isplvm_sp-2];
+			isplvm_stack[isplvm_sp-2] = isplvm_stack[isplvm_sp-1];
+			isplvm_stack[isplvm_sp-1] = a;
+			break;
+
+		case ISPL_ROTn:
+			a = isplFetchU16CIP();  // Number of things to rotate on stack
+			// ROTn n=4, save 4, 3->4 2->3, 1->2 4->1
+			a = min(isplvm_sp-1, a); // Safeguard against rotating off the bottom of the stack
+			b = isplvm_stack[isplvm_sp-a];
+			for(uint8_t i=a-1; i>0; i--)
+			{
+				isplvm_stack[isplvm_sp-i-1] = isplvm_stack[isplvm_sp-i];
+			}
 			isplvm_stack[isplvm_sp-1] = b;
 			break;
-			
+
+
 		case ISPL_OVER:
 			isplvm_stack[isplvm_sp] = isplvm_stack[isplvm_sp-2];
 			isplvm_sp++;
@@ -392,6 +399,15 @@ printf("CIP=0x%04X  SP=%d OP=[%s] (0x%02x)\n", cip, isplvm_sp, isplOpcodeName(op
 			isplvm_stack[isplvm_sp-2] = isplvm_stack[isplvm_sp-2] && isplvm_stack[isplvm_sp-1];
 			isplvm_sp--;
 			break;
+
+		case ISPL_INC:
+			isplvm_stack[isplvm_sp-1]++;
+			break;
+
+		case ISPL_DEC:
+			isplvm_stack[isplvm_sp-1]--;
+			break;
+
 
 		default:
 			break;
