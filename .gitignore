@@ -1,0 +1,5 @@
+*.o
+*~
+*.elf
+src/*.hex
+src/cicada/cicada.eep
