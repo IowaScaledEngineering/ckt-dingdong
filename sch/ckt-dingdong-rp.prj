@@ -1,0 +1,4 @@
+schematics ckt-dingdong-rp.sch
+output-name ../pcb/ckt-dingdong-rp
+skip-m4
+elements-dir ../../../footprints

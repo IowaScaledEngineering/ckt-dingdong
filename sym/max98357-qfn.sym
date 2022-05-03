@@ -1,0 +1,146 @@
+v 20130925 2
+B 300 400 1600 1900 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 1500 2350 5 10 1 1 0 0 1
+refdes=U?
+T 1400 1300 5 10 1 1 0 4 1
+device=MAX98357
+T 300 7000 5 10 0 0 0 0 1
+footprint=SOT23-5
+T 300 7200 5 10 0 0 0 0 1
+author=Michael Petersen
+T 400 7800 5 10 0 0 0 0 1
+dist-license=GPL
+T 400 8000 5 10 0 0 0 0 1
+use-license=unlimited
+P 1200 2600 1200 2300 1 0 0
+{
+T 1150 2400 5 8 0 1 270 8 1
+pinseq=14
+T 1200 2250 5 8 0 1 270 2 1
+pintype=io
+T 1150 2395 5 8 1 1 90 0 1
+pinnumber=8
+T 1200 2245 9 8 1 1 90 6 1
+pinlabel=VDD
+}
+P 0 1900 300 1900 1 0 0
+{
+T 200 1850 5 8 0 1 0 8 1
+pinseq=14
+T 350 1900 5 8 0 1 0 2 1
+pintype=io
+T 200 1950 5 8 1 1 0 6 1
+pinnumber=1
+T 350 1900 9 8 1 1 0 1 1
+pinlabel=DIN
+}
+P 2200 1900 1900 1900 1 0 0
+{
+T 2000 1850 5 8 0 1 0 2 1
+pinseq=20
+T 1850 1900 5 8 0 1 0 8 1
+pintype=pwr
+T 2000 1950 5 8 1 1 0 0 1
+pinnumber=9
+T 1850 1900 9 8 1 1 0 7 1
+pinlabel=OUT+
+}
+P 2200 1600 1900 1600 1 0 0
+{
+T 2000 1550 5 8 0 1 0 2 1
+pinseq=20
+T 1850 1600 5 8 0 1 0 8 1
+pintype=pwr
+T 2000 1650 5 8 1 1 0 0 1
+pinnumber=10
+T 1850 1600 9 8 1 1 0 7 1
+pinlabel=OUT-
+}
+P 0 1000 300 1000 1 0 0
+{
+T 200 1050 5 8 1 1 0 6 1
+pinnumber=4
+T 200 950 5 8 0 1 0 8 1
+pinseq=14
+T 350 1000 9 8 1 1 0 1 1
+pinlabel=\_SD MODE\_
+T 350 1000 5 8 0 1 0 2 1
+pintype=io
+}
+P 0 1600 300 1600 1 0 0
+{
+T 200 1550 5 8 0 1 0 8 1
+pinseq=14
+T 350 1600 5 8 0 1 0 2 1
+pintype=io
+T 200 1650 5 8 1 1 0 6 1
+pinnumber=16
+T 350 1600 9 8 1 1 0 1 1
+pinlabel=BCLK
+}
+P 0 1300 300 1300 1 0 0
+{
+T 200 1250 5 8 0 1 0 8 1
+pinseq=14
+T 350 1300 5 8 0 1 0 2 1
+pintype=io
+T 200 1350 5 8 1 1 0 6 1
+pinnumber=14
+T 350 1300 9 8 1 1 0 1 1
+pinlabel=LRCLK
+}
+P 2200 1000 1900 1000 1 0 0
+{
+T 2000 950 5 8 0 1 0 2 1
+pinseq=20
+T 1850 1000 5 8 0 1 0 8 1
+pintype=pwr
+T 2000 1050 5 8 1 1 0 0 1
+pinnumber=2
+T 1850 1000 9 8 1 1 0 7 1
+pinlabel=GAIN
+}
+P 1500 100 1500 400 1 0 0
+{
+T 1450 300 5 8 0 1 90 6 1
+pinseq=14
+T 1500 450 5 8 0 1 90 0 1
+pintype=io
+T 1450 305 5 8 1 1 90 6 1
+pinnumber=17
+T 1500 455 9 8 1 1 90 0 1
+pinlabel=GND
+}
+P 900 2600 900 2300 1 0 0
+{
+T 850 2400 5 8 0 1 270 8 1
+pinseq=14
+T 900 2250 5 8 0 1 270 2 1
+pintype=io
+T 850 2395 5 8 1 1 90 0 1
+pinnumber=7
+T 900 2245 9 8 1 1 90 6 1
+pinlabel=VDD
+}
+P 1200 100 1200 400 1 0 0
+{
+T 1150 300 5 8 0 1 90 6 1
+pinseq=14
+T 1200 450 5 8 0 1 90 0 1
+pintype=io
+T 1150 305 5 8 1 1 90 6 1
+pinnumber=15
+T 1200 455 9 8 1 1 90 0 1
+pinlabel=GND
+}
+P 900 100 900 400 1 0 0
+{
+T 850 300 5 8 0 1 90 6 1
+pinseq=14
+T 900 450 5 8 0 1 90 0 1
+pintype=io
+T 850 305 5 8 1 1 90 6 1
+pinnumber=3
+T 900 455 9 8 1 1 90 0 1
+pinlabel=GND
+}
