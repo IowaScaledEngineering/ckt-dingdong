@@ -1,0 +1,6 @@
+Generate sawtooth (120Hz, 1.0)
+Low Pass (60Hz, 6dB)
+Amplify 6dB
+7500 samples @ 18kHz
+   18000 samples per second / 120 period per second = 150 samples per period
+   7500 samples / 150 samples per period = 50 periods
