@@ -3,3 +3,5 @@
 *.elf
 src/*.hex
 src/cicada/cicada.eep
+fp-info-cache
+kicad/*/*-backups
