@@ -1,8 +1,8 @@
 {
     "layout": {
         "type": "grid",
-        "rows": 3,
-        "cols": 3,
+        "rows": 6,
+        "cols": 1,
         "space": "100mil",
     },
     "tabs": {
@@ -13,7 +13,7 @@
         "type": "mousebites",
         "drill": "0.5mm",
         "spacing": "0.75mm",
-        "offset": "0.25mm",
+        "offset": "0mm",
     },
     "framing": {
         "type": "frame",
