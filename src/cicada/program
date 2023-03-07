@@ -2,6 +2,14 @@
 
 while [ true ]
 do
+	make read > /dev/null 2> /dev/null
+
+	while [ $? -ne 0 ]
+	do
+		echo -n .
+		make read > /dev/null 2> /dev/null
+	done
+
 	espeak "Programming"
 
 	echo -e "\n\033[1;33mFusing...\033[0m\n"
@@ -26,7 +34,4 @@ do
 		espeak "Failed"
 	fi
 
-	read -t 0.1 -n 1000 discard
-	read -n 1 -p "Press any key to continue..."
-	echo
 done
