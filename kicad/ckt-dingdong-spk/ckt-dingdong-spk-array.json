@@ -31,4 +31,9 @@
     "post": {
         "millradius": "50mil",
     },
+    "copperfill": {
+        "type": "solid",
+        "clearance": "100mil",
+        "layers": "F.Cu",
+    },
 }
