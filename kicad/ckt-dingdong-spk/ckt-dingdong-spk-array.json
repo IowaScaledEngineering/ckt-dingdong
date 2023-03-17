@@ -1,13 +1,14 @@
 {
     "layout": {
         "type": "grid",
-        "rows": 6,
-        "cols": 1,
+        "rows": 1,
+        "cols": 6,
         "space": "100mil",
     },
     "tabs": {
         "type": "fixed",
         "width": "100mil",
+        "hcount": "0",
     },
     "cuts": {
         "type": "mousebites",
@@ -23,8 +24,8 @@
     "fiducials": {
         "type": "3fid",
         "space": "100mil",
-        "hoffset": "400mil",
-        "voffset": "100mil",
+        "hoffset": "100mil",
+        "voffset": "400mil",
         "coppersize": "1mm",
         "opening": "2mm",
     },
