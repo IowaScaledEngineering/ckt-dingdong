@@ -2,7 +2,7 @@
     "layout": {
         "type": "grid",
         "rows": 1,
-        "cols": 10,
+        "cols": 5,
         "space": "100mil",
     },
     "tabs": {
