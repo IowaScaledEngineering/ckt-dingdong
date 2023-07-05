@@ -1,12 +1,11 @@
 G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,6.0.2+dfsg-1*
-G04 #@! TF.CreationDate,2023-03-16T21:42:12-06:00*
+G04 #@! TF.CreationDate,2023-06-21T21:29:59-06:00*
 G04 #@! TF.ProjectId,ckt-dingdong-spk-array,636b742d-6469-46e6-9764-6f6e672d7370,rev?*
 G04 #@! TF.SameCoordinates,Original*
-G04 #@! TF.FileFunction,Glue,Top*
-G04 #@! TF.FilePolarity,Positive*
+G04 #@! TF.FileFunction,Other,User*
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 6.0.2+dfsg-1) date 2023-03-16 21:42:12*
+G04 Created by KiCad (PCBNEW 6.0.2+dfsg-1) date 2023-06-21 21:29:59*
 %MOMM*%
 %LPD*%
 G01*
