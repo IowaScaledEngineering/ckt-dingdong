@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<office:document xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ooo="http://openoffice.org/2004/office" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.text">
- <office:meta><meta:creation-date>2019-05-20T18:20:09.768431878</meta:creation-date><dc:date>2021-12-30T13:09:40.437911088</dc:date><meta:editing-duration>PT2H30M47S</meta:editing-duration><meta:editing-cycles>47</meta:editing-cycles><meta:generator>LibreOffice/7.2.3.2$Linux_X86_64 LibreOffice_project/20$Build-2</meta:generator><meta:print-date>2021-12-30T13:08:57.651570364</meta:print-date><meta:document-statistic meta:table-count="0" meta:image-count="20" meta:object-count="0" meta:page-count="1" meta:paragraph-count="40" meta:word-count="230" meta:character-count="1210" meta:non-whitespace-character-count="1010"/></office:meta>
+<office:document xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:rpt="http://openoffice.org/2005/report" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.text">
+ <office:meta><meta:creation-date>2019-05-20T18:20:09.768431878</meta:creation-date><dc:date>2023-07-04T20:07:57.694372935</dc:date><meta:editing-duration>PT2H30M58S</meta:editing-duration><meta:editing-cycles>48</meta:editing-cycles><meta:generator>LibreOffice/7.5.3.2$Linux_X86_64 LibreOffice_project/50$Build-2</meta:generator><meta:print-date>2023-07-04T20:09:06.657290376</meta:print-date><meta:document-statistic meta:table-count="0" meta:image-count="20" meta:object-count="0" meta:page-count="1" meta:paragraph-count="40" meta:word-count="250" meta:character-count="1310" meta:non-whitespace-character-count="1090"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
    <config:config-item config:name="ViewAreaTop" config:type="long">0</config:config-item>
    <config:config-item config:name="ViewAreaLeft" config:type="long">0</config:config-item>
-   <config:config-item config:name="ViewAreaWidth" config:type="long">18390</config:config-item>
-   <config:config-item config:name="ViewAreaHeight" config:type="long">17367</config:config-item>
+   <config:config-item config:name="ViewAreaWidth" config:type="long">20350</config:config-item>
+   <config:config-item config:name="ViewAreaHeight" config:type="long">20472</config:config-item>
    <config:config-item config:name="ShowRedlineChanges" config:type="boolean">true</config:config-item>
    <config:config-item config:name="InBrowseMode" config:type="boolean">false</config:config-item>
    <config:config-item-map-indexed config:name="Views">
@@ -17,8 +17,8 @@
      <config:config-item config:name="ViewTop" config:type="long">7546</config:config-item>
      <config:config-item config:name="VisibleLeft" config:type="long">0</config:config-item>
      <config:config-item config:name="VisibleTop" config:type="long">0</config:config-item>
-     <config:config-item config:name="VisibleRight" config:type="long">18389</config:config-item>
-     <config:config-item config:name="VisibleBottom" config:type="long">17365</config:config-item>
+     <config:config-item config:name="VisibleRight" config:type="long">20348</config:config-item>
+     <config:config-item config:name="VisibleBottom" config:type="long">20470</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ViewLayoutColumns" config:type="short">1</config:config-item>
      <config:config-item config:name="ViewLayoutBookMode" config:type="boolean">false</config:config-item>
@@ -26,52 +26,53 @@
      <config:config-item config:name="IsSelectedFrame" config:type="boolean">false</config:config-item>
      <config:config-item config:name="KeepRatio" config:type="boolean">false</config:config-item>
      <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="LegacySingleLineFontwork" config:type="boolean">false</config:config-item>
+     <config:config-item config:name="ConnectorUseSnapRect" config:type="boolean">false</config:config-item>
     </config:config-item-map-entry>
    </config:config-item-map-indexed>
   </config:config-item-set>
   <config:config-item-set config:name="ooo:configuration-settings">
-   <config:config-item config:name="PrintPaperFromSetup" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrintFaxName" config:type="string"/>
-   <config:config-item config:name="PrintSingleJobs" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintRightPages" config:type="boolean">true</config:config-item>
    <config:config-item config:name="PrintProspectRTL" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrintProspect" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrintTextPlaceholder" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrintTables" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="PrintPageBackground" config:type="boolean">true</config:config-item>
    <config:config-item config:name="PrintLeftPages" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="PrintAnnotationMode" config:type="short">0</config:config-item>
+   <config:config-item config:name="PrintPaperFromSetup" config:type="boolean">false</config:config-item>
    <config:config-item config:name="PrintControls" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="PrintHiddenText" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrintDrawings" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="FrameAutowidthWithMorePara" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintProspect" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintBlackFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintEmptyPages" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintSingleJobs" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintAnnotationMode" config:type="short">0</config:config-item>
+   <config:config-item config:name="WordLikeWrapForAsCharFlys" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="AutoFirstLineIndentDisregardLineSpace" config:type="boolean">false</config:config-item>
    <config:config-item config:name="HeaderSpacingBelowLastPara" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="ProtectFields" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrintReversed" config:type="boolean">false</config:config-item>
    <config:config-item config:name="ProtectBookmarks" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="EmptyDbFieldHidesPara" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="UseOldPrinterMetrics" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="UseOldNumbering" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="AddExternalLeading" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="TreatSingleColumnBreakAsPageBreak" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="IsLabelDocument" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="RsidRoot" config:type="int">1634386</config:config-item>
-   <config:config-item config:name="TabOverSpacing" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="ConsiderTextWrapOnObjPos" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="TableRowKeep" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="TabsRelativeToIndent" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="AddParaLineSpacingToTableCells" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="AllowPrintJobCancel" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="GutterAtTop" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="UpdateFromTemplate" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="SaveVersionOnClose" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="UseFormerTextWrapping" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="ChartAutoUpdate" config:type="boolean">true</config:config-item>
    <config:config-item config:name="ContinuousEndnotes" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="AddParaTableSpacingAtStart" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="AddParaTableSpacing" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="AddParaSpacingToTableCells" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="UseFormerLineSpacing" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="OutlineLevelYieldsNumbering" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="DisableOffPagePositioning" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintTables" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="SubtractFlysAnchoredAtFlys" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ApplyParagraphMarkFormatToNumbering" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrintFaxName" config:type="string"/>
+   <config:config-item config:name="SurroundTextWrapSmall" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="TreatSingleColumnBreakAsPageBreak" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PropLineSpacingShrinksFirstLine" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="TabOverSpacing" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="TabOverMargin" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="EmbedFonts" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ClippedPictures" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="FrameAutowidthWithMorePara" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="FloattableNomargins" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="UnbreakableNumberings" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="AllowPrintJobCancel" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="UseFormerObjectPositioning" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="UseOldNumbering" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="RsidRoot" config:type="int">1634386</config:config-item>
+   <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="CurrentDatabaseDataSource" config:type="string"/>
+   <config:config-item config:name="UpdateFromTemplate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="AddFrameOffsets" config:type="boolean">false</config:config-item>
    <config:config-item-map-indexed config:name="ForbiddenCharacters">
     <config:config-item-map-entry>
      <config:config-item config:name="Language" config:type="string">en</config:config-item>
@@ -81,65 +82,73 @@
      <config:config-item config:name="EndLine" config:type="string"/>
     </config:config-item-map-entry>
    </config:config-item-map-indexed>
-   <config:config-item config:name="AlignTabStopPosition" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="DoNotJustifyLinesWithManualBreak" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="EmbedOnlyUsedFonts" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="LinkUpdateMode" config:type="short">1</config:config-item>
-   <config:config-item config:name="CurrentDatabaseCommandType" config:type="int">0</config:config-item>
-   <config:config-item config:name="CurrentDatabaseCommand" config:type="string"/>
-   <config:config-item config:name="CharacterCompressionType" config:type="short">0</config:config-item>
-   <config:config-item config:name="SmallCapsPercentage66" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="StylesNoDefault" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="EmbeddedDatabaseName" config:type="string"/>
-   <config:config-item config:name="FloattableNomargins" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="BackgroundParaOverDrawings" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrinterName" config:type="string">HP-OfficeJet-Pro-8210</config:config-item>
-   <config:config-item config:name="UseFormerObjectPositioning" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrinterSetup" config:type="base64Binary">yAH+/0hQLU9mZmljZUpldC1Qcm8tODIxMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpIUC1PZmZpY2VKZXQtUHJvLTgyMTAAAAAAAAAWAAMA6QAAAAEAAAAIAFZUAAAkbQAASm9iRGF0YSAxCnByaW50ZXI9SFAtT2ZmaWNlSmV0LVByby04MjEwCm9yaWVudGF0aW9uPUxhbmRzY2FwZQpjb3BpZXM9MQpjb2xsYXRlPWZhbHNlCm1hcmdpbmFkanVzdG1lbnQ9MCwwLDAsMApjb2xvcmRlcHRoPTI0CnBzbGV2ZWw9MApwZGZkZXZpY2U9MQpjb2xvcmRldmljZT0wClBQRENvbnRleHREYXRhCkR1cGxleDpOb25lAFBhZ2VTaXplOkxldHRlcgBIUFBKTE91dHB1dE1vZGU6UHJlc2VudGF0aW9uAAASAENPTVBBVF9EVVBMRVhfTU9ERQ8ARHVwbGV4TW9kZTo6T2Zm</config:config-item>
-   <config:config-item config:name="IgnoreFirstLineIndentInNumbering" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="CollapseEmptyCellPara" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="TabOverMargin" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="SaveGlobalDocumentLinks" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="CurrentDatabaseDataSource" config:type="string"/>
-   <config:config-item config:name="IsKernAsianPunctuation" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrintEmptyPages" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="ProtectForm" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="AddVerticalFrameOffsets" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="SaveThumbnail" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="PrinterIndependentLayout" config:type="string">high-resolution</config:config-item>
-   <config:config-item config:name="PrinterPaperFromSetup" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="TabOverflow" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="PrintGraphics" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="PropLineSpacingShrinksFirstLine" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="DoNotResetParaAttrsForNumFont" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="FieldAutoUpdate" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="IgnoreTabsAndBlanksForLineCalculation" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="RedlineProtectionKey" config:type="base64Binary"/>
-   <config:config-item config:name="EmbedComplexScriptFonts" config:type="boolean">true</config:config-item>
    <config:config-item config:name="LoadReadonly" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="DoNotCaptureDrawObjsOnPage" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="Rsid" config:type="int">4716741</config:config-item>
+   <config:config-item config:name="FootnoteInColumnToPageEnd" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ProtectFields" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="SaveGlobalDocumentLinks" config:type="boolean">false</config:config-item>
    <config:config-item config:name="ClipAsCharacterAnchoredWriterFlyFrames" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrintBlackFonts" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="DisableOffPagePositioning" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="SurroundTextWrapSmall" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="UnxForceZeroExtLeading" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="TabAtLeftIndentForParagraphsInList" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="PrintRightPages" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="Rsid" config:type="int">4577893</config:config-item>
-   <config:config-item config:name="MathBaselineAlignment" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="MsWordCompTrailingBlanks" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="MsWordCompMinLineHeightByFly" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="InvertBorderSpacing" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="EmbedFonts" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="UnbreakableNumberings" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="AddFrameOffsets" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="ClippedPictures" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="EmbedLatinScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="LinkUpdateMode" config:type="short">1</config:config-item>
+   <config:config-item config:name="AddExternalLeading" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrintGraphics" config:type="boolean">true</config:config-item>
    <config:config-item config:name="EmbedSystemFonts" config:type="boolean">false</config:config-item>
-   <config:config-item config:name="ApplyParagraphMarkFormatToNumbering" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="SubtractFlysAnchoredAtFlys" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsLabelDocument" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="AddParaLineSpacingToTableCells" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="UseFormerTextWrapping" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="HyphenateURLs" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="AddParaTableSpacingAtStart" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="TabsRelativeToIndent" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="FieldAutoUpdate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="SaveVersionOnClose" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ChartAutoUpdate" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ImagePreferredDPI" config:type="int">0</config:config-item>
+   <config:config-item config:name="PrinterSetup" config:type="base64Binary">FgL+/0hQX09mZmljZUpldF9Qcm9fODIxMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ1VQUzpIUF9PZmZpY2VKZXRfUHJvXzgyMTAAAAAAAAAWAAMA6QAAAAEAAAAIAFZUAAAkbQAASm9iRGF0YSAxCnByaW50ZXI9SFBfT2ZmaWNlSmV0X1Byb184MjEwCm9yaWVudGF0aW9uPUxhbmRzY2FwZQpjb3BpZXM9MQpjb2xsYXRlPWZhbHNlCm1hcmdpbmFkanVzdG1lbnQ9MCwwLDAsMApjb2xvcmRlcHRoPTI0CnBzbGV2ZWw9MApwZGZkZXZpY2U9MQpjb2xvcmRldmljZT0wClBQRENvbnRleHREYXRhCkhQUEpMT3V0cHV0TW9kZTpQcmVzZW50YXRpb24AUGFnZVNpemU6TGV0dGVyAER1cGxleDpOb25lAAASAENPTVBBVF9EVVBMRVhfTU9ERQ8ARHVwbGV4TW9kZTo6T2ZmDABQUklOVEVSX05BTUUVAEhQX09mZmljZUpldF9Qcm9fODIxMAsARFJJVkVSX05BTUUaAENVUFM6SFBfT2ZmaWNlSmV0X1Byb184MjEw</config:config-item>
+   <config:config-item config:name="SmallCapsPercentage66" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="AlignTabStopPosition" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="DropCapPunctuation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="MathBaselineAlignment" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="PrinterName" config:type="string">HP_OfficeJet_Pro_8210</config:config-item>
+   <config:config-item config:name="CharacterCompressionType" config:type="short">0</config:config-item>
+   <config:config-item config:name="AddParaTableSpacing" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="DoNotJustifyLinesWithManualBreak" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintHiddenText" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IsKernAsianPunctuation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrinterIndependentLayout" config:type="string">high-resolution</config:config-item>
+   <config:config-item config:name="TabOverflow" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="AddParaSpacingToTableCells" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="AddVerticalFrameOffsets" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="TabAtLeftIndentForParagraphsInList" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="ApplyUserData" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="MsWordCompMinLineHeightByFly" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintTextPlaceholder" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IgnoreFirstLineIndentInNumbering" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="UseFormerLineSpacing" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintPageBackground" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="RedlineProtectionKey" config:type="base64Binary"/>
+   <config:config-item config:name="EmbedAsianScriptFonts" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="BackgroundParaOverDrawings" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="SaveThumbnail" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="ConsiderTextWrapOnObjPos" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="EmbeddedDatabaseName" config:type="string"/>
+   <config:config-item config:name="ProtectForm" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="DoNotResetParaAttrsForNumFont" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="MsWordCompTrailingBlanks" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="EmptyDbFieldHidesPara" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="TableRowKeep" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="NoNumberingShowFollowBy" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="InvertBorderSpacing" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="IgnoreTabsAndBlanksForLineCalculation" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="DoNotCaptureDrawObjsOnPage" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="GutterAtTop" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="StylesNoDefault" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="UnxForceZeroExtLeading" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="PrintReversed" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="UseOldPrinterMetrics" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="CurrentDatabaseCommandType" config:type="int">0</config:config-item>
+   <config:config-item config:name="PrintDrawings" config:type="boolean">true</config:config-item>
+   <config:config-item config:name="OutlineLevelYieldsNumbering" config:type="boolean">false</config:config-item>
+   <config:config-item config:name="CurrentDatabaseCommand" config:type="string"/>
+   <config:config-item config:name="CollapseEmptyCellPara" config:type="boolean">true</config:config-item>
   </config:config-item-set>
  </office:settings>
  <office:scripts>
@@ -150,29 +159,29 @@
   </office:script>
  </office:scripts>
  <office:font-face-decls>
-  <style:font-face style:name="FreeSans" svg:font-family="FreeSans" style:font-family-generic="system" style:font-pitch="variable"/>
-  <style:font-face style:name="FreeSans1" svg:font-family="FreeSans" style:font-family-generic="swiss"/>
+  <style:font-face style:name="FreeSans" svg:font-family="FreeSans" style:font-family-generic="swiss"/>
+  <style:font-face style:name="FreeSans1" svg:font-family="FreeSans" style:font-family-generic="system" style:font-pitch="variable"/>
   <style:font-face style:name="Liberation Sans" svg:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="swiss" style:font-pitch="variable"/>
   <style:font-face style:name="Liberation Serif" svg:font-family="&apos;Liberation Serif&apos;" style:font-family-generic="roman" style:font-pitch="variable"/>
   <style:font-face style:name="Oswald" svg:font-family="Oswald" style:font-pitch="variable"/>
   <style:font-face style:name="Oswald Medium" svg:font-family="&apos;Oswald Medium&apos;" style:font-pitch="variable"/>
-  <style:font-face style:name="Oswald SemiBold" svg:font-family="&apos;Oswald SemiBold&apos;" style:font-adornments="Regular" style:font-pitch="variable"/>
-  <style:font-face style:name="Oswald SemiBold1" svg:font-family="&apos;Oswald SemiBold&apos;" style:font-pitch="variable"/>
+  <style:font-face style:name="Oswald SemiBold" svg:font-family="&apos;Oswald SemiBold&apos;" style:font-pitch="variable"/>
+  <style:font-face style:name="Oswald SemiBold1" svg:font-family="&apos;Oswald SemiBold&apos;" style:font-adornments="Regular" style:font-pitch="variable"/>
   <style:font-face style:name="Tahoma" svg:font-family="Tahoma" style:font-family-generic="system" style:font-pitch="variable"/>
  </office:font-face-decls>
  <office:styles>
   <draw:gradient draw:name="gradient" draw:style="linear" draw:start-color="#000000" draw:end-color="#ffffff" draw:start-intensity="100%" draw:end-intensity="100%" draw:angle="0deg" draw:border="0%"/>
   <draw:hatch draw:name="hatch" draw:style="single" draw:color="#3465a4" draw:distance="0.0079in" draw:rotation="0"/>
   <style:default-style style:family="graphic">
-   <style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap" draw:shadow-offset-x="0.1181in" draw:shadow-offset-y="0.1181in" draw:start-line-spacing-horizontal="0.1114in" draw:start-line-spacing-vertical="0.1114in" draw:end-line-spacing-horizontal="0.1114in" draw:end-line-spacing-vertical="0.1114in" style:flow-with-text="false"/>
+   <style:graphic-properties svg:stroke-color="#3465a4" draw:fill-color="#729fcf" fo:wrap-option="no-wrap" draw:shadow-offset-x="0.1181in" draw:shadow-offset-y="0.1181in" draw:start-line-spacing-horizontal="0.1114in" draw:start-line-spacing-vertical="0.1114in" draw:end-line-spacing-horizontal="0.1114in" draw:end-line-spacing-vertical="0.1114in" style:writing-mode="lr-tb" style:flow-with-text="false"/>
    <style:paragraph-properties style:text-autospace="ideograph-alpha" style:line-break="strict" style:font-independent-line-spacing="false">
     <style:tab-stops/>
    </style:paragraph-properties>
-   <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="en" fo:country="US" style:letter-kerning="true" style:font-name-asian="Tahoma" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="FreeSans" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN"/>
+   <style:text-properties style:use-window-font-color="true" loext:opacity="0%" loext:color-lum-mod="100%" loext:color-lum-off="0%" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="en" fo:country="US" style:letter-kerning="true" style:font-name-asian="Tahoma" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="FreeSans1" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN"/>
   </style:default-style>
   <style:default-style style:family="paragraph">
    <style:paragraph-properties fo:orphans="2" fo:widows="2" fo:hyphenation-ladder-count="no-limit" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:tab-stop-distance="0.5in" style:writing-mode="lr-tb"/>
-   <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="en" fo:country="US" style:letter-kerning="true" style:font-name-asian="Tahoma" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="FreeSans" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" loext:hyphenation-no-caps="false"/>
+   <style:text-properties style:use-window-font-color="true" loext:opacity="0%" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="en" fo:country="US" style:letter-kerning="true" style:font-name-asian="Tahoma" style:font-size-asian="10.5pt" style:language-asian="zh" style:country-asian="CN" style:font-name-complex="FreeSans1" style:font-size-complex="12pt" style:language-complex="hi" style:country-complex="IN" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" loext:hyphenation-no-caps="false" loext:hyphenation-no-last-word="false" loext:hyphenation-word-char-count="5" loext:hyphenation-zone="no-limit"/>
   </style:default-style>
   <style:default-style style:family="table">
    <style:table-properties table:border-model="collapsing"/>
@@ -183,30 +192,30 @@
   <style:style style:name="Standard" style:family="paragraph" style:class="text"/>
   <style:style style:name="Heading" style:family="paragraph" style:parent-style-name="Standard" style:next-style-name="Text_20_body" style:class="text">
    <style:paragraph-properties fo:margin-top="0.1665in" fo:margin-bottom="0.0835in" style:contextual-spacing="false" fo:keep-with-next="always"/>
-   <style:text-properties style:font-name="Liberation Sans" fo:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="14pt" style:font-name-asian="Tahoma" style:font-family-asian="Tahoma" style:font-family-generic-asian="system" style:font-pitch-asian="variable" style:font-size-asian="14pt" style:font-name-complex="FreeSans" style:font-family-complex="FreeSans" style:font-family-generic-complex="system" style:font-pitch-complex="variable" style:font-size-complex="14pt"/>
+   <style:text-properties style:font-name="Liberation Sans" fo:font-family="&apos;Liberation Sans&apos;" style:font-family-generic="swiss" style:font-pitch="variable" fo:font-size="14pt" style:font-name-asian="Tahoma" style:font-family-asian="Tahoma" style:font-family-generic-asian="system" style:font-pitch-asian="variable" style:font-size-asian="14pt" style:font-name-complex="FreeSans1" style:font-family-complex="FreeSans" style:font-family-generic-complex="system" style:font-pitch-complex="variable" style:font-size-complex="14pt"/>
   </style:style>
   <style:style style:name="Text_20_body" style:display-name="Text body" style:family="paragraph" style:parent-style-name="Standard" style:class="text">
    <style:paragraph-properties fo:margin-top="0in" fo:margin-bottom="0.0972in" style:contextual-spacing="false" fo:line-height="115%"/>
   </style:style>
   <style:style style:name="List" style:family="paragraph" style:parent-style-name="Text_20_body" style:class="list">
-   <style:text-properties style:font-size-asian="12pt" style:font-name-complex="FreeSans1" style:font-family-complex="FreeSans" style:font-family-generic-complex="swiss"/>
+   <style:text-properties style:font-size-asian="12pt" style:font-name-complex="FreeSans" style:font-family-complex="FreeSans" style:font-family-generic-complex="swiss"/>
   </style:style>
   <style:style style:name="Caption" style:family="paragraph" style:parent-style-name="Standard" style:class="extra">
    <style:paragraph-properties fo:margin-top="0.0835in" fo:margin-bottom="0.0835in" style:contextual-spacing="false" text:number-lines="false" text:line-number="0"/>
-   <style:text-properties fo:font-size="12pt" fo:font-style="italic" style:font-size-asian="12pt" style:font-style-asian="italic" style:font-name-complex="FreeSans1" style:font-family-complex="FreeSans" style:font-family-generic-complex="swiss" style:font-size-complex="12pt" style:font-style-complex="italic"/>
+   <style:text-properties fo:font-size="12pt" fo:font-style="italic" style:font-size-asian="12pt" style:font-style-asian="italic" style:font-name-complex="FreeSans" style:font-family-complex="FreeSans" style:font-family-generic-complex="swiss" style:font-size-complex="12pt" style:font-style-complex="italic"/>
   </style:style>
   <style:style style:name="Index" style:family="paragraph" style:parent-style-name="Standard" style:class="index">
    <style:paragraph-properties text:number-lines="false" text:line-number="0"/>
-   <style:text-properties style:font-size-asian="12pt" style:font-name-complex="FreeSans1" style:font-family-complex="FreeSans" style:font-family-generic-complex="swiss"/>
+   <style:text-properties style:font-size-asian="12pt" style:font-name-complex="FreeSans" style:font-family-complex="FreeSans" style:font-family-generic-complex="swiss"/>
   </style:style>
   <style:style style:name="Frame_20_contents" style:display-name="Frame contents" style:family="paragraph" style:parent-style-name="Standard" style:class="extra"/>
   <style:style style:name="GBM_20_Title" style:display-name="GBM Title" style:family="paragraph" style:parent-style-name="Standard">
    <style:paragraph-properties fo:margin-left="0.1201in" fo:margin-right="0.1201in" fo:margin-top="0in" fo:margin-bottom="0.0598in" style:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:text-indent="0in" style:auto-text-indent="false" fo:padding-left="0in" fo:padding-right="0in" fo:padding-top="0.0201in" fo:padding-bottom="0.0201in" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.51pt solid #eba800"/>
-   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Oswald SemiBold" fo:font-family="&apos;Oswald SemiBold&apos;" style:font-style-name="Regular" style:font-pitch="variable" fo:font-weight="600" officeooo:rsid="001d4744" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-scale="110%"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Oswald SemiBold1" fo:font-family="&apos;Oswald SemiBold&apos;" style:font-style-name="Regular" style:font-pitch="variable" fo:font-weight="600" officeooo:rsid="001d4744" style:font-weight-asian="normal" style:font-weight-complex="normal" style:text-scale="110%"/>
   </style:style>
   <style:style style:name="GBM_20_Description" style:display-name="GBM Description" style:family="paragraph" style:parent-style-name="Standard">
    <style:paragraph-properties fo:margin-left="0.1201in" fo:margin-right="0.1201in" fo:margin-top="0in" fo:margin-bottom="0in" style:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:text-indent="0in" style:auto-text-indent="false"/>
-   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Oswald SemiBold" fo:font-family="&apos;Oswald SemiBold&apos;" style:font-style-name="Regular" style:font-pitch="variable" fo:font-size="8pt" fo:font-weight="normal" officeooo:rsid="001d4744" style:font-size-asian="8pt" style:font-weight-asian="normal" style:font-size-complex="8pt" style:font-weight-complex="normal" style:text-scale="110%"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Oswald SemiBold1" fo:font-family="&apos;Oswald SemiBold&apos;" style:font-style-name="Regular" style:font-pitch="variable" fo:font-size="8pt" fo:font-weight="normal" officeooo:rsid="001d4744" style:font-size-asian="8pt" style:font-weight-asian="normal" style:font-size-complex="8pt" style:font-weight-complex="normal" style:text-scale="110%"/>
   </style:style>
   <style:style style:name="GBM_20_Code" style:display-name="GBM Code" style:family="paragraph" style:parent-style-name="GBM_20_Description">
    <style:paragraph-properties fo:text-align="end" style:justify-single-word="false"/>
@@ -282,170 +291,13 @@
  </office:styles>
  <office:automatic-styles>
   <style:style style:name="P1" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:text-properties officeooo:paragraph-rsid="001f4ebe"/>
+   <style:text-properties fo:font-size="10pt" officeooo:rsid="0045da65" officeooo:paragraph-rsid="0045da65" style:font-size-asian="10pt" style:font-size-complex="10pt"/>
   </style:style>
-  <style:style style:name="P2" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:text-properties officeooo:rsid="0022e751" officeooo:paragraph-rsid="0022e751"/>
-  </style:style>
-  <style:style style:name="P3" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:text-properties officeooo:rsid="0029fb4f" officeooo:paragraph-rsid="0029fb4f"/>
-  </style:style>
-  <style:style style:name="P4" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:paragraph-properties>
-    <style:tab-stops>
-     <style:tab-stop style:position="1.2598in" style:type="right"/>
-    </style:tab-stops>
-   </style:paragraph-properties>
-   <style:text-properties officeooo:paragraph-rsid="00323a4d"/>
-  </style:style>
-  <style:style style:name="P5" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:paragraph-properties>
-    <style:tab-stops>
-     <style:tab-stop style:position="1.2598in" style:type="right"/>
-    </style:tab-stops>
-   </style:paragraph-properties>
-   <style:text-properties officeooo:paragraph-rsid="001f4ebe"/>
-  </style:style>
-  <style:style style:name="P6" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:text-properties officeooo:rsid="0032ef49" officeooo:paragraph-rsid="0032ef49"/>
-  </style:style>
-  <style:style style:name="P7" style:family="paragraph" style:parent-style-name="GBM_20_Title">
-   <style:paragraph-properties fo:padding-left="0in" fo:padding-right="0in" fo:padding-top="0.0201in" fo:padding-bottom="0.0201in" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.51pt solid #ff0000"/>
-   <style:text-properties officeooo:rsid="0032ef49" officeooo:paragraph-rsid="0032ef49"/>
-  </style:style>
-  <style:style style:name="P8" style:family="paragraph" style:parent-style-name="GBM_20_Code">
-   <style:text-properties officeooo:rsid="0032ef49" officeooo:paragraph-rsid="0032ef49"/>
-  </style:style>
-  <style:style style:name="P9" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:text-properties fo:font-size="15pt" officeooo:rsid="003acca7" officeooo:paragraph-rsid="003acca7" style:font-size-asian="13.1000003814697pt" style:font-size-complex="15pt"/>
-  </style:style>
-  <style:style style:name="P10" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:text-properties fo:font-size="10pt" officeooo:rsid="0032ef49" officeooo:paragraph-rsid="0032ef49" style:font-size-asian="10pt" style:font-size-complex="10pt"/>
-  </style:style>
-  <style:style style:name="P11" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:text-properties fo:font-size="13pt" officeooo:rsid="003acca7" officeooo:paragraph-rsid="003acca7" style:font-size-asian="11.3500003814697pt" style:font-size-complex="13pt"/>
-  </style:style>
-  <style:style style:name="P12" style:family="paragraph" style:parent-style-name="Standard">
-   <style:paragraph-properties fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0in" style:auto-text-indent="false" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb">
-    <style:tab-stops/>
-   </style:paragraph-properties>
-   <style:text-properties fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" loext:hyphenation-no-caps="false"/>
-  </style:style>
-  <style:style style:name="P13" style:family="paragraph" style:parent-style-name="Standard">
-   <style:paragraph-properties fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0in" style:auto-text-indent="false" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb">
-    <style:tab-stops/>
-   </style:paragraph-properties>
-   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Oswald SemiBold1" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" loext:hyphenation-no-caps="false"/>
-  </style:style>
-  <style:style style:name="P14" style:family="paragraph" style:parent-style-name="Standard">
-   <loext:graphic-properties draw:fill-color="#235b4e"/>
-   <style:paragraph-properties fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0in" style:auto-text-indent="false" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb">
-    <style:tab-stops/>
-   </style:paragraph-properties>
-   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Oswald SemiBold1" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" loext:hyphenation-no-caps="false"/>
-  </style:style>
-  <style:style style:name="P15" style:family="paragraph" style:parent-style-name="Standard">
-   <loext:graphic-properties draw:fill-color="#ff0000"/>
-   <style:paragraph-properties fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0in" style:auto-text-indent="false" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb">
-    <style:tab-stops/>
-   </style:paragraph-properties>
-   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Oswald SemiBold1" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" loext:hyphenation-no-caps="false"/>
-  </style:style>
-  <style:style style:name="P16" style:family="paragraph" style:parent-style-name="Standard">
-   <loext:graphic-properties draw:fill="solid" draw:fill-color="#d2232a"/>
-   <style:paragraph-properties fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0in" style:auto-text-indent="false" fo:background-color="#d2232a" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb">
-    <style:tab-stops/>
-   </style:paragraph-properties>
-   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Oswald SemiBold1" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" loext:hyphenation-no-caps="false"/>
-  </style:style>
-  <style:style style:name="P17" style:family="paragraph" style:parent-style-name="Standard">
-   <loext:graphic-properties draw:fill="solid" draw:fill-color="#ff0000"/>
-   <style:paragraph-properties fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0in" style:auto-text-indent="false" fo:background-color="#ff0000" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb">
-    <style:tab-stops/>
-   </style:paragraph-properties>
-   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Oswald SemiBold1" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" loext:hyphenation-no-caps="false"/>
-  </style:style>
-  <style:style style:name="P18" style:family="paragraph" style:parent-style-name="GBM_20_Title">
-   <style:paragraph-properties fo:padding-left="0in" fo:padding-right="0in" fo:padding-top="0.0201in" fo:padding-bottom="0.0201in" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.51pt solid #ff0000"/>
-   <style:text-properties officeooo:paragraph-rsid="0032ef49"/>
-  </style:style>
-  <style:style style:name="P19" style:family="paragraph" style:parent-style-name="GBM_20_Title">
+  <style:style style:name="P2" style:family="paragraph" style:parent-style-name="GBM_20_Title">
    <style:paragraph-properties fo:padding-left="0in" fo:padding-right="0in" fo:padding-top="0.0201in" fo:padding-bottom="0.0201in" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.51pt solid #ff0000"/>
    <style:text-properties fo:font-size="45pt" officeooo:rsid="0032ef49" officeooo:paragraph-rsid="0032ef49" style:font-size-asian="39.3499984741211pt" style:font-size-complex="45pt"/>
   </style:style>
-  <style:style style:name="P20" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:paragraph-properties fo:margin-top="0.0402in" fo:margin-bottom="0.0402in" style:contextual-spacing="false" fo:text-align="end" style:justify-single-word="false"/>
-   <style:text-properties fo:font-size="6pt" officeooo:paragraph-rsid="0032ef49" style:font-size-asian="6pt" style:font-size-complex="6pt"/>
-  </style:style>
-  <style:style style:name="P21" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <loext:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
-   <style:paragraph-properties fo:margin-top="0.0402in" fo:margin-bottom="0.0402in" style:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:background-color="#ffffff">
-    <style:tab-stops>
-     <style:tab-stop style:position="0.502in"/>
-    </style:tab-stops>
-   </style:paragraph-properties>
-   <style:text-properties fo:color="#2a6099" loext:opacity="100%" fo:font-size="7pt" officeooo:paragraph-rsid="0032ef49" style:font-size-asian="7pt" style:font-size-complex="7pt"/>
-  </style:style>
-  <style:style style:name="P22" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <loext:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
-   <style:paragraph-properties fo:margin-top="0.0402in" fo:margin-bottom="0.0402in" style:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:background-color="#ffffff">
-    <style:tab-stops>
-     <style:tab-stop style:position="0.502in"/>
-    </style:tab-stops>
-   </style:paragraph-properties>
-   <style:text-properties fo:color="#8c8279" loext:opacity="100%" fo:font-size="7pt" officeooo:paragraph-rsid="0032ef49" style:font-size-asian="7pt" style:font-size-complex="7pt"/>
-  </style:style>
-  <style:style style:name="P23" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <loext:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
-   <style:paragraph-properties fo:margin-top="0.0402in" fo:margin-bottom="0.0402in" style:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:background-color="#ffffff">
-    <style:tab-stops>
-     <style:tab-stop style:position="0.502in"/>
-    </style:tab-stops>
-   </style:paragraph-properties>
-   <style:text-properties fo:color="#808080" loext:opacity="100%" fo:font-size="7pt" officeooo:paragraph-rsid="0032ef49" style:font-size-asian="7pt" style:font-size-complex="7pt"/>
-  </style:style>
-  <style:style style:name="P24" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:paragraph-properties fo:margin-top="0.1in" fo:margin-bottom="0in" style:contextual-spacing="false">
-    <style:tab-stops>
-     <style:tab-stop style:position="1.3728in" style:type="right"/>
-    </style:tab-stops>
-   </style:paragraph-properties>
-   <style:text-properties officeooo:paragraph-rsid="0035e7cb"/>
-  </style:style>
-  <style:style style:name="P25" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <loext:graphic-properties draw:fill-gradient-name="gradient" draw:fill-hatch-name="hatch"/>
-   <style:paragraph-properties fo:margin-top="0.05in" fo:margin-bottom="0in" style:contextual-spacing="false">
-    <style:tab-stops>
-     <style:tab-stop style:position="1.3728in" style:type="right"/>
-    </style:tab-stops>
-   </style:paragraph-properties>
-   <style:text-properties officeooo:paragraph-rsid="0035e7cb"/>
-  </style:style>
-  <style:style style:name="P26" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:paragraph-properties fo:text-align="start" style:justify-single-word="false"/>
-   <style:text-properties fo:color="#0070ff" loext:opacity="100%" style:font-name="Oswald Medium" fo:font-size="8pt" fo:font-weight="normal" officeooo:rsid="004106cc" officeooo:paragraph-rsid="004106cc" style:font-size-asian="8pt" style:font-weight-asian="normal" style:font-size-complex="8pt" style:font-weight-complex="normal"/>
-  </style:style>
-  <style:style style:name="P27" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:paragraph-properties fo:text-align="start" style:justify-single-word="false"/>
-   <style:text-properties fo:color="#00a933" loext:opacity="100%" style:font-name="Oswald Medium" fo:font-size="8pt" fo:font-weight="normal" officeooo:rsid="004106cc" officeooo:paragraph-rsid="004106cc" style:font-size-asian="8pt" style:font-weight-asian="normal" style:font-size-complex="8pt" style:font-weight-complex="normal"/>
-  </style:style>
-  <style:style style:name="P28" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:paragraph-properties fo:text-align="start" style:justify-single-word="false"/>
-   <style:text-properties fo:color="#800080" loext:opacity="100%" style:font-name="Oswald Medium" fo:font-size="8pt" fo:font-weight="normal" officeooo:rsid="004106cc" officeooo:paragraph-rsid="004106cc" style:font-size-asian="8pt" style:font-weight-asian="normal" style:font-size-complex="8pt" style:font-weight-complex="normal"/>
-  </style:style>
-  <style:style style:name="P29" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <style:text-properties fo:font-size="10pt" officeooo:rsid="0045da65" officeooo:paragraph-rsid="0045da65" style:font-size-asian="10pt" style:font-size-complex="10pt"/>
-  </style:style>
-  <style:style style:name="P30" style:family="paragraph" style:parent-style-name="GBM_20_Description">
-   <loext:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
-   <style:paragraph-properties fo:margin-top="0.0402in" fo:margin-bottom="0.0402in" style:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:background-color="#ffffff">
-    <style:tab-stops>
-     <style:tab-stop style:position="0.502in"/>
-    </style:tab-stops>
-   </style:paragraph-properties>
-   <style:text-properties fo:color="#808080" loext:opacity="100%" fo:font-size="7pt" officeooo:paragraph-rsid="0032ef49" style:font-size-asian="7pt" style:font-size-complex="7pt"/>
-  </style:style>
-  <style:style style:name="P31" style:family="paragraph" style:parent-style-name="GBM_20_Description">
+  <style:style style:name="P3" style:family="paragraph" style:parent-style-name="GBM_20_Description">
    <loext:graphic-properties draw:fill-gradient-name="gradient" draw:fill-hatch-name="hatch"/>
    <style:paragraph-properties fo:margin-top="0.0201in" fo:margin-bottom="0in" style:contextual-spacing="false">
     <style:tab-stops>
@@ -454,92 +306,97 @@
    </style:paragraph-properties>
    <style:text-properties officeooo:paragraph-rsid="0035e7cb"/>
   </style:style>
-  <style:style style:name="P32" style:family="paragraph" style:parent-style-name="GBM_20_Description">
+  <style:style style:name="P4" style:family="paragraph" style:parent-style-name="GBM_20_Description">
    <style:paragraph-properties fo:text-align="start" style:justify-single-word="false"/>
    <style:text-properties fo:color="#1e6a39" loext:opacity="100%" style:font-name="Oswald Medium" fo:font-size="8pt" fo:font-weight="normal" officeooo:rsid="0045da65" officeooo:paragraph-rsid="0045da65" style:font-size-asian="8pt" style:font-weight-asian="normal" style:font-size-complex="8pt" style:font-weight-complex="normal" style:text-scale="110%"/>
   </style:style>
-  <style:style style:name="P33" style:family="paragraph" style:parent-style-name="GBM_20_Title">
+  <style:style style:name="P5" style:family="paragraph" style:parent-style-name="GBM_20_Description">
+   <loext:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
+   <style:paragraph-properties fo:margin-top="0.0402in" fo:margin-bottom="0.0402in" style:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:background-color="#ffffff">
+    <style:tab-stops>
+     <style:tab-stop style:position="0.502in"/>
+    </style:tab-stops>
+   </style:paragraph-properties>
+   <style:text-properties fo:color="#808080" loext:opacity="100%" fo:font-size="7pt" officeooo:paragraph-rsid="0032ef49" style:font-size-asian="7pt" style:font-size-complex="7pt"/>
+  </style:style>
+  <style:style style:name="P6" style:family="paragraph" style:parent-style-name="Standard">
+   <style:paragraph-properties fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0in" style:auto-text-indent="false" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb">
+    <style:tab-stops/>
+   </style:paragraph-properties>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Oswald SemiBold" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" loext:hyphenation-no-caps="false" loext:hyphenation-no-last-word="false" loext:hyphenation-word-char-count="5" loext:hyphenation-zone="no-limit"/>
+  </style:style>
+  <style:style style:name="P7" style:family="paragraph" style:parent-style-name="Standard">
+   <loext:graphic-properties draw:fill="solid" draw:fill-color="#d2232a"/>
+   <style:paragraph-properties fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:margin-bottom="0in" style:contextual-spacing="false" fo:line-height="100%" fo:text-align="center" style:justify-single-word="false" fo:hyphenation-ladder-count="no-limit" fo:text-indent="0in" style:auto-text-indent="false" fo:background-color="#d2232a" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb">
+    <style:tab-stops/>
+   </style:paragraph-properties>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Oswald SemiBold" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%" fo:hyphenate="false" fo:hyphenation-remain-char-count="2" fo:hyphenation-push-char-count="2" loext:hyphenation-no-caps="false" loext:hyphenation-no-last-word="false" loext:hyphenation-word-char-count="5" loext:hyphenation-zone="no-limit"/>
+  </style:style>
+  <style:style style:name="P8" style:family="paragraph" style:parent-style-name="GBM_20_Description">
+   <style:text-properties fo:font-size="10pt" officeooo:rsid="0045da65" officeooo:paragraph-rsid="0045da65" style:font-size-asian="10pt" style:font-size-complex="10pt"/>
+  </style:style>
+  <style:style style:name="P9" style:family="paragraph" style:parent-style-name="GBM_20_Description">
+   <style:paragraph-properties fo:text-align="start" style:justify-single-word="false"/>
+   <style:text-properties fo:color="#1e6a39" loext:opacity="100%" style:font-name="Oswald Medium" fo:font-size="8pt" fo:font-weight="normal" officeooo:rsid="0045da65" officeooo:paragraph-rsid="0045da65" style:font-size-asian="8pt" style:font-weight-asian="normal" style:font-size-complex="8pt" style:font-weight-complex="normal" style:text-scale="110%"/>
+  </style:style>
+  <style:style style:name="P10" style:family="paragraph" style:parent-style-name="GBM_20_Description">
+   <loext:graphic-properties draw:fill="solid" draw:fill-color="#ffffff"/>
+   <style:paragraph-properties fo:margin-top="0.0402in" fo:margin-bottom="0.0402in" style:contextual-spacing="false" fo:text-align="start" style:justify-single-word="false" fo:background-color="#ffffff">
+    <style:tab-stops>
+     <style:tab-stop style:position="0.502in"/>
+    </style:tab-stops>
+   </style:paragraph-properties>
+   <style:text-properties fo:color="#808080" loext:opacity="100%" fo:font-size="7pt" officeooo:paragraph-rsid="0032ef49" style:font-size-asian="7pt" style:font-size-complex="7pt"/>
+  </style:style>
+  <style:style style:name="P11" style:family="paragraph" style:parent-style-name="GBM_20_Description">
+   <loext:graphic-properties draw:fill-gradient-name="gradient" draw:fill-hatch-name="hatch"/>
+   <style:paragraph-properties fo:margin-top="0.0201in" fo:margin-bottom="0in" style:contextual-spacing="false">
+    <style:tab-stops>
+     <style:tab-stop style:position="1.3728in" style:type="right"/>
+    </style:tab-stops>
+   </style:paragraph-properties>
+   <style:text-properties officeooo:paragraph-rsid="0035e7cb"/>
+  </style:style>
+  <style:style style:name="P12" style:family="paragraph" style:parent-style-name="GBM_20_Title">
    <style:paragraph-properties fo:padding-left="0in" fo:padding-right="0in" fo:padding-top="0.0201in" fo:padding-bottom="0.0201in" fo:border-left="none" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.51pt solid #ff0000"/>
    <style:text-properties fo:font-size="45pt" officeooo:rsid="0032ef49" officeooo:paragraph-rsid="0032ef49" style:font-size-asian="39.3499984741211pt" style:font-size-complex="45pt"/>
   </style:style>
-  <style:style style:name="P34" style:family="paragraph">
+  <style:style style:name="P13" style:family="paragraph">
    <style:paragraph-properties fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:margin-bottom="0in" fo:line-height="100%" fo:text-align="center" fo:text-indent="0in" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb">
     <style:tab-stops/>
    </style:paragraph-properties>
-   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Oswald SemiBold1" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%" fo:hyphenate="false"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Oswald SemiBold" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%" fo:hyphenate="false"/>
   </style:style>
-  <style:style style:name="P35" style:family="paragraph">
+  <style:style style:name="P14" style:family="paragraph">
    <loext:graphic-properties draw:fill="solid" draw:fill-color="#d2232a"/>
    <style:paragraph-properties fo:margin-left="0in" fo:margin-right="0in" fo:margin-top="0in" fo:margin-bottom="0in" fo:line-height="100%" fo:text-align="center" fo:text-indent="0in" style:text-autospace="ideograph-alpha" style:punctuation-wrap="hanging" style:line-break="strict" style:writing-mode="lr-tb">
     <style:tab-stops/>
    </style:paragraph-properties>
-   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Oswald SemiBold1" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%" fo:hyphenate="false"/>
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%" loext:color-lum-mod="100%" loext:color-lum-off="0%" style:font-name="Oswald SemiBold" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%" fo:hyphenate="false"/>
   </style:style>
   <style:style style:name="T1" style:family="text">
-   <style:text-properties officeooo:rsid="001ea8bf"/>
-  </style:style>
-  <style:style style:name="T2" style:family="text">
-   <style:text-properties officeooo:rsid="002468ad"/>
-  </style:style>
-  <style:style style:name="T3" style:family="text">
-   <style:text-properties officeooo:rsid="00265165"/>
-  </style:style>
-  <style:style style:name="T4" style:family="text">
-   <style:text-properties officeooo:rsid="0029fb4f"/>
-  </style:style>
-  <style:style style:name="T5" style:family="text">
-   <style:text-properties officeooo:rsid="002ddc7e"/>
-  </style:style>
-  <style:style style:name="T6" style:family="text">
-   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Oswald SemiBold1" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%"/>
-  </style:style>
-  <style:style style:name="T7" style:family="text">
-   <style:text-properties fo:color="#808080" loext:opacity="100%" officeooo:rsid="001ea8bf"/>
-  </style:style>
-  <style:style style:name="T8" style:family="text">
-   <style:text-properties fo:color="#808080" loext:opacity="100%" style:font-name="Oswald" officeooo:rsid="00325fa3"/>
-  </style:style>
-  <style:style style:name="T9" style:family="text">
-   <style:text-properties fo:color="#808080" loext:opacity="100%" style:font-name="Oswald" officeooo:rsid="0035e7cb"/>
-  </style:style>
-  <style:style style:name="T10" style:family="text">
    <style:text-properties fo:color="#808080" loext:opacity="100%" style:font-name="Oswald" fo:font-size="6pt" officeooo:rsid="00325fa3" style:font-size-asian="6pt" style:font-size-complex="6pt"/>
   </style:style>
-  <style:style style:name="T11" style:family="text">
-   <style:text-properties fo:color="#808080" loext:opacity="100%" style:font-name="Oswald" fo:font-size="6pt" officeooo:rsid="0035e7cb" style:font-size-asian="6pt" style:font-size-complex="6pt"/>
-  </style:style>
-  <style:style style:name="T12" style:family="text">
-   <style:text-properties fo:color="#808080" loext:opacity="100%" style:font-name="Oswald" fo:font-size="6pt" officeooo:rsid="00445153" style:font-size-asian="6pt" style:font-size-complex="6pt"/>
-  </style:style>
-  <style:style style:name="T13" style:family="text">
+  <style:style style:name="T2" style:family="text">
    <style:text-properties fo:color="#808080" loext:opacity="100%" style:font-name="Oswald" fo:font-size="6pt" officeooo:rsid="0045da65" style:font-size-asian="6pt" style:font-size-complex="6pt"/>
   </style:style>
-  <style:style style:name="T14" style:family="text">
+  <style:style style:name="T3" style:family="text">
    <style:text-properties officeooo:rsid="00325fa3"/>
   </style:style>
-  <style:style style:name="T15" style:family="text">
-   <style:text-properties officeooo:rsid="0032ef49"/>
-  </style:style>
-  <style:style style:name="T16" style:family="text">
+  <style:style style:name="T4" style:family="text">
    <style:text-properties style:font-name="Oswald" officeooo:rsid="0032ef49"/>
   </style:style>
-  <style:style style:name="T17" style:family="text">
+  <style:style style:name="T5" style:family="text">
    <style:text-properties style:font-name="Oswald" officeooo:rsid="0035e7cb"/>
   </style:style>
-  <style:style style:name="T18" style:family="text">
-   <style:text-properties style:font-name="Oswald SemiBold1" fo:font-size="6pt" fo:font-weight="normal" officeooo:rsid="0035e7cb" style:font-size-asian="6pt" style:font-weight-asian="normal" style:font-size-complex="6pt" style:font-weight-complex="normal"/>
+  <style:style style:name="T6" style:family="text">
+   <style:text-properties style:font-name="Oswald SemiBold" fo:font-size="6pt" fo:font-weight="normal" officeooo:rsid="0035e7cb" style:font-size-asian="6pt" style:font-weight-asian="normal" style:font-size-complex="6pt" style:font-weight-complex="normal"/>
   </style:style>
-  <style:style style:name="T19" style:family="text">
-   <style:text-properties fo:color="#8c8279" loext:opacity="100%" style:font-name="Oswald" officeooo:rsid="0035e7cb"/>
-  </style:style>
-  <style:style style:name="T20" style:family="text">
-   <style:text-properties fo:color="#8c8279" loext:opacity="100%" style:font-name="Oswald" officeooo:rsid="00325fa3"/>
-  </style:style>
-  <style:style style:name="T21" style:family="text">
+  <style:style style:name="T7" style:family="text">
    <style:text-properties officeooo:rsid="004106cc"/>
   </style:style>
-  <style:style style:name="T22" style:family="text">
-   <style:text-properties officeooo:rsid="00445153" style:text-scale="110%"/>
+  <style:style style:name="T8" style:family="text">
+   <style:text-properties fo:color="#ffffff" loext:opacity="100%" style:font-name="Oswald SemiBold" fo:font-size="9pt" fo:letter-spacing="normal" style:font-size-asian="9pt" style:font-size-complex="9pt" style:text-scale="110%"/>
   </style:style>
   <style:style style:name="fr1" style:family="graphic" style:parent-style-name="Labels">
    <style:graphic-properties style:vertical-pos="from-top" style:vertical-rel="page" style:horizontal-pos="from-left" style:horizontal-rel="page"/>
@@ -561,7 +418,7 @@
    </style:section-properties>
   </style:style>
   <style:style style:name="gr1" style:family="graphic">
-   <style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#d2232a" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="top" draw:auto-grow-height="false" fo:min-height="0.3598in" fo:min-width="1.7in" fo:padding-top="0.0402in" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="paragraph" style:horizontal-pos="center" style:horizontal-rel="paragraph" draw:wrap-influence-on-position="once-concurrent" loext:allow-overlap="true" style:flow-with-text="false"/>
+   <style:graphic-properties draw:stroke="none" draw:fill="solid" draw:fill-color="#d2232a" draw:textarea-horizontal-align="justify" draw:textarea-vertical-align="top" draw:auto-grow-height="false" fo:min-height="0.3598in" fo:min-width="1.7in" fo:padding-top="0.0402in" style:writing-mode="lr-tb" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="paragraph" style:horizontal-pos="center" style:horizontal-rel="paragraph" draw:wrap-influence-on-position="once-concurrent" loext:allow-overlap="true" style:flow-with-text="false"/>
    <style:paragraph-properties style:writing-mode="lr-tb"/>
   </style:style>
   <style:page-layout style:name="pm1">
@@ -589,7 +446,7 @@
    </text:sequence-decls><draw:frame draw:style-name="fr1" draw:name="Frame1" text:anchor-type="page" text:anchor-page-number="1" svg:x="0.6299in" svg:y="1in" svg:width="1.5in" svg:height="2.75in" draw:z-index="0">
     <draw:text-box>
      <text:section text:style-name="Sect2" text:name="MasterLabel">
-      <text:p text:style-name="P19"><draw:frame draw:style-name="fr2" draw:name="Image11" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="12"><draw:image draw:mime-type="image/png">
+      <text:p text:style-name="P2"><draw:frame draw:style-name="fr2" draw:name="Image11" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="12"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAAf4AAAH+CAIAAADyDftyAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -1221,8 +1078,8 @@
           QmCC
          </office:binary-data>
         </draw:image>
-       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="10" draw:name="Shape1" draw:style-name="gr1" draw:text-style-name="P35" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
-        <text:p text:style-name="P34"><text:span text:style-name="T6">www.iascaled.com</text:span></text:p>
+       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="10" draw:name="Shape1" draw:style-name="gr1" draw:text-style-name="P14" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
+        <text:p text:style-name="P13"><text:span text:style-name="T8">www.iascaled.com</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
        </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image1" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="11"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAA7oAAAEECAIAAACJOd8WAAAKN2lDQ1BzUkdCIElFQzYxOTY2
@@ -1972,17 +1829,17 @@
          </office:binary-data>
         </draw:image>
        </draw:frame></text:p>
-      <text:p text:style-name="P29">CTC Bell</text:p>
-      <text:p text:style-name="P32">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
-      <text:p text:style-name="P23"><text:span text:style-name="T16">Red Wire: 5V to 24V<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T17">Activate</text:span><text:span text:style-name="T18"><text:line-break/></text:span></text:p>
-      <text:p text:style-name="P31"><text:span text:style-name="T10">SND-</text:span><text:span text:style-name="T13">CTCBELL</text:span><text:span text:style-name="T14"><text:tab/>$</text:span><text:span text:style-name="T21">22</text:span><text:span text:style-name="T14">.00</text:span></text:p>
+      <text:p text:style-name="P1">CTC Bell</text:p>
+      <text:p text:style-name="P4">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
+      <text:p text:style-name="P5"><text:span text:style-name="T4">Red Wire: 5V to 24V (DC only)<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T5">Activate</text:span><text:span text:style-name="T6"><text:line-break/></text:span></text:p>
+      <text:p text:style-name="P3"><text:span text:style-name="T1">SND-</text:span><text:span text:style-name="T2">CTCBELL</text:span><text:span text:style-name="T3"><text:tab/>$</text:span><text:span text:style-name="T7">22</text:span><text:span text:style-name="T3">.00</text:span></text:p>
      </text:section>
     </draw:text-box>
    </draw:frame><draw:frame draw:style-name="fr1" draw:name="Frame2" text:anchor-type="page" text:anchor-page-number="1" svg:x="2.6898in" svg:y="1in" svg:width="1.5in" svg:height="2.75in" draw:z-index="1">
     <draw:text-box>
      <text:section text:style-name="Sect1" text:name="Section1" text:protected="true">
       <text:section-source text:section-name="MasterLabel"/>
-      <text:p text:style-name="P19"><draw:frame draw:style-name="fr2" draw:name="Image12" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="39"><draw:image draw:mime-type="image/png">
+      <text:p text:style-name="P2"><draw:frame draw:style-name="fr2" draw:name="Image11 Copy 1" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="39"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAAf4AAAH+CAIAAADyDftyAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -2614,10 +2471,10 @@
           QmCC
          </office:binary-data>
         </draw:image>
-       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="37" draw:name="Shape 9" draw:style-name="gr1" draw:text-style-name="P35" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
-        <text:p text:style-name="P34"><text:span text:style-name="T6">www.iascaled.com</text:span></text:p>
+       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="37" draw:name="Shape 9" draw:style-name="gr1" draw:text-style-name="P14" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
+        <text:p text:style-name="P13"><text:span text:style-name="T8">www.iascaled.com</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
-       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image2" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="38"><draw:image draw:mime-type="image/png">
+       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image1 Copy 1" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="38"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAA7oAAAEECAIAAACJOd8WAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -3365,17 +3222,17 @@
          </office:binary-data>
         </draw:image>
        </draw:frame></text:p>
-      <text:p text:style-name="P29">CTC Bell</text:p>
-      <text:p text:style-name="P32">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
-      <text:p text:style-name="P23"><text:span text:style-name="T16">Red Wire: 5V to 24V<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T17">Activate</text:span><text:span text:style-name="T18"><text:line-break/></text:span></text:p>
-      <text:p text:style-name="P31"><text:span text:style-name="T10">SND-</text:span><text:span text:style-name="T13">CTCBELL</text:span><text:span text:style-name="T14"><text:tab/>$</text:span><text:span text:style-name="T21">22</text:span><text:span text:style-name="T14">.00</text:span></text:p>
+      <text:p text:style-name="P1">CTC Bell</text:p>
+      <text:p text:style-name="P4">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
+      <text:p text:style-name="P5"><text:span text:style-name="T4">Red Wire: 5V to 24V (DC only)<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T5">Activate</text:span><text:span text:style-name="T6"><text:line-break/></text:span></text:p>
+      <text:p text:style-name="P3"><text:span text:style-name="T1">SND-</text:span><text:span text:style-name="T2">CTCBELL</text:span><text:span text:style-name="T3"><text:tab/>$</text:span><text:span text:style-name="T7">22</text:span><text:span text:style-name="T3">.00</text:span></text:p>
      </text:section>
     </draw:text-box>
    </draw:frame><draw:frame draw:style-name="fr1" draw:name="Frame3" text:anchor-type="page" text:anchor-page-number="1" svg:x="4.7492in" svg:y="1in" svg:width="1.5in" svg:height="2.75in" draw:z-index="2">
     <draw:text-box>
      <text:section text:style-name="Sect1" text:name="Section2" text:protected="true">
       <text:section-source text:section-name="MasterLabel"/>
-      <text:p text:style-name="P19"><draw:frame draw:style-name="fr2" draw:name="Image13" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="36"><draw:image draw:mime-type="image/png">
+      <text:p text:style-name="P2"><draw:frame draw:style-name="fr2" draw:name="Image11 Copy 2" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="36"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAAf4AAAH+CAIAAADyDftyAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -4007,10 +3864,10 @@
           QmCC
          </office:binary-data>
         </draw:image>
-       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="34" draw:name="Shape 8" draw:style-name="gr1" draw:text-style-name="P35" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
-        <text:p text:style-name="P34"><text:span text:style-name="T6">www.iascaled.com</text:span></text:p>
+       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="34" draw:name="Shape 8" draw:style-name="gr1" draw:text-style-name="P14" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
+        <text:p text:style-name="P13"><text:span text:style-name="T8">www.iascaled.com</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
-       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image3" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="35"><draw:image draw:mime-type="image/png">
+       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image1 Copy 2" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="35"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAA7oAAAEECAIAAACJOd8WAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -4758,17 +4615,17 @@
          </office:binary-data>
         </draw:image>
        </draw:frame></text:p>
-      <text:p text:style-name="P29">CTC Bell</text:p>
-      <text:p text:style-name="P32">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
-      <text:p text:style-name="P23"><text:span text:style-name="T16">Red Wire: 5V to 24V<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T17">Activate</text:span><text:span text:style-name="T18"><text:line-break/></text:span></text:p>
-      <text:p text:style-name="P31"><text:span text:style-name="T10">SND-</text:span><text:span text:style-name="T13">CTCBELL</text:span><text:span text:style-name="T14"><text:tab/>$</text:span><text:span text:style-name="T21">22</text:span><text:span text:style-name="T14">.00</text:span></text:p>
+      <text:p text:style-name="P1">CTC Bell</text:p>
+      <text:p text:style-name="P4">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
+      <text:p text:style-name="P5"><text:span text:style-name="T4">Red Wire: 5V to 24V (DC only)<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T5">Activate</text:span><text:span text:style-name="T6"><text:line-break/></text:span></text:p>
+      <text:p text:style-name="P3"><text:span text:style-name="T1">SND-</text:span><text:span text:style-name="T2">CTCBELL</text:span><text:span text:style-name="T3"><text:tab/>$</text:span><text:span text:style-name="T7">22</text:span><text:span text:style-name="T3">.00</text:span></text:p>
      </text:section>
     </draw:text-box>
    </draw:frame><draw:frame draw:style-name="fr1" draw:name="Frame4" text:anchor-type="page" text:anchor-page-number="1" svg:x="6.8091in" svg:y="1in" svg:width="1.5in" svg:height="2.75in" draw:z-index="3">
     <draw:text-box>
      <text:section text:style-name="Sect1" text:name="Section3" text:protected="true">
       <text:section-source text:section-name="MasterLabel"/>
-      <text:p text:style-name="P19"><draw:frame draw:style-name="fr2" draw:name="Image14" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="33"><draw:image draw:mime-type="image/png">
+      <text:p text:style-name="P2"><draw:frame draw:style-name="fr2" draw:name="Image11 Copy 3" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="33"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAAf4AAAH+CAIAAADyDftyAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -5400,10 +5257,10 @@
           QmCC
          </office:binary-data>
         </draw:image>
-       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="31" draw:name="Shape 7" draw:style-name="gr1" draw:text-style-name="P35" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
-        <text:p text:style-name="P34"><text:span text:style-name="T6">www.iascaled.com</text:span></text:p>
+       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="31" draw:name="Shape 7" draw:style-name="gr1" draw:text-style-name="P14" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
+        <text:p text:style-name="P13"><text:span text:style-name="T8">www.iascaled.com</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
-       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image4" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="32"><draw:image draw:mime-type="image/png">
+       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image1 Copy 3" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="32"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAA7oAAAEECAIAAACJOd8WAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -6151,17 +6008,17 @@
          </office:binary-data>
         </draw:image>
        </draw:frame></text:p>
-      <text:p text:style-name="P29">CTC Bell</text:p>
-      <text:p text:style-name="P32">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
-      <text:p text:style-name="P23"><text:span text:style-name="T16">Red Wire: 5V to 24V<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T17">Activate</text:span><text:span text:style-name="T18"><text:line-break/></text:span></text:p>
-      <text:p text:style-name="P31"><text:span text:style-name="T10">SND-</text:span><text:span text:style-name="T13">CTCBELL</text:span><text:span text:style-name="T14"><text:tab/>$</text:span><text:span text:style-name="T21">22</text:span><text:span text:style-name="T14">.00</text:span></text:p>
+      <text:p text:style-name="P1">CTC Bell</text:p>
+      <text:p text:style-name="P4">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
+      <text:p text:style-name="P5"><text:span text:style-name="T4">Red Wire: 5V to 24V (DC only)<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T5">Activate</text:span><text:span text:style-name="T6"><text:line-break/></text:span></text:p>
+      <text:p text:style-name="P3"><text:span text:style-name="T1">SND-</text:span><text:span text:style-name="T2">CTCBELL</text:span><text:span text:style-name="T3"><text:tab/>$</text:span><text:span text:style-name="T7">22</text:span><text:span text:style-name="T3">.00</text:span></text:p>
      </text:section>
     </draw:text-box>
    </draw:frame><draw:frame draw:style-name="fr1" draw:name="Frame5" text:anchor-type="page" text:anchor-page-number="1" svg:x="8.8689in" svg:y="1in" svg:width="1.5in" svg:height="2.75in" draw:z-index="4">
     <draw:text-box>
      <text:section text:style-name="Sect1" text:name="Section4" text:protected="true">
       <text:section-source text:section-name="MasterLabel"/>
-      <text:p text:style-name="P19"><draw:frame draw:style-name="fr2" draw:name="Image15" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="30"><draw:image draw:mime-type="image/png">
+      <text:p text:style-name="P2"><draw:frame draw:style-name="fr2" draw:name="Image11 Copy 4" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="30"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAAf4AAAH+CAIAAADyDftyAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -6793,10 +6650,10 @@
           QmCC
          </office:binary-data>
         </draw:image>
-       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="28" draw:name="Shape 6" draw:style-name="gr1" draw:text-style-name="P35" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
-        <text:p text:style-name="P34"><text:span text:style-name="T6">www.iascaled.com</text:span></text:p>
+       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="28" draw:name="Shape 6" draw:style-name="gr1" draw:text-style-name="P14" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
+        <text:p text:style-name="P13"><text:span text:style-name="T8">www.iascaled.com</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
-       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image5" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="29"><draw:image draw:mime-type="image/png">
+       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image1 Copy 4" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="29"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAA7oAAAEECAIAAACJOd8WAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -7544,17 +7401,17 @@
          </office:binary-data>
         </draw:image>
        </draw:frame></text:p>
-      <text:p text:style-name="P29">CTC Bell</text:p>
-      <text:p text:style-name="P32">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
-      <text:p text:style-name="P23"><text:span text:style-name="T16">Red Wire: 5V to 24V<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T17">Activate</text:span><text:span text:style-name="T18"><text:line-break/></text:span></text:p>
-      <text:p text:style-name="P31"><text:span text:style-name="T10">SND-</text:span><text:span text:style-name="T13">CTCBELL</text:span><text:span text:style-name="T14"><text:tab/>$</text:span><text:span text:style-name="T21">22</text:span><text:span text:style-name="T14">.00</text:span></text:p>
+      <text:p text:style-name="P1">CTC Bell</text:p>
+      <text:p text:style-name="P4">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
+      <text:p text:style-name="P5"><text:span text:style-name="T4">Red Wire: 5V to 24V (DC only)<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T5">Activate</text:span><text:span text:style-name="T6"><text:line-break/></text:span></text:p>
+      <text:p text:style-name="P3"><text:span text:style-name="T1">SND-</text:span><text:span text:style-name="T2">CTCBELL</text:span><text:span text:style-name="T3"><text:tab/>$</text:span><text:span text:style-name="T7">22</text:span><text:span text:style-name="T3">.00</text:span></text:p>
      </text:section>
     </draw:text-box>
    </draw:frame><draw:frame draw:style-name="fr1" draw:name="Frame6" text:anchor-type="page" text:anchor-page-number="1" svg:x="0.6299in" svg:y="4.75in" svg:width="1.5in" svg:height="2.75in" draw:z-index="5">
     <draw:text-box>
      <text:section text:style-name="Sect1" text:name="Section5" text:protected="true">
       <text:section-source text:section-name="MasterLabel"/>
-      <text:p text:style-name="P19"><draw:frame draw:style-name="fr2" draw:name="Image16" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="27"><draw:image draw:mime-type="image/png">
+      <text:p text:style-name="P2"><draw:frame draw:style-name="fr2" draw:name="Image11 Copy 5" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="27"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAAf4AAAH+CAIAAADyDftyAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -8186,10 +8043,10 @@
           QmCC
          </office:binary-data>
         </draw:image>
-       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="25" draw:name="Shape 5" draw:style-name="gr1" draw:text-style-name="P35" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
-        <text:p text:style-name="P34"><text:span text:style-name="T6">www.iascaled.com</text:span></text:p>
+       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="25" draw:name="Shape 5" draw:style-name="gr1" draw:text-style-name="P14" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
+        <text:p text:style-name="P13"><text:span text:style-name="T8">www.iascaled.com</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
-       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image6" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="26"><draw:image draw:mime-type="image/png">
+       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image1 Copy 5" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="26"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAA7oAAAEECAIAAACJOd8WAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -8937,17 +8794,17 @@
          </office:binary-data>
         </draw:image>
        </draw:frame></text:p>
-      <text:p text:style-name="P29">CTC Bell</text:p>
-      <text:p text:style-name="P32">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
-      <text:p text:style-name="P23"><text:span text:style-name="T16">Red Wire: 5V to 24V<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T17">Activate</text:span><text:span text:style-name="T18"><text:line-break/></text:span></text:p>
-      <text:p text:style-name="P31"><text:span text:style-name="T10">SND-</text:span><text:span text:style-name="T13">CTCBELL</text:span><text:span text:style-name="T14"><text:tab/>$</text:span><text:span text:style-name="T21">22</text:span><text:span text:style-name="T14">.00</text:span></text:p>
+      <text:p text:style-name="P1">CTC Bell</text:p>
+      <text:p text:style-name="P4">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
+      <text:p text:style-name="P5"><text:span text:style-name="T4">Red Wire: 5V to 24V (DC only)<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T5">Activate</text:span><text:span text:style-name="T6"><text:line-break/></text:span></text:p>
+      <text:p text:style-name="P3"><text:span text:style-name="T1">SND-</text:span><text:span text:style-name="T2">CTCBELL</text:span><text:span text:style-name="T3"><text:tab/>$</text:span><text:span text:style-name="T7">22</text:span><text:span text:style-name="T3">.00</text:span></text:p>
      </text:section>
     </draw:text-box>
    </draw:frame><draw:frame draw:style-name="fr1" draw:name="Frame7" text:anchor-type="page" text:anchor-page-number="1" svg:x="2.6898in" svg:y="4.75in" svg:width="1.5in" svg:height="2.75in" draw:z-index="6">
     <draw:text-box>
      <text:section text:style-name="Sect1" text:name="Section6" text:protected="true">
       <text:section-source text:section-name="MasterLabel"/>
-      <text:p text:style-name="P19"><draw:frame draw:style-name="fr2" draw:name="Image17" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="24"><draw:image draw:mime-type="image/png">
+      <text:p text:style-name="P2"><draw:frame draw:style-name="fr2" draw:name="Image11 Copy 6" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="24"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAAf4AAAH+CAIAAADyDftyAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -9579,10 +9436,10 @@
           QmCC
          </office:binary-data>
         </draw:image>
-       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="22" draw:name="Shape 4" draw:style-name="gr1" draw:text-style-name="P35" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
-        <text:p text:style-name="P34"><text:span text:style-name="T6">www.iascaled.com</text:span></text:p>
+       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="22" draw:name="Shape 4" draw:style-name="gr1" draw:text-style-name="P14" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
+        <text:p text:style-name="P13"><text:span text:style-name="T8">www.iascaled.com</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
-       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image7" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="23"><draw:image draw:mime-type="image/png">
+       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image1 Copy 6" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="23"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAA7oAAAEECAIAAACJOd8WAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -10330,17 +10187,17 @@
          </office:binary-data>
         </draw:image>
        </draw:frame></text:p>
-      <text:p text:style-name="P29">CTC Bell</text:p>
-      <text:p text:style-name="P32">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
-      <text:p text:style-name="P23"><text:span text:style-name="T16">Red Wire: 5V to 24V<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T17">Activate</text:span><text:span text:style-name="T18"><text:line-break/></text:span></text:p>
-      <text:p text:style-name="P31"><text:span text:style-name="T10">SND-</text:span><text:span text:style-name="T13">CTCBELL</text:span><text:span text:style-name="T14"><text:tab/>$</text:span><text:span text:style-name="T21">22</text:span><text:span text:style-name="T14">.00</text:span></text:p>
+      <text:p text:style-name="P1">CTC Bell</text:p>
+      <text:p text:style-name="P4">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
+      <text:p text:style-name="P5"><text:span text:style-name="T4">Red Wire: 5V to 24V (DC only)<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T5">Activate</text:span><text:span text:style-name="T6"><text:line-break/></text:span></text:p>
+      <text:p text:style-name="P3"><text:span text:style-name="T1">SND-</text:span><text:span text:style-name="T2">CTCBELL</text:span><text:span text:style-name="T3"><text:tab/>$</text:span><text:span text:style-name="T7">22</text:span><text:span text:style-name="T3">.00</text:span></text:p>
      </text:section>
     </draw:text-box>
    </draw:frame><draw:frame draw:style-name="fr1" draw:name="Frame8" text:anchor-type="page" text:anchor-page-number="1" svg:x="4.7492in" svg:y="4.75in" svg:width="1.5in" svg:height="2.75in" draw:z-index="7">
     <draw:text-box>
      <text:section text:style-name="Sect1" text:name="Section7" text:protected="true">
       <text:section-source text:section-name="MasterLabel"/>
-      <text:p text:style-name="P19"><draw:frame draw:style-name="fr2" draw:name="Image18" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="21"><draw:image draw:mime-type="image/png">
+      <text:p text:style-name="P2"><draw:frame draw:style-name="fr2" draw:name="Image11 Copy 7" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="21"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAAf4AAAH+CAIAAADyDftyAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -10972,10 +10829,10 @@
           QmCC
          </office:binary-data>
         </draw:image>
-       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="19" draw:name="Shape 3" draw:style-name="gr1" draw:text-style-name="P35" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
-        <text:p text:style-name="P34"><text:span text:style-name="T6">www.iascaled.com</text:span></text:p>
+       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="19" draw:name="Shape 3" draw:style-name="gr1" draw:text-style-name="P14" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
+        <text:p text:style-name="P13"><text:span text:style-name="T8">www.iascaled.com</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
-       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image8" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="20"><draw:image draw:mime-type="image/png">
+       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image1 Copy 7" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="20"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAA7oAAAEECAIAAACJOd8WAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -11723,17 +11580,17 @@
          </office:binary-data>
         </draw:image>
        </draw:frame></text:p>
-      <text:p text:style-name="P29">CTC Bell</text:p>
-      <text:p text:style-name="P32">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
-      <text:p text:style-name="P23"><text:span text:style-name="T16">Red Wire: 5V to 24V<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T17">Activate</text:span><text:span text:style-name="T18"><text:line-break/></text:span></text:p>
-      <text:p text:style-name="P31"><text:span text:style-name="T10">SND-</text:span><text:span text:style-name="T13">CTCBELL</text:span><text:span text:style-name="T14"><text:tab/>$</text:span><text:span text:style-name="T21">22</text:span><text:span text:style-name="T14">.00</text:span></text:p>
+      <text:p text:style-name="P1">CTC Bell</text:p>
+      <text:p text:style-name="P4">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
+      <text:p text:style-name="P5"><text:span text:style-name="T4">Red Wire: 5V to 24V (DC only)<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T5">Activate</text:span><text:span text:style-name="T6"><text:line-break/></text:span></text:p>
+      <text:p text:style-name="P3"><text:span text:style-name="T1">SND-</text:span><text:span text:style-name="T2">CTCBELL</text:span><text:span text:style-name="T3"><text:tab/>$</text:span><text:span text:style-name="T7">22</text:span><text:span text:style-name="T3">.00</text:span></text:p>
      </text:section>
     </draw:text-box>
    </draw:frame><draw:frame draw:style-name="fr1" draw:name="Frame9" text:anchor-type="page" text:anchor-page-number="1" svg:x="6.8091in" svg:y="4.75in" svg:width="1.5in" svg:height="2.75in" draw:z-index="8">
     <draw:text-box>
      <text:section text:style-name="Sect1" text:name="Section8" text:protected="true">
       <text:section-source text:section-name="MasterLabel"/>
-      <text:p text:style-name="P19"><draw:frame draw:style-name="fr2" draw:name="Image19" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="18"><draw:image draw:mime-type="image/png">
+      <text:p text:style-name="P2"><draw:frame draw:style-name="fr2" draw:name="Image11 Copy 8" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="18"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAAf4AAAH+CAIAAADyDftyAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -12365,10 +12222,10 @@
           QmCC
          </office:binary-data>
         </draw:image>
-       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="16" draw:name="Shape 2" draw:style-name="gr1" draw:text-style-name="P35" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
-        <text:p text:style-name="P34"><text:span text:style-name="T6">www.iascaled.com</text:span></text:p>
+       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="16" draw:name="Shape 2" draw:style-name="gr1" draw:text-style-name="P14" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
+        <text:p text:style-name="P13"><text:span text:style-name="T8">www.iascaled.com</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
-       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image9" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="17"><draw:image draw:mime-type="image/png">
+       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image1 Copy 8" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="17"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAA7oAAAEECAIAAACJOd8WAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -13116,17 +12973,17 @@
          </office:binary-data>
         </draw:image>
        </draw:frame></text:p>
-      <text:p text:style-name="P29">CTC Bell</text:p>
-      <text:p text:style-name="P32">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
-      <text:p text:style-name="P23"><text:span text:style-name="T16">Red Wire: 5V to 24V<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T17">Activate</text:span><text:span text:style-name="T18"><text:line-break/></text:span></text:p>
-      <text:p text:style-name="P31"><text:span text:style-name="T10">SND-</text:span><text:span text:style-name="T13">CTCBELL</text:span><text:span text:style-name="T14"><text:tab/>$</text:span><text:span text:style-name="T21">22</text:span><text:span text:style-name="T14">.00</text:span></text:p>
+      <text:p text:style-name="P1">CTC Bell</text:p>
+      <text:p text:style-name="P4">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
+      <text:p text:style-name="P5"><text:span text:style-name="T4">Red Wire: 5V to 24V (DC only)<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T5">Activate</text:span><text:span text:style-name="T6"><text:line-break/></text:span></text:p>
+      <text:p text:style-name="P3"><text:span text:style-name="T1">SND-</text:span><text:span text:style-name="T2">CTCBELL</text:span><text:span text:style-name="T3"><text:tab/>$</text:span><text:span text:style-name="T7">22</text:span><text:span text:style-name="T3">.00</text:span></text:p>
      </text:section>
     </draw:text-box>
    </draw:frame><draw:frame draw:style-name="fr1" draw:name="Frame10" text:anchor-type="page" text:anchor-page-number="1" svg:x="8.8689in" svg:y="4.75in" svg:width="1.5in" svg:height="2.75in" draw:z-index="9">
     <draw:text-box>
      <text:section text:style-name="Sect1" text:name="Section9" text:protected="true">
       <text:section-source text:section-name="MasterLabel"/>
-      <text:p text:style-name="P19"><draw:frame draw:style-name="fr2" draw:name="Image20" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="15"><draw:image draw:mime-type="image/png">
+      <text:p text:style-name="P2"><draw:frame draw:style-name="fr2" draw:name="Image11 Copy 9" text:anchor-type="paragraph" svg:x="0.8937in" svg:y="0.0827in" svg:width="0.4799in" svg:height="0.4799in" draw:z-index="15"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAAf4AAAH+CAIAAADyDftyAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -13758,10 +13615,10 @@
           QmCC
          </office:binary-data>
         </draw:image>
-       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="13" draw:name="Shape 1" draw:style-name="gr1" draw:text-style-name="P35" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
-        <text:p text:style-name="P34"><text:span text:style-name="T6">www.iascaled.com</text:span></text:p>
+       </draw:frame><draw:custom-shape text:anchor-type="paragraph" draw:z-index="13" draw:name="Shape 1" draw:style-name="gr1" draw:text-style-name="P14" svg:width="1.7004in" svg:height="0.4004in" svg:x="-0.1in" svg:y="2.4335in">
+        <text:p text:style-name="P13"><text:span text:style-name="T8">www.iascaled.com</text:span></text:p>
         <draw:enhanced-geometry svg:viewBox="0 0 21600 21600" draw:mirror-horizontal="false" draw:mirror-vertical="false" draw:type="rectangle" draw:enhanced-path="M 0 0 L 21600 0 21600 21600 0 21600 0 0 Z N"/>
-       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image10" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="14"><draw:image draw:mime-type="image/png">
+       </draw:custom-shape><draw:frame draw:style-name="fr3" draw:name="Image1 Copy 9" text:anchor-type="paragraph" svg:x="0.1in" svg:y="0.5366in" svg:width="1.3in" svg:height="0.35in" draw:z-index="14"><draw:image draw:mime-type="image/png">
          <office:binary-data>iVBORw0KGgoAAAANSUhEUgAAA7oAAAEECAIAAACJOd8WAAAKN2lDQ1BzUkdCIElFQzYxOTY2
           LTIuMQAAeJydlndUU9kWh8+9N71QkhCKlNBraFICSA29SJEuKjEJEErAkAAiNkRUcERRkaYI
           MijggKNDkbEiioUBUbHrBBlE1HFwFBuWSWStGd+8ee/Nm98f935rn73P3Wfvfda6AJD8gwXC
@@ -14509,10 +14366,10 @@
          </office:binary-data>
         </draw:image>
        </draw:frame></text:p>
-      <text:p text:style-name="P29">CTC Bell</text:p>
-      <text:p text:style-name="P32">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
-      <text:p text:style-name="P23"><text:span text:style-name="T16">Red Wire: 5V to 24V<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T17">Activate</text:span><text:span text:style-name="T18"><text:line-break/></text:span></text:p>
-      <text:p text:style-name="P31"><text:span text:style-name="T10">SND-</text:span><text:span text:style-name="T13">CTCBELL</text:span><text:span text:style-name="T14"><text:tab/>$</text:span><text:span text:style-name="T21">22</text:span><text:span text:style-name="T14">.00</text:span></text:p>
+      <text:p text:style-name="P1">CTC Bell</text:p>
+      <text:p text:style-name="P4">US&amp;S Model 506<text:line-break/>CTC Console Bell</text:p>
+      <text:p text:style-name="P5"><text:span text:style-name="T4">Red Wire: 5V to 24V (DC only)<text:line-break/>Black Wire: GND<text:line-break/>White Wire: GND to </text:span><text:span text:style-name="T5">Activate</text:span><text:span text:style-name="T6"><text:line-break/></text:span></text:p>
+      <text:p text:style-name="P3"><text:span text:style-name="T1">SND-</text:span><text:span text:style-name="T2">CTCBELL</text:span><text:span text:style-name="T3"><text:tab/>$</text:span><text:span text:style-name="T7">22</text:span><text:span text:style-name="T3">.00</text:span></text:p>
      </text:section>
     </draw:text-box>
    </draw:frame>
