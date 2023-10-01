@@ -1,4 +1,4 @@
 schematics ckt-dingdong.sch
 output-name ../pcb/ckt-dingdong
 skip-m4
-elements-dir ../../ise-footprints
+elements-dir ../../../footprints
