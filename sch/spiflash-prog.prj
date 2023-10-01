@@ -1,0 +1,4 @@
+schematics spiflash-prog.sch
+output-name ../pcb/spiflash-prog
+skip-m4
+elements-dir ../../ise-footprints
