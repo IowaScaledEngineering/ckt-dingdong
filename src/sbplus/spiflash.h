@@ -31,12 +31,12 @@ LICENSE:
 #include <stdint.h>
 #include "audio.h"
 
-#define SPI_DDR_PORT DDRB
-#define SPI_PORT     PORTB
-#define USI_DI_PIN   PB0
-#define USI_DO_PIN   PB1
-#define USI_SCK_PIN  PB2
-#define USI_CS_PIN   PB3
+#define SPI_DDR_PORT DDRA
+#define SPI_PORT     PORTA
+#define USI_DI_PIN   PA0
+#define USI_DO_PIN   PA1
+#define USI_SCK_PIN  PA2
+#define USI_CS_PIN   PA3
 
 #define SPI_FLASH_READ_CMD       0x03
 #define SPI_FLASH_POWER_UP_CMD   0xAB
@@ -44,8 +44,6 @@ LICENSE:
 #define UUID_LEN_BYTES           8
 
 void spiSetup();
-void spiCSAcquire();
-void spiCSRelease();
 void spiCSEnable();
 void spiCSDisble();
 uint8_t spiTransferByte(uint8_t txData);

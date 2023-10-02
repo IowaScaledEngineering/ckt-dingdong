@@ -55,26 +55,29 @@ uint32_t getMillis()
 {
 	return millis;
 }
-
+	
 void audioInitialize()
 {
 	audioReadIdx = audioStartIdx = audioDataLen = 0;
 	audioBufferInitialize();
 
 	// Enable 64 MHz PLL and use as source for Timer1
+	PLLCSR = _BV(PLLE);
+	_delay_us(100);
 	PLLCSR = _BV(PCKE) | _BV(PLLE);
 
-	// Set up Timer/Counter1 for PWM output on PB1 (OCR1A)
 	TIMSK = 0;                                    // Timer interrupts OFF
-	TCCR1 = _BV(CS10); // PWM A, clear on match, 1:1 prescale
-	GTCCR = _BV(PWM1B) | _BV(COM1B1);
-	OCR1B = 0x7F;                                 // 50% duty at start
 
-	// Set up Timer/Counter0 for interrupts to output samples.
-	TCCR0A = _BV(WGM00) | _BV(WGM01);             // Fast PWM (also needs WGM02 in TCCR0B)
-	TCCR0B = _BV(WGM02) | _BV(CS01);              // 1/8 prescale
+	// Set up Timer/Counter1 for PWM output on PB3 (OC1B)
+	TCCR1A = 0b00100001; // PWM B, clear on match
+	TCCR1B = 0b00000000; // No dead time, 1:1 prescale for counter 1
+	OCR1B = 0x7F;        // 50% duty at start
+
+	// Set up Timer/Counter0 for 1MHz clock, interrupts to output samples.
+	//  OCR0A will be loaded as the number of us between samples
+	TCCR0A = 0b00000001;  // CTC Mode
+	TCCR0B = 0b00000010;  // Just CS01 - 1/8 prescale
 	OCR0A = 42;
-	
 	TIMSK = _BV(OCIE0A);
 }
 

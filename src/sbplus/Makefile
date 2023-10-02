@@ -1,12 +1,12 @@
 #*************************************************************************
-#Title:    CKT-DINGDONG SPI Flash Makefile
+#Title:    SoundBytes Plus Makefile
 #Authors:  Michael Petersen <railfan@drgw.net>
 #          Nathan Holmes <maverick@drgw.net>
 #File:     CKT-DINGDONG Makefile
 #License:  GNU General Public License v3
 #
 #LICENSE:
-#    Copyright (C) 2021 Nathan Holmes and Michael Petersen
+#    Copyright (C) 2023 Nathan Holmes and Michael Petersen
 #
 #    Derived from example WinAVR project Makefile
 #
@@ -28,11 +28,11 @@
 BASE_NAME = main
 
 # ATmega328P 20MHz @ 5.0V
-DEVICE  = attiny85
+DEVICE  = attiny861a
 F_CPU   = 8000000  # Hz
 FUSE_L  = 0xE2
-FUSE_H  = 0xC5
-FUSE_E  = 0xFF
+FUSE_H  = 0xD5
+FUSE_E  = 0xFE
 
 #PROGRAMMER_TYPE=avrispmkii
 PROGRAMMER_TYPE=iseavrprog
@@ -40,7 +40,7 @@ PROGRAMMER_TYPE=iseavrprog
 PROGRAMMER_PORT=usb
 
 DEFINES = 
-SRCS = $(BASE_NAME).c spiflash.c audio.c lfsr.c ispl.c ispl-vm.c
+SRCS = $(BASE_NAME).c spiflash.c audio.c lfsr.c ispl.c ispl-vm.c debouncer.c
 
 AVRDUDE = avrdude -P $(PROGRAMMER_PORT) -c $(PROGRAMMER_TYPE) -p $(DEVICE) -B8 -F
 AVRDUDE_SLOW = avrdude -P $(PROGRAMMER_PORT) -c $(PROGRAMMER_TYPE) -p $(DEVICE) -B32

@@ -42,23 +42,9 @@ void spiSetup()
 	SPI_DDR_PORT |= _BV(USI_SCK_PIN);
 	SPI_DDR_PORT |= _BV(USI_DO_PIN);
 	SPI_DDR_PORT &= ~_BV(USI_DI_PIN);
-}
 
-void spiCSAcquire()
-{
-	// The /CS pin doubles as the trigger input, so we have to be tricky
-	// Make it an output
 	SPI_PORT     |= _BV(USI_CS_PIN);  // Set /CS high, just in case
 	SPI_DDR_PORT |= _BV(USI_CS_PIN);  // Make it an output
-	_delay_us(5);
-}
-
-void spiCSRelease()
-{
-	// The /CS pin doubles as the trigger input, so we have to be tricky
-	// Make it an output
-	SPI_PORT     |= _BV(USI_CS_PIN);  // Set /CS high, just in case
-	SPI_DDR_PORT &= ~(_BV(USI_CS_PIN));  // Make it an input
 }
 
 inline void spiCSEnable()
