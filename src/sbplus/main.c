@@ -113,17 +113,16 @@ int main(void)
 	PORTB = 0b00000000; 	// Just make everything low
 	DDRB  = 0b11111111;     // And set it as an output
 
+	initDebounceState8(&inputDebouncer, 0x00);
+
 	audioInitialize();
 
 	spiSetup();
 	spiflashReset();
-	
-	initDebounceState8(&inputDebouncer, 0x00);
 
 	sei();
 
 	wdt_reset();
-	_delay_ms(100);  // Wait for PWM and PB3 to settle
 
 	initializeRandomGenerator();
 	isplInitialize(); // What should I do if this fails?
@@ -132,12 +131,13 @@ int main(void)
 	{
 		wdt_reset();
 
-		isplVirtualMachineRun();
+//		isplVirtualMachineRun();
 /*		if (!audioIsPlaying() && (inputs & 0x01))
 		{
 			isplAudioAssetLoad(0, &r);
 			audioPlay(r.addr, r.size, r.sampleRate);
 		}*/
+		spiflashReset();
 
 		audioPump();
 		readInputs();
