@@ -35,8 +35,9 @@ LICENSE:
 
 void spiSetup()
 {
-	USICR &= ~(_BV(USISIE) | _BV(USIOIE) | _BV(USIWM1));
-	USICR |= _BV(USIWM0) | _BV(USICS1) | _BV(USICLK);
+	USIPP = _BV(USIPOS); // Put USI pins on PORTA
+	
+	USICR = _BV(USIWM0) | _BV(USICS1) | _BV(USICLK);
 
 	// SCK and DO should be outputs, DI input
 	SPI_DDR_PORT |= _BV(USI_SCK_PIN);

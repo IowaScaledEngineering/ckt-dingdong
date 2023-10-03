@@ -55,6 +55,14 @@ uint32_t getMillis()
 {
 	return millis;
 }
+
+void audioAmplifierEnable(uint8_t enable)
+{
+	if (enable)
+		PORTA |= _BV(PA7);
+	else
+		PORTA &= ~(_BV(PA7));
+}
 	
 void audioInitialize()
 {
@@ -63,14 +71,22 @@ void audioInitialize()
 
 	// Enable 64 MHz PLL and use as source for Timer1
 	PLLCSR = _BV(PLLE);
-	_delay_us(100);
+	
+	// Wait for PLL lock per datasheet
+	do
+	{
+		_delay_us(100);
+	}
+	while (!(PLLCSR & _BV(PLOCK)));
+
+	// Enable PCK once PLL lock established
 	PLLCSR = _BV(PCKE) | _BV(PLLE);
 
 	TIMSK = 0;                                    // Timer interrupts OFF
 
 	// Set up Timer/Counter1 for PWM output on PB3 (OC1B)
 	TCCR1A = 0b00100001; // PWM B, clear on match
-	TCCR1B = 0b00000000; // No dead time, 1:1 prescale for counter 1
+	TCCR1B = 0b00000001; // No dead time, 1:1 prescale for counter 1
 	OCR1B = 0x7F;        // 50% duty at start
 
 	// Set up Timer/Counter0 for 1MHz clock, interrupts to output samples.
@@ -79,6 +95,8 @@ void audioInitialize()
 	TCCR0B = 0b00000010;  // Just CS01 - 1/8 prescale
 	OCR0A = 42;
 	TIMSK = _BV(OCIE0A);
+	
+	audioAmplifierEnable(1);
 }
 
 bool audioIsPlaying()

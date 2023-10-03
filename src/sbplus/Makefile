@@ -28,7 +28,7 @@
 BASE_NAME = main
 
 # ATmega328P 20MHz @ 5.0V
-DEVICE  = attiny861a
+DEVICE  = attiny861
 F_CPU   = 8000000  # Hz
 FUSE_L  = 0xE2
 FUSE_H  = 0xD5
