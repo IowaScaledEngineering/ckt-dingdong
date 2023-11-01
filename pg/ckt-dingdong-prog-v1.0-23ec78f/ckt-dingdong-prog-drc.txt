@@ -1,0 +1,10 @@
+** Drc report for /tank/data/design/projects/ckt-dingdong/kicad/ckt-dingdong-prog/ckt-dingdong-prog.kicad_pcb **
+** Created on 2023-09-16 20:59:21 **
+
+** Found 0 DRC violations **
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **

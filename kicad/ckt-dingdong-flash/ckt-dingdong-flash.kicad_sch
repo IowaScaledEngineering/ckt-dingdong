@@ -2286,7 +2286,7 @@
     (uuid c78b60c6-740d-4b49-adb4-e9d9efed718a)
     (property "Reference" "U1" (id 0) (at 75.565 33.02 0))
     (property "Value" "AP7381-33Y" (id 1) (at 75.565 35.56 0))
-    (property "Footprint" "Package_TO_SOT_SMD:SOT-89-3" (id 2) (at 75.565 34.29 0)
+    (property "Footprint" "ISE_Generic:SOT-89-3" (id 2) (at 75.565 34.29 0)
       (effects (font (size 1.27 1.27) italic) hide)
     )
     (property "Datasheet" "https://www.diodes.com/assets/Datasheets/AP7384.pdf" (id 3) (at 75.565 40.005 0)
@@ -2597,7 +2597,7 @@
       (reference "SPK1") (unit 1) (value "Speaker") (footprint "ISE_Generic:Speaker_13x18")
     )
     (path "/c78b60c6-740d-4b49-adb4-e9d9efed718a"
-      (reference "U1") (unit 1) (value "AP7381-33Y") (footprint "Package_TO_SOT_SMD:SOT-89-3")
+      (reference "U1") (unit 1) (value "AP7381-33Y") (footprint "ISE_Generic:SOT-89-3")
     )
     (path "/538c95d1-efba-4df5-84ff-f266a285b7b1"
       (reference "U2") (unit 1) (value "ATtiny861A-S") (footprint "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm")

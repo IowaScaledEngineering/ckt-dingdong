@@ -1,0 +1,10 @@
+** Drc report for /tank/data/design/projects/ckt-dingdong/kicad/ckt-dingdong-flash/ckt-dingdong-flash.kicad_pcb **
+** Created on 2023-09-18 08:20:42 **
+
+** Found 0 DRC violations **
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **
