@@ -2,8 +2,9 @@
 import re
 import argparse
 import struct
-from isplasm import isplAssemble
 from pydub import AudioSegment
+from intelhex import IntelHex
+import zlib
 
 class ISPLManifest:
   def __init__(self):
@@ -80,9 +81,8 @@ def main():
   wav_asset_match = re.compile(r'AudioFile (?P<assetName>\w+) WAV (?P<sampleRate>\d+) (?P<assetFilename>.+)')
 
   asset_match = re.compile(r'AudioFile (?P<assetName>\w+) PCM (?P<sampleRate>\d+) (?P<assetFilename>.+)')
-  
-  code_begin_match = re.compile(r'ISPLCode')
-  code_end_match = re.compile(r'ISPLCodeEnd')
+
+  hex_match = re.compile(r'Firmware (?P<assetFilename>.+)')
   
   # Compile assets
   
@@ -133,35 +133,38 @@ def main():
         print("ERROR: Audio asset [%s] - file [%s] cannot be opened" % (assetRec.group('assetName'), assetRec.group('assetFilename')))
         raise IOError
 
-
-
     isplFile.seek(0)
-      
-    inCode = False
-    code = ""
+    hexAssetRecs = []
+
+    for assetRec in filter(lambda e: e is not None, [hex_match.match(rec) for rec in isplFile.readlines()]):
+      hexAssetRecs.append(assetRec)
+
+    if len(hexAssetRecs) > 1:
+      print("ERROR: Too many Firmware records, only 1 allowed")
+      raise IOError
+    elif len(hexAssetRecs) < 1:
+      print("ERROR: Missing Firmware record")
+      raise IOError
+
+    assetRec = hexAssetRecs[0]
     
-    for line in isplFile.readlines():
-      if code_begin_match.match(line):
-        inCode = True
-        continue
+    try:
+      firmware = IntelHex()
+      firmware.fromfile(args.input_directory + '/' + assetRec.group('assetFilename'), format='hex')
+      programData = firmware.tobinarray(start=0)
+    except IOError:
+      print("ERROR: Firmware asset file [%s] cannot be opened" % (assetRec.group('assetFilename')))
+      raise IOError
 
-      if code_end_match.match(line):
-        inCode = False
-        continue
-
-      if inCode:
-        code += line
-
-    print("Building ISPL assembly")
-    #print(code)
     
-    programData, listData = isplAssemble(code, assetDict)
     print("- Program is %d bytes long" % (len(programData)))
-    #print(listData)
+    programDataCRC = zlib.crc32(programData)
+    print("- Program CRC32 is %08X" % (programDataCRC))
+    
+    programData = bytes(programData) + struct.pack('>I', programDataCRC)
   
   # Build asset table
-  
-  
+
   # Build manifest
   
   # Write Header
@@ -180,21 +183,6 @@ def main():
     # 2 - Audio asset table
     # *  Manifest Table Record:
     # *  [Addr:32] [Recs-N:32] [Recs-S:16]
-    
-    programDataWorks = bytearray([
-      0x00,                # ldst                 0x00
-      0x22, 0x00, 0x01,    # push 0x0001          0x22 0x00 0x01
-      0x35,                # and                  0x35
-      0x3A,                # lnot                 0x3A
-      0x01,                # ldin                 0x01
-      0x22, 0x00, 0x01,    # push 0x0001          0x22 0x00 0x01
-      0x35,                # and                  0x35
-      0x3B,                # land                 0x3B
-      0x22, 0x00, 0x00,    # push 0               0x22 0x00 0x00
-      0x91, 0x00, 0x04,    # rje 4                0x91 0x00 0x04
-      0x22, 0x00, 0x00,    # push 0               0x22 0x00 0x00
-      0x0A,                # play                 0x0A
-      0x80, 0x00, 0x00])   # jmp 0                0x80 0x00 0x00
     
     manifestFinalSize = 10 * 3
     
