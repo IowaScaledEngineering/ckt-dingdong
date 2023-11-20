@@ -35,7 +35,7 @@ FUSE_E  = 0xFE
 
 
 # BOOTLOADER_ADDRESS must be a multiple of attiny861 page size (64) and in hex (despite no 0x)
-BOOTLOADER_ADDRESS = 1800
+BOOTLOADER_ADDRESS = 1900
 
 #PROGRAMMER_TYPE=avrispmkii
 PROGRAMMER_TYPE=iseavrprog
@@ -89,7 +89,7 @@ jump.elf:	jump.asm
 	avr-as -mmcu=$(DEVICE) --defsym BOOTLOADER_ADDRESS=0x$(BOOTLOADER_ADDRESS) -o $@ $<
 
 jump.hex:	jump.elf
-	rm -f $@ $@.tmp jump_hv.eep.hex
+	rm -f $@ $@.tmp jump.hex
 	avr-objcopy -j .text -j .data -O ihex $< $@.tmp
 	head -1 $@.tmp > $@
 	rm -f $@.tmp
