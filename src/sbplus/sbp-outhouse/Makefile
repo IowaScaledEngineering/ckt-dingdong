@@ -8,7 +8,7 @@ firmware:
 	$(MAKE) -C src clean hex
 
 ispl: firmware
-	$(PYTHON) ../tools/isplcreate/isplcreate.py -i . -o sbp-outhouse.bin
+	$(PYTHON) ../tools/isplcreate/isplcreate.py -i . -o sbp-outhouse.sbp
 	
 flash: 
-	$(PYTHON) ../tools/spiflash-pyprog/flash.py sbp-outhouse.bin
+	$(PYTHON) ../tools/spiflash-pyprog/flash.py sbp-outhouse.sbp
