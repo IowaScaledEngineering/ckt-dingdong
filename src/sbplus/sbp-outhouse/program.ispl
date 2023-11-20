@@ -1,16 +1,16 @@
-AudioFile SOUND1 PCM 16000 audio/sound1-noise-16kHz.raw
-AudioFile SOUND2 PCM 16000 audio/sound2-noise-16kHz.raw
-AudioFile SOUND3 PCM 16000 audio/sound3-noise-16kHz.raw
-AudioFile SOUND4 PCM 16000 audio/sound4-noise-16kHz.raw
-AudioFile SOUND5 PCM 16000 audio/sound5-noise-16kHz.raw
-AudioFile SOUND6 PCM 16000 audio/sound6-noise-16kHz.raw
+AudioFile SOUND1 PCM 32000 audio/sound1-noise-32kHz.raw
+AudioFile SOUND2 PCM 32000 audio/sound2-noise-32kHz.raw
+AudioFile SOUND3 PCM 32000 audio/sound3-noise-32kHz.raw
+AudioFile SOUND4 PCM 32000 audio/sound4-noise-32kHz.raw
+AudioFile SOUND5 PCM 32000 audio/sound5-noise-32kHz.raw
+AudioFile SOUND6 PCM 32000 audio/sound6-noise-32kHz.raw
 
-AudioFile SAYING1 PCM 16000 audio/sound1-saying-16kHz.raw
-AudioFile SAYING2 PCM 16000 audio/sound2-saying-16kHz.raw
-AudioFile SAYING3 PCM 16000 audio/sound3-saying-16kHz.raw
-AudioFile SAYING4 PCM 16000 audio/sound4-saying-16kHz.raw
-AudioFile SAYING5 PCM 16000 audio/sound5-saying-16kHz.raw
-AudioFile SAYING6 PCM 16000 audio/sound6-saying-16kHz.raw
+AudioFile SAYING1 PCM 32000 audio/sound1-saying-32kHz.raw
+AudioFile SAYING2 PCM 32000 audio/sound2-saying-32kHz.raw
+AudioFile SAYING3 PCM 32000 audio/sound3-saying-32kHz.raw
+AudioFile SAYING4 PCM 32000 audio/sound4-saying-32kHz.raw
+AudioFile SAYING5 PCM 32000 audio/sound5-saying-32kHz.raw
+AudioFile SAYING6 PCM 32000 audio/sound6-saying-32kHz.raw
 
 
 Firmware src/main.hex
