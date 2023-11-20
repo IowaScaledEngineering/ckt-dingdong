@@ -34,15 +34,15 @@ FUSE_H  = 0xD5
 FUSE_E  = 0xFE
 
 
-# BOOTLOADER_ADDRESS must be a multiple of attiny861 page size (32)
-BOOTLOADER_ADDRESS = 0x1500
+# BOOTLOADER_ADDRESS must be a multiple of attiny861 page size (64) and in hex (despite no 0x)
+BOOTLOADER_ADDRESS = 1800
 
 #PROGRAMMER_TYPE=avrispmkii
 PROGRAMMER_TYPE=iseavrprog
 #PROGRAMMER_TYPE=dragon_isp
 PROGRAMMER_PORT=usb
 
-DEFINES = -DBOOTLOADER_ADDRESS=$(BOOTLOADER_ADDRESS)
+DEFINES = -DBOOTLOADER_ADDRESS=0x$(BOOTLOADER_ADDRESS)
 
 SRCS = bootloader.c spiflash.c
 
@@ -68,26 +68,36 @@ help:
 	@echo "make release.... produce release tarball"
 	@echo "make terminal... open up avrdude terminal"
 
-hex: $(BASE_NAME).hex
+hex: boot-img.hex
 
 program: fuse flash
 
 terminal:
 	$(AVRDUDE_SLOW) -t
 
-boot.elf: $(OBJS)
-	$(CC) $(CFLAGS) -DLOW_VOLTAGE -o $@ $(OBJS) $(LDFLAGS) -Wl,--section-start=.text=$(BOOTLOADER_ADDRESS)
+loader.elf: $(OBJS)
+	$(COMPILE) -o $@ $(OBJS) $(LDFLAGS) -Wl,--section-start=.text=$(BOOTLOADER_ADDRESS)
 	avr-size --format=avr --mcu=$(DEVICE) $@
 	avr-objdump -x -D -S -z $@ > $@.lss
 
+loader.hex: loader.elf
+	rm -f loader.hex
+	avr-objcopy -j .text -j .data -O ihex $< $@
+	avr-size $@
+
 jump.elf:	jump.asm
-	avr-as -mmcu=$(DEVICE) --defsym BOOTLOADER_ADDRESS=$(BOOTLOADER_ADDRESS) -o $@ $<
+	avr-as -mmcu=$(DEVICE) --defsym BOOTLOADER_ADDRESS=0x$(BOOTLOADER_ADDRESS) -o $@ $<
 
 jump.hex:	jump.elf
 	rm -f $@ $@.tmp jump_hv.eep.hex
 	avr-objcopy -j .text -j .data -O ihex $< $@.tmp
 	head -1 $@.tmp > $@
 	rm -f $@.tmp
+
+boot-img.hex: jump.hex loader.hex
+	cat jump.hex loader.hex > $@
+	avr-objdump -mavr -D $@ > $@.lss
+
 
 # rule for programming fuse bits:
 fuse:
@@ -101,13 +111,11 @@ read:
 size:
 	avr-size -C --mcu=$(DEVICE) $(BASE_NAME).elf
 
-boot.hex: jump.hex bootloader.hex
-	cat jump.hex bootloader.hex > $@
-	avr-objdump -mavr -D $@ > $@.lss
+
 
 # rule for uploading firmware:
-flash: boot.hex
-	$(AVRDUDE) -U flash:w:boot.hex:i
+flash: hex
+	$(AVRDUDE) -U flash:w:boot-img.hex:i
 
 firmware:
 	$(AVRDUDE) -U flash:w:$(HEX):i

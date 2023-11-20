@@ -144,8 +144,6 @@ int main ( void )
 		if (crc32_eeprom != crc32_spiflash)
 		{
 			// The actual program size is 4 bytes less than reported because of the CRC on the end
-			isplProgramTable.n -= 4; 
-
 			eeprom_write_dword((uint32_t*)EEPROM_PROG_CRC32_BASE, 0xFFFFFFFF);
 			eeprom_busy_wait();
 
@@ -155,9 +153,11 @@ int main ( void )
 				boot_page_erase(progmemAddr);
 
 			uint8_t pageBuffer[PAGE_SZ_BYTES];
-			uint16_t bytesLeftToWrite = isplProgramTable.n;
+			uint16_t bytesLeftToWrite = isplProgramTable.n - 4; // Don't write the CRC
 			progmemAddr = 0;
-			while (bytesLeftToWrite > 0)
+			uint16_t appResetRJMP = 0xFFFF;
+
+			while (bytesLeftToWrite > 0 && progmemAddr < (BOOTLOADER_ADDRESS-PAGE_SZ_BYTES))
 			{
 				uint8_t thisPageSz = min(PAGE_SZ_BYTES, bytesLeftToWrite); 
 
@@ -169,9 +169,14 @@ int main ( void )
 
 				if (0 == progmemAddr)
 				{
-					//boot_page_fill(BOOTLOADER_ADDRESS - 2, 0xCFFF & (((fake_page[0] & 0x0FFF) - (BOOTLOADER_ADDRESS / 2) + 1) | 0xC000)); // jump to start
-					// Preserve the current bootloader jump instruction
-	//				tmp = pgm_read_word(BOOTLOADER_ADDRESS + CUR_ADDR); // get the original instruction inside bootloader
+					// Save off the application's rjmp reset vector
+					uint16_t appResetAddr = 0x0FFF & ((uint16_t)pageBuffer[0] | ((uint16_t)pageBuffer[1]<<8));
+					appResetRJMP = 0xCFFF & ((appResetAddr - (BOOTLOADER_ADDRESS / 2) + 1) | 0xC000);
+
+					// Calculate the bootloader's reset vector rjmp and put it in instead
+					uint16_t bootloaderResetRJMP = 0xC000 | (((uint16_t)BOOTLOADER_ADDRESS / 2) - 1);
+					pageBuffer[0] = (uint8_t)bootloaderResetRJMP;
+					pageBuffer[1] = (uint8_t)(bootloaderResetRJMP>>8);
 				}
 
 				for(uint8_t i=0; i<PAGE_SZ_BYTES; i+=2)
@@ -181,9 +186,21 @@ int main ( void )
 				}
 
 				boot_page_write_safe(progmemAddr);
+				progmemAddr += PAGE_SZ_BYTES;
 				bytesLeftToWrite -= thisPageSz;
 			}
 
+
+			// Write special page before the bootloader
+			progmemAddr = BOOTLOADER_ADDRESS - PAGE_SZ_BYTES;
+			for(uint8_t i=0; i<PAGE_SZ_BYTES; i+=2)
+			{
+				uint16_t w = 0xFFFF;
+				if (i == PAGE_SZ_BYTES - 2)
+					w = appResetRJMP;
+				boot_page_fill_safe(progmemAddr + i, w);
+			}
+			boot_page_write_safe(progmemAddr);
 			boot_spm_busy_wait();
 
 			// Did we succeed?  Write eeprom crc

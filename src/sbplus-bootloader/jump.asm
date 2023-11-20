@@ -26,7 +26,7 @@
 ;*************************************************************************
 
 .org 0x0000
-		rjmp BOOTLOADER_ADDRESS   
+		rjmp BOOTLOADER_ADDRESS
 		; The bootloader doesn't use any other vectors, so no need to remap them
 
 main:	cli
