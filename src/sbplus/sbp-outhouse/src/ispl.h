@@ -64,7 +64,6 @@ extern ISPLTable audioTable;
 bool isplAudioAssetLoad(uint16_t assetNum, AudioAssetRecord* r);
 void isplTableLoad(ISPLTable* t, uint8_t tableNum);
 bool isplInitialize();
-void isplVirtualMachineRun();
 
 /*  Start of Flash:
  *  IDENT:  ISPL
@@ -82,9 +81,5 @@ void isplVirtualMachineRun();
  *  [Type:8] [Addr:32] [Size:32] [SampleRate:16] [Flags:32]
  * 
  */
-
-#ifdef VM_DEBUG
-const char* const isplOpcodeName(uint8_t op);
-#endif
 
 #endif

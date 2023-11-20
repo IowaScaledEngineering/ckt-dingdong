@@ -82,7 +82,7 @@ int main(void)
 {
 	// Deal with watchdog first thing
 	MCUSR = 0;								// Clear reset status
-
+	bool notYetActivated = true;
 	wdt_reset();                     // Reset the WDT, just in case it's still enabled over reset
 	wdt_enable(WDTO_1S);             // Enable it at a 1S timeout.
 
@@ -131,14 +131,16 @@ int main(void)
 	{
 		wdt_reset();
 
-//		isplVirtualMachineRun();
-/*		if (!audioIsPlaying() && (inputs & 0x01))
+		if (notYetActivated)
+			randomGet(); // Just keep pulling random numbers for a while
+
+		if (!audioIsPlaying() && (inputs & 0x01))
 		{
+			notYetActivated = false;
+			AudioAssetRecord r;
 			isplAudioAssetLoad(0, &r);
 			audioPlay(r.addr, r.size, r.sampleRate);
-		}*/
-		spiflashReset();
-
+		}
 		audioPump();
 		readInputs();
 	}
