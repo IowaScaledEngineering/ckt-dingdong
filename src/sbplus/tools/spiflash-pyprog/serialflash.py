@@ -124,6 +124,14 @@ class SerialFlash:
         """
         raise NotImplementedError()
 
+    def erase_all(self, verify: bool = False) -> None:
+        """Erase the whole chip
+           :param verify: optionally check that the selected blocks have been
+                          erased, reading them back.
+        """
+        raise NotImplementedError()
+
+
     def can_erase(self, address: int, length: int) -> None:
         """Verifies that a defined area can be erased on the flash device.
            It does not take into account any locking scheme, only the area
@@ -878,10 +886,10 @@ class W25xFlashDevice(_Gen25FlashDevice):
     READ_UID_WIDTH = 4  # 4 dummy bytes
     TIMINGS = {'page': (0.0015, 0.003),  # 1.5/3 ms
                'subsector': (0.200, 0.200),  # 200/200 ms
-               'sector': (1.0, 1.0),  # 1/1 s
+               'sector': (0.150, 2.0),  # 1/1 s
                'bulk': (32, 64),  # seconds
                'lock': (0.05, 0.1),  # 50/100 ms
-               'chip': (4, 11)}
+               'chip': (40, 200)}
     FEATURES = (SerialFlash.FEAT_SECTERASE |
                 SerialFlash.FEAT_SUBSECTERASE |
                 SerialFlash.FEAT_CHIPERASE)

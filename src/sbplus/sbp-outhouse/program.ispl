@@ -1,16 +1,16 @@
-AudioFile SOUND1 PCM 16000 sound1-noise.wav
-AudioFile SOUND2 PCM 16000 sound2-noise.wav
-AudioFile SOUND3 PCM 16000 sound3-noise.wav
-AudioFile SOUND4 PCM 16000 sound4-noise.wav
-AudioFile SOUND5 PCM 16000 sound5-noise.wav
-AudioFile SOUND6 PCM 16000 sound6-noise.wav
+AudioFile SOUND1 PCM 16000 audio/sound1-noise-16kHz.raw
+AudioFile SOUND2 PCM 16000 audio/sound2-noise-16kHz.raw
+AudioFile SOUND3 PCM 16000 audio/sound3-noise-16kHz.raw
+AudioFile SOUND4 PCM 16000 audio/sound4-noise-16kHz.raw
+AudioFile SOUND5 PCM 16000 audio/sound5-noise-16kHz.raw
+AudioFile SOUND6 PCM 16000 audio/sound6-noise-16kHz.raw
 
-AudioFile SAYING1 PCM 16000 sound1-saying.wav
-AudioFile SAYING2 PCM 16000 sound2-saying.wav
-AudioFile SAYING3 PCM 16000 sound3-saying.wav
-AudioFile SAYING4 PCM 16000 sound4-saying.wav
-AudioFile SAYING5 PCM 16000 sound5-saying.wav
-AudioFile SAYING6 PCM 16000 sound6-saying.wav
+AudioFile SAYING1 PCM 16000 audio/sound1-saying-16kHz.raw
+AudioFile SAYING2 PCM 16000 audio/sound2-saying-16kHz.raw
+AudioFile SAYING3 PCM 16000 audio/sound3-saying-16kHz.raw
+AudioFile SAYING4 PCM 16000 audio/sound4-saying-16kHz.raw
+AudioFile SAYING5 PCM 16000 audio/sound5-saying-16kHz.raw
+AudioFile SAYING6 PCM 16000 audio/sound6-saying-16kHz.raw
 
 
-Firmware main.hex
+Firmware src/main.hex

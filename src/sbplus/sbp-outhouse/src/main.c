@@ -41,6 +41,9 @@ LICENSE:
 #include "lfsr.h"
 #include "debouncer.h"
 
+#define MAX_TRACKS 6
+
+
 uint8_t inputs = 0;
 DebounceState8_t inputDebouncer;
 
@@ -78,11 +81,38 @@ void initializeRandomGenerator()
 	randomSeedSet(((uint16_t)buffer[1]<<8) + buffer[0]);
 }
 
+bool recentlyUsed(uint8_t trackNum)
+{
+	static uint8_t lastPlayed[3] = { 0xFF, 0xFF, 0xFF };
+
+	for(uint8_t i=0; i<sizeof(lastPlayed); i++)
+	{
+		if (lastPlayed[i] == trackNum)
+			return true;
+	}
+
+	lastPlayed[2] = lastPlayed[1];
+	lastPlayed[1] = lastPlayed[0];
+	lastPlayed[0] = trackNum;
+	return false;
+}
+
+typedef enum 
+{
+	PLAYBACK_OFF,
+	PLAYBACK_START_NOISE,
+	PLAYBACK_WAIT_NOISE,
+	PLAYBACK_WAIT_GAP,
+	PLAYBACK_START_SAYING,
+	PLAYBACK_WAIT_SAYING,
+	PLAYBACK_WAIT_PIN
+}
+PlayBackState;
+
 int main(void)
 {
 	// Deal with watchdog first thing
 	MCUSR = 0;								// Clear reset status
-	bool notYetActivated = true;
 	wdt_reset();                     // Reset the WDT, just in case it's still enabled over reset
 	wdt_enable(WDTO_1S);             // Enable it at a 1S timeout.
 
@@ -105,7 +135,7 @@ int main(void)
 	//  PB2 - Output - (AVR programming SPI)
 	//  PB1 - Output - (AVR programming SPI)
 	//  PB0 - Output - (AVR programming SPI)
-	
+
 
 	PORTA = 0b00111001;
 	DDRA  = 0b11001110;
@@ -116,16 +146,21 @@ int main(void)
 	initDebounceState8(&inputDebouncer, 0x00);
 
 	audioInitialize();
-
 	spiSetup();
 	spiflashReset();
 
-	sei();
+	bool notYetActivated = true;
+	PlayBackState playState = PLAYBACK_OFF;
+	uint8_t playTrack = 0;
+	AudioAssetRecord r;
 
+
+	sei();
 	wdt_reset();
 
 	initializeRandomGenerator();
 	isplInitialize(); // What should I do if this fails?
+
 
 	while(1)
 	{
@@ -134,17 +169,67 @@ int main(void)
 		if (notYetActivated)
 			randomGet(); // Just keep pulling random numbers for a while
 
-		if (!audioIsPlaying() && (inputs & 0x01))
+		switch(playState)
 		{
-			notYetActivated = false;
-			AudioAssetRecord r;
-			isplAudioAssetLoad(0, &r);
-			audioPlay(r.addr, r.size, r.sampleRate);
+			case PLAYBACK_OFF:
+				if (inputs & 0x01)
+				{
+					do
+					{
+						playTrack = randomRangedGet(0, MAX_TRACKS);
+					} while (recentlyUsed(playTrack));
+
+					playState = PLAYBACK_START_NOISE;
+					notYetActivated = false;
+				}
+				break;
+
+			case PLAYBACK_START_NOISE:
+				isplAudioAssetLoad(playTrack, &r);
+				audioPlay(r.addr, r.size, r.sampleRate);
+				playState = PLAYBACK_WAIT_NOISE;
+				break;
+
+			case PLAYBACK_WAIT_NOISE:
+				if (!audioIsPlaying())
+					playState = PLAYBACK_WAIT_GAP;
+				break;
+
+			case PLAYBACK_WAIT_GAP:
+				for(uint8_t i=0; i<20; i++)
+				{
+					wdt_reset();
+					_delay_ms(100);
+				}
+				playState = PLAYBACK_START_SAYING;
+				break;
+
+			case PLAYBACK_START_SAYING:
+				isplAudioAssetLoad(playTrack + MAX_TRACKS, &r);
+				audioPlay(r.addr, r.size, r.sampleRate);
+				playState = PLAYBACK_WAIT_SAYING;
+				break;
+
+			case PLAYBACK_WAIT_SAYING:
+				if (!audioIsPlaying())
+					playState = PLAYBACK_WAIT_PIN;
+				break;
+
+			case PLAYBACK_WAIT_PIN:
+				if (!(inputs & 0x01))
+					playState = PLAYBACK_OFF;
+
+			default:
+				playState = PLAYBACK_OFF;
+				break;
+
 		}
+
 		audioPump();
 		readInputs();
 	}
 }
+
 
 
 

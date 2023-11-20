@@ -1,4 +1,5 @@
 PROJECT_NAME=sbp-outhouse
+PYTHON=python3
 
 all: firmware ispl
 
@@ -6,5 +7,8 @@ all: firmware ispl
 firmware: 
 	$(MAKE) -C src clean hex
 
-ispl:
+ispl: firmware
+	$(PYTHON) ../tools/isplcreate/isplcreate.py -i . -o sbp-outhouse.bin
 	
+flash: 
+	$(PYTHON) ../tools/spiflash-pyprog/flash.py sbp-outhouse.bin
