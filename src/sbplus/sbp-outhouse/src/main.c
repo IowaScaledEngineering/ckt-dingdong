@@ -196,7 +196,7 @@ int main(void)
 				break;
 
 			case PLAYBACK_WAIT_GAP:
-				for(uint8_t i=0; i<20; i++)
+				for(uint8_t i=0; i<10; i++)
 				{
 					wdt_reset();
 					_delay_ms(100);
