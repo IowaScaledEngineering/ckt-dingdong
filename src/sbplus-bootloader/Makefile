@@ -30,7 +30,7 @@ BASE_NAME = bootloader
 DEVICE  = attiny861
 F_CPU   = 8000000  # Hz
 FUSE_L  = 0xE2
-FUSE_H  = 0xD5
+FUSE_H  = 0xD6
 FUSE_E  = 0xFE
 
 
