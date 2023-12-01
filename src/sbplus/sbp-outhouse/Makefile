@@ -12,3 +12,6 @@ ispl: firmware
 	
 flash: 
 	$(PYTHON) ../tools/spiflash-pyprog/flash.py sbp-outhouse.sbp
+
+program: 
+	$(PYTHON) ../tools/spiflash-pyprog/flash.py release/sbp-outhouse.sbp

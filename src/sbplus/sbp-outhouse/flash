@@ -1,0 +1,3 @@
+#!/bin/bash
+python ../tools/spiflash-pyprog/flash.py release/sbp-outhouse-c6c74b8-1Dec2023.sbp
+
