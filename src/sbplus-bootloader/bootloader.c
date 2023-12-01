@@ -25,10 +25,12 @@ LICENSE:
 #include <avr/boot.h>
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
+#include <avr/pgmspace.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include "string.h"
 #include "spiflash.h"
+#include "util/delay.h"
 
 #define PAGE_SZ_BYTES    64
 
@@ -89,6 +91,35 @@ bool isplInitialize(ISPLTable* isplProgramTable)
 	return isplTableLoad(isplProgramTable, ISPL_TABLE_PROGRAM);
 }
 
+void beep()
+{
+	PORTA |= 0b10000000;  // Enable amplifier
+
+	while(1)
+	{
+		for(uint16_t i=0 ; i < 150; i++)
+		{
+			PORTB ^= 0b00001000;
+
+			switch((PINA & 0x30)>>4)
+			{
+				case 0x03:
+					_delay_us(250);
+				case 0x02:
+					_delay_us(250);
+				case 0x01:
+					_delay_us(250);
+				case 0x00:
+					_delay_us(500);
+					break;
+			}
+		}
+
+		_delay_ms(1000);
+	}
+}
+
+
 int main ( void )
 {
 	// Deal with watchdog first thing
@@ -126,6 +157,9 @@ int main ( void )
 	PORTB = 0b00000000; 	// Just make everything low
 	DDRB  = 0b11111111;     // And set it as an output
 
+	// Let power stabilize a bit
+	_delay_ms(100);
+
 	spiSetup();
 	spiflashReset();
 
@@ -134,15 +168,28 @@ int main ( void )
 	if (true == isplInitialize(&isplProgramTable))
 	{
 		// At this point, we have a valid ISPL program image
+		bool crcMatch = false;
+		uint32_t crc32_eeprom = 0;
+		uint32_t crc32_spiflash = 0;
 
 		// Check if the CRC is the same as the one we have in eeprom
-		uint32_t crc32_eeprom = eeprom_read_dword((const uint32_t*)EEPROM_PROG_CRC32_BASE);
-		uint32_t crc32_spiflash = spiflashReadU32(isplProgramTable.baseAddr + isplProgramTable.n - 4);
+		for(uint8_t i=0; !crcMatch && i<5; i++)
+		{
+			crc32_eeprom = eeprom_read_dword((const uint32_t*)EEPROM_PROG_CRC32_BASE);
+			crc32_spiflash = spiflashReadU32(isplProgramTable.baseAddr + isplProgramTable.n - 4);
+
+			if (crc32_eeprom == crc32_spiflash)
+				crcMatch = true;
+			else
+				_delay_ms(100);
+		}
 
 
 		// If the program CRC isn't the same as what we have in flash, reflash the part
-		if (crc32_eeprom != crc32_spiflash)
+		if (!crcMatch)
 		{
+			bool programWriteSuccessful = true; // Negated if one of the pages fails to verify
+
 			// The actual program size is 4 bytes less than reported because of the CRC on the end
 			eeprom_write_dword((uint32_t*)EEPROM_PROG_CRC32_BASE, 0xFFFFFFFF);
 			eeprom_busy_wait();
@@ -157,9 +204,11 @@ int main ( void )
 			progmemAddr = 0;
 			uint16_t appResetRJMP = 0xFFFF;
 
-			while (bytesLeftToWrite > 0 && progmemAddr < (BOOTLOADER_ADDRESS-PAGE_SZ_BYTES))
+			while (bytesLeftToWrite > 0 && progmemAddr < (BOOTLOADER_ADDRESS-PAGE_SZ_BYTES) && programWriteSuccessful)
 			{
 				uint8_t thisPageSz = min(PAGE_SZ_BYTES, bytesLeftToWrite); 
+
+				boot_page_erase_safe(progmemAddr);
 
 				spiflashReadBlock(isplProgramTable.baseAddr + progmemAddr, thisPageSz, pageBuffer);
 
@@ -186,27 +235,51 @@ int main ( void )
 				}
 
 				boot_page_write_safe(progmemAddr);
+
+				// Wait for write completion before verifying
+				boot_spm_busy_wait();
+
+				for(uint8_t i=0; programWriteSuccessful && i<PAGE_SZ_BYTES; i+=1)
+				{
+					if (pageBuffer[i] != pgm_read_byte(progmemAddr + i))
+						programWriteSuccessful = false;
+				}
+
 				progmemAddr += PAGE_SZ_BYTES;
 				bytesLeftToWrite -= thisPageSz;
 			}
 
-
-			// Write special page before the bootloader
-			progmemAddr = BOOTLOADER_ADDRESS - PAGE_SZ_BYTES;
-			for(uint8_t i=0; i<PAGE_SZ_BYTES; i+=2)
+			if (programWriteSuccessful)
 			{
-				uint16_t w = 0xFFFF;
-				if (i == PAGE_SZ_BYTES - 2)
-					w = appResetRJMP;
-				boot_page_fill_safe(progmemAddr + i, w);
+				// Write special page before the bootloader
+				boot_page_erase_safe(progmemAddr);
+
+				progmemAddr = BOOTLOADER_ADDRESS - PAGE_SZ_BYTES;
+				for(uint8_t i=0; i<PAGE_SZ_BYTES; i+=2)
+				{
+					uint16_t w = 0xFFFF;
+					if (i == PAGE_SZ_BYTES - 2)
+						w = appResetRJMP;
+					boot_page_fill_safe(progmemAddr + i, w);
+				}
+				boot_page_write_safe(progmemAddr);
+				boot_spm_busy_wait();
+
+				// Verify
+				if (appResetRJMP != pgm_read_word(BOOTLOADER_ADDRESS - 2))
+					programWriteSuccessful = false;
 			}
-			boot_page_write_safe(progmemAddr);
-			boot_spm_busy_wait();
 
 			// Did we succeed?  Write eeprom crc
-			eeprom_write_dword((uint32_t*)EEPROM_PROG_CRC32_BASE, crc32_spiflash);
-			eeprom_busy_wait();
+			if (programWriteSuccessful)
+			{
+				eeprom_write_dword((uint32_t*)EEPROM_PROG_CRC32_BASE, crc32_spiflash);
+				eeprom_busy_wait();
+			}
 		}
+	} else if (0xFFFFFFFF == eeprom_read_dword((const uint32_t*)EEPROM_PROG_CRC32_BASE)) {
+		// If there's no ISPL image and there doesn't appear to be anything bootloaded, just beep
+		beep();
 	}
 
 	// this will jump to user app

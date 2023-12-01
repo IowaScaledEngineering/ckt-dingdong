@@ -35,7 +35,7 @@ FUSE_E  = 0xFE
 
 
 # BOOTLOADER_ADDRESS must be a multiple of attiny861 page size (64) and in hex (despite no 0x)
-BOOTLOADER_ADDRESS = 1900
+BOOTLOADER_ADDRESS = 1800
 
 #PROGRAMMER_TYPE=avrispmkii
 PROGRAMMER_TYPE=iseavrprog
