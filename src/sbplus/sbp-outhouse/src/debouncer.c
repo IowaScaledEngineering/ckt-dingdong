@@ -21,3 +21,9 @@ uint8_t debounce8(uint8_t raw_inputs, DebounceState8_t* d)
 	d->debounced_state ^= changes;
 	return(changes & ~(d->debounced_state));
 }
+
+uint8_t getDebouncedState(DebounceState8_t* d)
+{
+	return d->debounced_state;
+}
+

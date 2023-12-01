@@ -44,9 +44,7 @@ LICENSE:
 #define MAX_TRACKS 6
 
 
-uint8_t inputs = 0;
 DebounceState8_t inputDebouncer;
-
 
 void readInputs()
 {
@@ -59,8 +57,8 @@ void readInputs()
 
 		// Invert the two inputs, since they're active low
 		// Shift PA4/PA5 down to bits 0, 1, mask off
-		currentInputState = ((PINA ^ 0xFF)>>4) & 0x03;
-		inputs = debounce8(currentInputState, &inputDebouncer);
+		currentInputState = (~(PINA >>4)) & 0x03;
+		debounce8(currentInputState, &inputDebouncer);
 	} 
 }
 
@@ -108,6 +106,9 @@ typedef enum
 	PLAYBACK_WAIT_PIN
 }
 PlayBackState;
+
+#define WHITE_INPUT_ACTIVE   0x01
+#define BLUE_INPUT_ACTIVE    0x02
 
 int main(void)
 {
@@ -172,7 +173,7 @@ int main(void)
 		switch(playState)
 		{
 			case PLAYBACK_OFF:
-				if (inputs & 0x01)
+				if (getDebouncedState(&inputDebouncer) & WHITE_INPUT_ACTIVE)
 				{
 					do
 					{
@@ -216,8 +217,10 @@ int main(void)
 				break;
 
 			case PLAYBACK_WAIT_PIN:
-				if (!(inputs & 0x01))
+				// This is a one-shot - wait until the switch is released before resetting
+				if (!(getDebouncedState(&inputDebouncer) & WHITE_INPUT_ACTIVE))
 					playState = PLAYBACK_OFF;
+				break;
 
 			default:
 				playState = PLAYBACK_OFF;

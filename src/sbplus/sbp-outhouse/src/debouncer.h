@@ -13,5 +13,6 @@ typedef struct
 
 void initDebounceState8(DebounceState8_t* d, uint8_t initialState);
 uint8_t debounce8(uint8_t raw_inputs, DebounceState8_t* d);
+uint8_t getDebouncedState(DebounceState8_t* d);
 
 #endif
