@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOADER=hex/loader-170f3f6.hex
+LOADER=hex/loader-39e3671-01Dec2023.hex
 
 while [ true ]
 do
