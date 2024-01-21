@@ -1,14 +1,13 @@
 {
     "layout": {
         "type": "grid",
-        "rows": 1,
-        "cols": 5,
+        "rows": 3,
+        "cols": 3,
         "space": "100mil",
     },
     "tabs": {
         "type": "fixed",
         "width": "100mil",
-        "hcount": "0",
     },
     "cuts": {
         "type": "mousebites",
@@ -18,14 +17,14 @@
     },
     "framing": {
         "type": "frame",
+        "cuts": "none",
         "space": "100mil",
         "width": "200mil",
     },
     "fiducials": {
         "type": "3fid",
-        "space": "100mil",
-        "hoffset": "100mil",
-        "voffset": "400mil",
+        "hoffset": "300mil",
+        "voffset": "100mil",
         "coppersize": "1mm",
         "opening": "2mm",
     },
