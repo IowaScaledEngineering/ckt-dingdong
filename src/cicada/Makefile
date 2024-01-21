@@ -92,7 +92,7 @@ firmware:
 	$(AVRDUDE) -U flash:w:$(HEX):i
 
 eeprom:
-	$(AVRDUDE) -U eeprom:w:$(BASE_NAME).eep:i
+	$(AVRDUDE_SLOW) -U eeprom:w:$(BASE_NAME).eep:i
 
 # rule for deleting dependent files (those which can be built by Make):
 clean:
