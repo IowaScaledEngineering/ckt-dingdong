@@ -1,0 +1,3 @@
+AudioFile SOUND1 PCM 32000 audio/detector-1466-32kHz.raw
+
+Firmware src/main.hex
