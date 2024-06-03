@@ -47,6 +47,10 @@ DebounceState8_t inputDebouncer;
 #define BLUE_INPUT_ACTIVE    0x02
 #define BOTH_INPUTS_ACTIVE   0x04
 
+#define VOLUME_COEF          10
+volatile uint8_t currentVolume = 0;
+uint8_t targetVolume = 0;
+
 void readInputs()
 {
 	static uint32_t lastRead = 0;
@@ -65,6 +69,29 @@ void readInputs()
 			currentInputState = BLUE_INPUT_ACTIVE;
 		debounce8(currentInputState, &inputDebouncer);
 	} 
+
+	static uint32_t lastVolume = 0;
+	uint8_t deltaVolume;
+	if (millis > lastVolume + 10)
+	{
+		lastVolume = millis;
+		if(currentVolume < targetVolume)
+		{
+			deltaVolume = (targetVolume - currentVolume);
+			if((deltaVolume > 0) && (deltaVolume < VOLUME_COEF))
+				deltaVolume = VOLUME_COEF;  // Make sure it goes all the way to min or max
+			currentVolume += deltaVolume / VOLUME_COEF;
+			setVolume(currentVolume);
+		}
+		else if(currentVolume > targetVolume)
+		{
+			deltaVolume = (currentVolume - targetVolume);
+			if((deltaVolume > 0) && (deltaVolume < VOLUME_COEF))
+				deltaVolume = VOLUME_COEF;  // Make sure it goes all the way to min or max
+			currentVolume -= deltaVolume / VOLUME_COEF;
+			setVolume(currentVolume);
+		}
+	}
 }
 
 typedef enum 
@@ -72,7 +99,7 @@ typedef enum
 	PLAYBACK_OFF,
 	PLAYBACK_START,
 	PLAYBACK_WAIT,
-	PLAYBACK_WAIT_FOR_RELEASE
+	VOLUME_WAIT,
 }
 PlayBackState;
 
@@ -119,7 +146,6 @@ int main(void)
 	spiflashReset();
 
 	PlayBackState playState = PLAYBACK_OFF;
-	uint32_t lastSeenMotion = 0;
 	AudioAssetRecord r;
 
 
@@ -156,6 +182,7 @@ int main(void)
 				break;
 
 			case PLAYBACK_START:
+				targetVolume = 255;
 				isplAudioAssetLoad(asset, &r);
 				audioPlay(r.addr, r.size, r.sampleRate, true);
 				playState = PLAYBACK_WAIT;
@@ -163,6 +190,14 @@ int main(void)
 
 			case PLAYBACK_WAIT:
 				if (!getDebouncedState(&inputDebouncer))
+				{
+					targetVolume = 0;
+					playState = VOLUME_WAIT;
+				}
+				break;
+
+			case VOLUME_WAIT:
+				if (0 == currentVolume)
 				{
 					stopAudio();
 					playState = PLAYBACK_OFF;

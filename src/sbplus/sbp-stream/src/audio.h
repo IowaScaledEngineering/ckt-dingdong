@@ -73,6 +73,7 @@ void audioInitialize();
 bool audioIsPlaying();
 void audioPlay(uint32_t addr, uint32_t len, uint16_t sampleRateHz, bool loop);
 void audioPump();
+void setVolume(uint8_t newVolume);
 
 // Functions related to the audio buffer - probably shouldn't call directly
 

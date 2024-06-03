@@ -34,6 +34,8 @@ uint32_t audioDataLen = 0;
 bool audioRun = true;
 bool audioLoop = false;
 
+uint8_t volume = 0;
+
 // Audio playing ISR
 
 uint32_t millis = 0;
@@ -52,10 +54,25 @@ ISR(TIMER0_COMPA_vect)
 {
 	static uint16_t micros = 0;
 	static uint8_t next = 0x7F;
+
 	OCR1B = next;
-	next = audioBufferPop();
-	
 	micros += OCR0A;
+	next = audioBufferPop();
+
+/*
+	uint8_t delta;
+	if(next > 0x80)
+	{
+		delta = (((next - 0x0080) * volume) + 127) >> 8;
+		next = 0x0080 + delta;
+	}
+	else
+	{
+		delta = (((0x0080 - next) * volume) + 127) >> 8;
+		next = 0x0080 - delta;
+	}
+*/
+
 	if(micros >= 1000)
 	{
 		millis++;
@@ -74,6 +91,11 @@ void audioAmplifierEnable(uint8_t enable)
 		PORTA |= _BV(PA7);
 	else
 		PORTA &= ~(_BV(PA7));
+}
+
+void setVolume(uint8_t newVolume)
+{
+	volume = newVolume;
 }
 	
 void audioInitialize()
