@@ -1,0 +1,5 @@
+AudioFile SOUND1 PCM 32000 audio/L.raw
+#AudioFile SOUND2 PCM 32000 audio/K.raw
+#AudioFile SOUND3 PCM 32000 audio/N.raw
+
+Firmware src/main.hex

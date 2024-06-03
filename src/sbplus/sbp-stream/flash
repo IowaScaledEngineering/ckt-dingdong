@@ -1,0 +1,2 @@
+#!/bin/bash
+python ../tools/spiflash-pyprog/flash.py release/sbp-stream-xxxxxxx-dddddddd.sbp
