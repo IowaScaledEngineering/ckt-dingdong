@@ -54,30 +54,29 @@ ISR(TIMER0_COMPA_vect)
 {
 	static uint16_t micros = 0;
 	static uint8_t next = 0x7F;
-
+PORTB |= _BV(PB6);
 	OCR1B = next;
 	micros += OCR0A;
 	next = audioBufferPop();
 
-/*
 	uint8_t delta;
-	if(next > 0x80)
+	if(next > 0x7F)
 	{
-		delta = (((next - 0x0080) * volume) + 127) >> 8;
-		next = 0x0080 + delta;
+		delta = (((next - 0x007F) * volume) + 128) >> 8;
+		next = 0x007F + delta;
 	}
 	else
 	{
-		delta = (((0x0080 - next) * volume) + 127) >> 8;
-		next = 0x0080 - delta;
+		delta = (((0x007F - next) * volume) + 128) >> 8;
+		next = 0x007F - delta;
 	}
-*/
 
 	if(micros >= 1000)
 	{
 		millis++;
 		micros -= 1000;
 	}
+PORTB &= ~_BV(PB6);
 }
 
 uint32_t getMillis()
@@ -209,9 +208,15 @@ void audioBufferPush(uint8_t data)
 uint8_t audioBufferPop()
 {
 	uint8_t retval = 0;
+	if (audioBufferDepth() < 80)
+	{
+PORTB |= _BV(PB5);
+PORTB &= ~_BV(PB5);
+	}
 	if (0 == audioBufferDepth())
+	{
 		return(0x7F);
-
+	}
 	retval = audioBuffer.buffer[audioBuffer.tailIdx];
 
 	if( ++audioBuffer.tailIdx >= sizeof(audioBuffer.buffer) )
