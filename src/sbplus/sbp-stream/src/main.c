@@ -56,9 +56,11 @@ void readInputs()
 	static uint32_t lastRead = 0;
 	uint8_t currentInputState = 0;
 
-	if (millis > lastRead + 20)
+	uint32_t currentMillis = getMillis();
+	
+	if (currentMillis > lastRead + 20)
 	{
-		lastRead = millis;
+		lastRead = currentMillis;
 
 		// Invert the two inputs, since they're active low, mask off
 		if((~PINA & (_BV(PA4) | _BV(PA5))) == (_BV(PA4) | _BV(PA5)))
@@ -72,9 +74,9 @@ void readInputs()
 
 	static uint32_t lastVolume = 0;
 	uint8_t deltaVolume;
-	if (millis > lastVolume + 10)
+	if (currentMillis > lastVolume + 10)
 	{
-		lastVolume = millis;
+		lastVolume = currentMillis;
 		if(currentVolume < targetVolume)
 		{
 			deltaVolume = (targetVolume - currentVolume);

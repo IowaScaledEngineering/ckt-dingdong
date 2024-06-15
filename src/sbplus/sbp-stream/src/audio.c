@@ -23,6 +23,7 @@ LICENSE:
     
 *************************************************************************/
 #include <string.h>
+#include "util/atomic.h"
 #include "audio.h"
 #include "spiflash.h"
 
@@ -38,7 +39,7 @@ uint8_t volume = 0;
 
 // Audio playing ISR
 
-uint32_t millis = 0;
+volatile uint32_t millis = 0;
 
 void stopAudio()
 {
@@ -81,7 +82,14 @@ PORTB &= ~_BV(PB6);
 
 uint32_t getMillis()
 {
-	return millis;
+	uint32_t retmillis;
+
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE) 
+	{
+		retmillis = millis;
+	}
+
+	return retmillis;
 }
 
 void audioAmplifierEnable(uint8_t enable)

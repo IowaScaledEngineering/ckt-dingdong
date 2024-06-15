@@ -40,8 +40,6 @@ LICENSE:
 
 #define min(a,b) ((a)<(b)?(a):(b))
 
-extern uint32_t millis;
-
 typedef struct
 {
 	uint8_t headIdx;
