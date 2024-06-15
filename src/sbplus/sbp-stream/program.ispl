@@ -1,5 +1,5 @@
-AudioFile SOUND1 PCM 32000 audio/L.raw
-#AudioFile SOUND2 PCM 32000 audio/K.raw
-#AudioFile SOUND3 PCM 32000 audio/N.raw
+AudioFile SOUND1 PCM 24000 audio/relaxing-nature-sound-mountain-creek-loop.raw
+AudioFile SOUND2 PCM 24000 audio/mountain-river-sounds.raw
+AudioFile SOUND3 PCM 24000 audio/water-with-birds.raw
 
 Firmware src/main.hex
