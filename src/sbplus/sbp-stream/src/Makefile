@@ -47,7 +47,7 @@ AVRDUDE_SLOW = avrdude -P $(PROGRAMMER_PORT) -c $(PROGRAMMER_TYPE) -p $(DEVICE) 
 
 OBJS = ${SRCS:.c=.o} ${ASM_SRC:.S=.o}
 INCLUDES = -I. 
-CFLAGS  = $(INCLUDES) -Wall -O2 -std=gnu99
+CFLAGS  = $(INCLUDES) -Wall -O3 -std=gnu99
 ASFLAGS = -ffunction-sections -fdata-sections
 LDFLAGS = -Wl,--gc-sections
 
