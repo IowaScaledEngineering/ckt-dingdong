@@ -1,0 +1,5 @@
+AudioFile SOUND1 PCM 24000 audio/relaxing-nature-sound-mountain-creek-loop.raw
+AudioFile SOUND2 PCM 24000 audio/mountain-river-sounds.raw
+AudioFile SOUND3 PCM 24000 audio/water-with-birds.raw
+
+Firmware src/main.hex
