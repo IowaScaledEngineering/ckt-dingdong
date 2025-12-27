@@ -1,0 +1,17 @@
+AudioFile BELL PCM 26000 audio/bell-26k.raw
+AudioFile SAFEMECH PCM 16000 audio/safetran-mechanical-16k.raw
+AudioFile SAFEHYB PCM 16000 audio/safetran-hybrid-16k.raw
+AudioFile USSTEAR PCM 20000 audio/uss-teardrop-20k.raw
+AudioFile WCH333 PCM 25000 audio/wchayes-333-25k.raw
+AudioFile WCH777 PCM 21000 audio/wchayes-777-21k.raw
+AudioFile WRS222 PCM 26000 audio/wrs-222-26k.raw
+AudioFile CTCBELL PCM 16000 audio/ctcbell.raw
+AudioFile CICADA1 PCM 16000 audio/cicada-recording-1.raw
+AudioFile CICADA2 PCM 16000 audio/cicada-recording-2.raw
+AudioFile CICADA3 PCM 16000 audio/cicada-recording-3.raw
+AudioFile CICADA4 PCM 16000 audio/cicada-recording-4.raw
+AudioFile CICADA5 PCM 16000 audio/cicada-recording-5.raw
+AudioFile CICADA6 PCM 16000 audio/cicada-recording-6.raw
+AudioFile CICADA7 PCM 16000 audio/cicada-recording-7.raw
+
+Firmware src/main.hex
